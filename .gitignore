@@ -1,0 +1,4 @@
+lucene/lucene-example/.gradle/*
+lucene/lucene-example/.idea/*
+lucene/lucene-example/out/*
+lucene/lucene-example/*.iml

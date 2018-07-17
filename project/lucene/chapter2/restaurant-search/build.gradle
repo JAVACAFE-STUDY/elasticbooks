@@ -1,0 +1,21 @@
+group 'com.example.javacafe'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.0.1'
+    compile files('lib/arirang.lucene-analyzer-6.2-1.1.0.jar')
+    compile files('lib/arirang-morph-1.0.3.jar')
+    //CSV 관련 라이브러리(opencsv)
+    compile group: 'com.opencsv', name: 'opencsv', version: '4.1'
+}
+
