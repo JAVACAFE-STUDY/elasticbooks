@@ -52,13 +52,22 @@ public class IndexService {
     	IndexWriterConfig config = new IndexWriterConfig(analyzer);
     	
     	try(IndexWriter w = new IndexWriter(index, config)) {
+			// 삭제하기 전 색인된 도큐먼트의 수를 확인한다.
     		System.out.println("before delete. numDocs=" + w.numDocs());
-    		
+
+			// 삭제할 대상 도큐먼트를 고르는 쿼리.
     		Query q = new QueryParser("reviewText", analyzer).parse(word);
+
+			// 쿼리의 대상이 되는 도큐먼트를 삭제한다.
     		w.deleteDocuments(q);
-    		
+
+			// 삭제 후 도큐먼트 수를 확인한다.
     		System.out.println("after delete. numDocs="+ w.numDocs());
+
+			// 삭제 처리에 대한 flush를 수행한다.
     		w.flush();
+
+			// flush를 실행한 후 도큐먼트 수를 확인한다.
     		System.out.println("after delete and flush. numDocs="+ w.numDocs());
     		w.close();
     	} catch (Exception e) {
@@ -71,11 +80,22 @@ public class IndexService {
     	IndexWriterConfig config = new IndexWriterConfig(analyzer);
     	
     	try(IndexWriter w = new IndexWriter(index, config)) {
-    		System.out.println("before update. numDocs=" + w.numDocs());
+			// 수정하기 전 색인된 도큐먼트 수를 확인한다.
+			System.out.println("before update. numDocs=" + w.numDocs());
+
+			// 수정할 도큐먼트를 설정한다.
     		Term updateDocumentReview = new Term("reviewId", reviewId);
+
+			// 수정할 도큐먼트를 매개변수로 받은 도큐먼트로 교체한다.
     		w.updateDocument(updateDocumentReview, document);
+
+			// 수정 후 도큐먼트 수를 확인한다.
     		System.out.println("after update. numDocs="+ w.numDocs());
+
+			// 수정 작업에 대한 flush를 수행한다.
     		w.flush();
+
+			// flush 후 도큐먼트 수를 확인한다.
     		System.out.println("after update and flush. numDocs="+ w.numDocs());
     		w.close();
     	} catch (Exception e) {
