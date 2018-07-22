@@ -2,7 +2,6 @@ package example;
 
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.store.RAMDirectory;
 import service.IndexService;
 import service.SearchService;
 import util.CsvLoader;
@@ -16,18 +15,18 @@ import java.util.List;
  */
 public class FSDirectoryExample {
     public static void main(String args[]) throws Exception{
-        //쇼핑몰 후기 데이터를 가져온다
+        // 쇼핑몰 후기 데이터를 가져온다
         FSDirectoryExample example = new FSDirectoryExample();
         List<CustomerReview> reviewList = example.collectData();
 
-        //FSDirectory를 사용한다.
+        // FSDirectory를 사용한다.
         Directory fsDirectory = FSDirectory.open(Paths.get("./src/main/java/example/result"));
 
-        //색인을 한다
+        // 색인을 한다
         IndexService indexService = new IndexService();
         indexService.indexCustomerReview(fsDirectory, reviewList);
 
-        //검색을 한다
+        // 검색을 한다
         example.searchResult(fsDirectory);
 
     }
@@ -37,7 +36,7 @@ public class FSDirectoryExample {
      * @return
      */
     public List<CustomerReview> collectData(){
-        //CSV 파일로 부터 데이터를 읽어온다.
+        // CSV 파일로 부터 데이터를 읽어온다.
         List<CustomerReview> reviewList = CsvLoader.readReview();
         return reviewList;
     }

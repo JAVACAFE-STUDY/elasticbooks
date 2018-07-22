@@ -1,11 +1,8 @@
 package service;
 
-import java.util.List;
-
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.StoredField;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.IndexWriter;
@@ -14,16 +11,20 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.store.Directory;
-
 import vo.CustomerReview;
+
+import java.util.List;
 
 public class IndexService {
     public void indexCustomerReview(Directory index, List<CustomerReview> reviewList){
         //분석기를 설정을 한다.
         IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());
 
+		// IndexWriter 생성
         try(IndexWriter w = new IndexWriter(index, config)) {
             reviewList.stream().forEach( review-> {
+
+				// Document 생성
                 Document doc = new Document();
                 doc.add(new StringField("reviewId", review.getReviewId(), Field.Store.YES));
                 doc.add(new TextField("clothingId", review.getClothingId(), Field.Store.YES));
@@ -32,12 +33,13 @@ public class IndexService {
                 doc.add(new StringField("age", review.getAge(), Field.Store.YES));
 
                 try{
+					// 색인에 Document 추가
                     w.addDocument(doc);
                 }catch (Exception e){
                     e.printStackTrace();
                 }
             });
-            //System.out.println("numDocs=" + w.numDocs());
+
             w.close();
 
         }catch (Exception e){
