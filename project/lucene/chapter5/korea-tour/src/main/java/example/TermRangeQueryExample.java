@@ -1,22 +1,20 @@
 package example;
 
-import java.util.List;
-
+import helper.CsvLoader;
 import org.apache.lucene.search.TermRangeQuery;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.RAMDirectory;
-
-import helper.CsvLoader;
 import service.IndexService;
 import service.SearchService;
 import vo.TourInfo;
+
+import java.util.List;
 
 public class TermRangeQueryExample {
     public static void main(String args[]) throws Exception {
         //CSV 파일로 부터 데이터를 읽어온다.
         CsvLoader csvHelper = new CsvLoader();
         List<TourInfo> tourInfoList = csvHelper.readTourInfo();
-        //tourInfoList.forEach(System.out::println);
 
         //Directory를 사용한다.
         Directory index = new RAMDirectory();

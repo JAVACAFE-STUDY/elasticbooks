@@ -35,7 +35,7 @@ public class PhraseQueryExample {
         System.out.println("====================================>> '마애여래삼존상'와 '개심사' 사이가 하나의 단어가 포함된 여행정보");
         System.out.println("===== position 방식 =====");
         getPhraseQueryUsingPosition(index,  maxHitCount);
-        System.out.println("===== slop ㅇ방식 =====");
+        System.out.println("===== slop 방식 =====");
         getPhraseQueryUsingSetSlop(index, maxHitCount);
     }
 

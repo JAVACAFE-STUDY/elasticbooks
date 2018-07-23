@@ -19,6 +19,7 @@ public class TwitterTextAnalysisMain {
         CsvLoader csvUtil = new CsvLoader();
         List<TweetPost> reviewList = csvUtil.readEnglishReview();
 
+        // 분석기 서비스를 생성한다.
         AnalyzerService analyzerService = new AnalyzerService();
 
         //StandardAnalyzer를 테스트한다.
@@ -30,10 +31,10 @@ public class TwitterTextAnalysisMain {
         //WhitespaceAnalyzer를 테스트한다.
         analyzerService.analyzeText(reviewList, new WhitespaceAnalyzer());
 
-        //StopAnalyzer 테스트한다.
+        //StopAnalyzer를 테스트한다.
         analyzerService.analyzeText(reviewList, new StopAnalyzer());
 
-        //KeywordAnalyzer 테스트한다.
+        //KeywordAnalyzer를 테스트한다.
         analyzerService.analyzeText(reviewList, new KeywordAnalyzer());
 
     }
