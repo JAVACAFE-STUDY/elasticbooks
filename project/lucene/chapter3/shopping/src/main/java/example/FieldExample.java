@@ -24,7 +24,7 @@ public class FieldExample {
 		// 사용할 분석기를 설정한다.
 		Analyzer analyzer = new StandardAnalyzer();
 
-		// 색인 생성에 필요한 IndexWriter를 구성한다.
+		// 인덱스 생성에 필요한 IndexWriter를 구성한다.
 		IndexWriterConfig config = new IndexWriterConfig(analyzer);
 
 		try(IndexWriter w = new IndexWriter(index, config)) {

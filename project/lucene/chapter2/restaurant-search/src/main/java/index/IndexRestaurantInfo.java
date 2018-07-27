@@ -21,7 +21,7 @@ public class IndexRestaurantInfo {
     // 색인할 경로
     private String indexPath;
 
-    // 클래스 생성 시 색인 경로를 설정한다.
+    // 클래스 생성 시 인덱스 경로를 설정한다.
     public IndexRestaurantInfo() {
         indexPath = PropertyLoader.getInstance().getPropertyValue("INDEX_DIR_PATH");
     }
@@ -29,14 +29,14 @@ public class IndexRestaurantInfo {
     // 음식점 정보를 색인하는 메소드
     public void indexRestaurantInfo(List<RestaurantInfoVo> restaurantInfoVos) throws Exception {
 
-        // 색인 작업을 파일 시스템에 한다.
+        // 파일 시스템에 색인을 한다.
         Directory indexDirectory = FSDirectory.open(Paths.get(indexPath));
         // 한국어 분석을 위한 analyzer를 선언한다.
         CustomKoreanAnalyzer analyzer = new CustomKoreanAnalyzer();
 
         // 인덱스 생성을 위한 Writer 설정 정보를 구성한다. 한글로 되어 있는 음식점 정보를 분석하기 위해 한글 분석기를 설정한다.
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
-        // 색인 directory와 설정 정보로 writer를 생성한다.
+        // 색인 디렉터리와 설정 정보로 writer를 생성한다.
         IndexWriter writer = new IndexWriter(indexDirectory, config);
 
         // List<RestaurantInfoVo>에서 하나씩 색인한다.
@@ -45,7 +45,7 @@ public class IndexRestaurantInfo {
         writer.close();
     }
 
-    // 음식점 정보를 하나씩 색인에 쓰는 메소드
+    // 음식점 정보를 하나씩 인덱스에 쓰는 메소드
     private void addDocument(RestaurantInfoVo restaurantInfoVo, IndexWriter writer) {
         // Document 생성
         Document doc = new Document();
@@ -66,7 +66,7 @@ public class IndexRestaurantInfo {
             // description 필드 추가
             doc.add(new TextField("description", restaurantInfoVo.getDescription(), Field.Store.YES));
 
-            // 색인에 추가
+            // 인덱에 추가
             writer.addDocument(doc);
 
         } catch (IOException e) {

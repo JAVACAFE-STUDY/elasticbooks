@@ -18,10 +18,10 @@ import org.apache.lucene.store.FSDirectory;
 import util.PropertyLoader;
 
 public class SearchRestaurantInfo {
-    // 검색한 색인 경로
+    // 검색한 인덱스 경로
     private String indexPath;
 
-    // 클래스 생성 시 색인이 존재하는 경로를 설정한다.
+    // 클래스 생성 시 인덱스 존재하는 경로를 설정한다.
     public SearchRestaurantInfo() {
         indexPath = PropertyLoader.getInstance().getPropertyValue("INDEX_DIR_PATH");
 
@@ -29,9 +29,9 @@ public class SearchRestaurantInfo {
 
     // 음식점 정보를 검색하는 메소드
     public void search(String searchValue) throws IOException {
-        // 색인을 읽어올 IndexReader를 설정한다.
+        // 인덱스를 읽어올 IndexReader를 설정한다.
         IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(indexPath)));
-        // 읽은 색인을 검색하는 IndexSearcher를 생성한다.
+        // 읽은 인덱스를 검색하는 IndexSearcher를 생성한다.
         IndexSearcher searcher = new IndexSearcher(reader);
 
         // 음식점 명과 개요에서 특정 단어로 검색하기 위해 쿼리를 생성한다.

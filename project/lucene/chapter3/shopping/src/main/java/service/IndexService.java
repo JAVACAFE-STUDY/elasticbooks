@@ -33,7 +33,7 @@ public class IndexService {
                 doc.add(new StringField("age", review.getAge(), Field.Store.YES));
 
                 try{
-					// 색인에 Document 추가
+					// 인덱스에 Document 추가
                     w.addDocument(doc);
                 }catch (Exception e){
                     e.printStackTrace();
