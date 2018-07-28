@@ -23,8 +23,7 @@ import java.util.List;
  * 하이라이터 예제
  */
 public class HighlighterExample {
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
         //CSV 파일로 부터 데이터를 읽어온다.
         CsvLoader csvHelper = new CsvLoader();
         List<TourInfo> tourInfoList = csvHelper.readTourInfo();
