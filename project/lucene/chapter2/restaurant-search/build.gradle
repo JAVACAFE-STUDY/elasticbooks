@@ -10,12 +10,14 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // 루씬 라이브러리
+    compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.3.1'
 
-    compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.0.1'
-    compile files('lib/arirang.lucene-analyzer-6.2-1.1.0.jar')
-    compile files('lib/arirang-morph-1.0.3.jar')
-    //CSV 관련 라이브러리(opencsv)
+    // 아리랑 형태소 분석기 라이브러리
+    compile files('lib/arirang.lucene-analyzer-7.2.1.1.jar')
+    compile files('lib/arirang-morph-1.1.4.jar')
+
+    // CSV 관련 라이브러리(opencsv)
     compile group: 'com.opencsv', name: 'opencsv', version: '4.1'
 }
 
