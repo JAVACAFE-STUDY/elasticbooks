@@ -15,6 +15,3 @@
 
 ## 예제 출처
 * 공공데이터 포털 : https://www.data.go.kr
-
-## 한국어 분석기 출처
-* 아리랑 분석기 : https://cafe.naver.com/korlucene

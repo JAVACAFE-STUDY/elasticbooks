@@ -13,7 +13,7 @@ dependencies {
     // 루씬 라이브러리
     compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.3.1'
 
-    // 아리랑 형태소 분석기 라이브러리
+    // Nori 형태소 분석기 라이브러리
     compile group: 'org.apache.lucene', name: 'lucene-analyzers-nori', version: '7.4.0'
 
     // CSV 관련 라이브러리(opencsv)
