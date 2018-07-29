@@ -1,7 +1,7 @@
 package example;
 
-import analyzer.CustomKoreanAnalyzer;
 import helper.CsvLoader;
+import org.apache.lucene.analysis.ko.KoreanAnalyzer;
 import org.apache.lucene.document.*;
 import org.apache.lucene.index.*;
 import org.apache.lucene.search.*;
@@ -42,7 +42,7 @@ public class IndexOrderSortExample {
     //색인을 하고 색인 시간을 기록한다
     private void indexTourInfoWithTime(Directory index, List<TourInfo> tourInfoList) throws Exception {
         //분석기를 설정을 한다.
-        CustomKoreanAnalyzer analyzer = new CustomKoreanAnalyzer();
+        KoreanAnalyzer analyzer = new KoreanAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
 
         try(IndexWriter w = new IndexWriter(index, config)) {

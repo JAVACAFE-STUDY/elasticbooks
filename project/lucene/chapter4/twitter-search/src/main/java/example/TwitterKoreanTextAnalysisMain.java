@@ -1,12 +1,11 @@
 package example;
 
-import java.util.List;
-
 import org.apache.lucene.analysis.ko.KoreanAnalyzer;
-
 import service.AnalyzerService;
 import util.CsvLoader;
 import vo.TweetPost;
+
+import java.util.List;
 
 public class TwitterKoreanTextAnalysisMain {
 

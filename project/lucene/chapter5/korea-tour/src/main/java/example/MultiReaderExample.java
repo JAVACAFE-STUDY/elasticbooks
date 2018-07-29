@@ -1,7 +1,7 @@
 package example;
 
-import analyzer.CustomKoreanAnalyzer;
 import helper.CsvLoader;
+import org.apache.lucene.analysis.ko.KoreanAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.*;
 import org.apache.lucene.queryparser.classic.ParseException;
@@ -56,8 +56,8 @@ public class MultiReaderExample {
         index2 = new RAMDirectory();
 
         // 인덱스 생성을 위한 Writer를 구성한다
-        IndexWriterConfig config1 = new IndexWriterConfig(new CustomKoreanAnalyzer());
-        IndexWriterConfig config2 = new IndexWriterConfig(new CustomKoreanAnalyzer());
+        IndexWriterConfig config1 = new IndexWriterConfig(new KoreanAnalyzer());
+        IndexWriterConfig config2 = new IndexWriterConfig(new KoreanAnalyzer());
         IndexWriter w1 = new IndexWriter(index1, config1);
         IndexWriter w2 = new IndexWriter(index2, config2);
 
@@ -87,7 +87,7 @@ public class MultiReaderExample {
         MultiReader mr = new MultiReader(reader1, reader2);
 
         IndexSearcher searcher = new IndexSearcher(mr);
-        Query q = new QueryParser("description", new CustomKoreanAnalyzer()).parse("도보");
+        Query q = new QueryParser("description", new KoreanAnalyzer()).parse("도보");
 
         int hitsPerPage = 10;
         TopDocs docs = searcher.search(q, hitsPerPage);

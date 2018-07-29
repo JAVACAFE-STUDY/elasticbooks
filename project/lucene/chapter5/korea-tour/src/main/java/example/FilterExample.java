@@ -1,7 +1,7 @@
 package example;
 
-import analyzer.CustomKoreanAnalyzer;
 import helper.CsvLoader;
+import org.apache.lucene.analysis.ko.KoreanAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.DoublePoint;
 import org.apache.lucene.index.DirectoryReader;
@@ -52,7 +52,7 @@ public class FilterExample {
     }
 
     public static void getMustQuery(Directory index, int maxHitCount) throws Exception{
-        Query baseQuery = new QueryParser("description", new CustomKoreanAnalyzer()).parse("바다");
+        Query baseQuery = new QueryParser("description", new KoreanAnalyzer()).parse("바다");
 
         Query filterQuery = DoublePoint.newRangeQuery("hour", 1d, 2d);
 
@@ -65,7 +65,7 @@ public class FilterExample {
     }
 
     public static void getFilterQuery(Directory index, int maxHitCount) throws Exception{
-        Query baseQuery = new QueryParser("description", new CustomKoreanAnalyzer()).parse("바다");
+        Query baseQuery = new QueryParser("description", new KoreanAnalyzer()).parse("바다");
 
         Query filterQuery = DoublePoint.newRangeQuery("hour", 1d, 2d);
 

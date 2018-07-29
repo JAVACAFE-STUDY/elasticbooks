@@ -1,6 +1,6 @@
 package service;
 
-import analyzer.CustomKoreanAnalyzer;
+import org.apache.lucene.analysis.ko.KoreanAnalyzer;
 import org.apache.lucene.document.*;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
@@ -17,7 +17,7 @@ public class IndexService {
 
     public void indexTourInfo(Directory index, List<TourInfo> tourInfoList) throws Exception {
         //분석기를 설정을 한다.
-        CustomKoreanAnalyzer analyzer = new CustomKoreanAnalyzer();
+        KoreanAnalyzer analyzer = new KoreanAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
 
         try(IndexWriter w = new IndexWriter(index, config)) {

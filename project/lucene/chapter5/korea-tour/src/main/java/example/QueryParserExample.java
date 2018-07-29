@@ -1,7 +1,7 @@
 package example;
 
-import analyzer.CustomKoreanAnalyzer;
 import helper.CsvLoader;
+import org.apache.lucene.analysis.ko.KoreanAnalyzer;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.store.Directory;
@@ -37,7 +37,7 @@ public class QueryParserExample {
     }
 
     private static void getQueryParser(Directory index, int maxHitCount) throws Exception{
-        CustomKoreanAnalyzer analyzer = new CustomKoreanAnalyzer();
+        KoreanAnalyzer analyzer = new KoreanAnalyzer();
 
         QueryParser qp = new QueryParser("description", analyzer);
         Query queryParser = qp.parse("해변 AND 시골 NOT 산");

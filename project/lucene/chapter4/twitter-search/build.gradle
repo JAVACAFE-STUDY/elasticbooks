@@ -18,10 +18,7 @@ dependencies {
     compile group: 'org.apache.lucene', name: 'lucene-analyzers-common', version: '7.3.1'
     compile group: 'org.apache.lucene', name: 'lucene-queryparser', version: '7.3.1'
 
-    compile files('lib/arirang.lucene-analyzer-7.2.1.1.jar')
-    compile files('lib/arirang-morph-1.1.4.jar')
-
     //노리 라이브러리
-    //compile files('src/main/resources/lib/lucene-analyzers-nori-7.4.0-snapshot.jar')
+    compile group: 'org.apache.lucene', name: 'lucene-analyzers-nori', version: '7.4.0'
 
 }

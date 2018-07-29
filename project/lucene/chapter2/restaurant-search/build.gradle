@@ -14,10 +14,12 @@ dependencies {
     compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.3.1'
 
     // 아리랑 형태소 분석기 라이브러리
-    compile files('lib/arirang.lucene-analyzer-7.2.1.1.jar')
-    compile files('lib/arirang-morph-1.1.4.jar')
+    compile group: 'org.apache.lucene', name: 'lucene-analyzers-nori', version: '7.4.0'
 
     // CSV 관련 라이브러리(opencsv)
     compile group: 'com.opencsv', name: 'opencsv', version: '4.1'
+
+    //노리 라이브러리
+    compile group: 'org.apache.lucene', name: 'lucene-analyzers-nori', version: '7.4.0'
 }
 

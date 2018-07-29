@@ -1,7 +1,7 @@
 package example;
 
-import analyzer.CustomKoreanAnalyzer;
 import helper.CsvLoader;
+import org.apache.lucene.analysis.ko.KoreanAnalyzer;
 import org.apache.lucene.document.DoublePoint;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.QueryParser;
@@ -64,7 +64,7 @@ public class SampleQueryExample {
      * @throws Exception
      */
     private static void getQueryParser(Directory index, int maxHitCount) throws Exception{
-        CustomKoreanAnalyzer analyzer = new CustomKoreanAnalyzer();
+        KoreanAnalyzer analyzer = new KoreanAnalyzer();
 
         QueryParser qp = new QueryParser("description", analyzer);
         Query queryParser = qp.parse("해변");

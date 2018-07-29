@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
 
+import org.apache.lucene.analysis.ko.KoreanAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
@@ -13,7 +14,6 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import analyzer.CustomKoreanAnalyzer;
 import util.PropertyLoader;
 import vo.RestaurantInfoVo;
 
@@ -32,7 +32,7 @@ public class IndexRestaurantInfo {
         // 파일 시스템에 색인을 한다.
         Directory indexDirectory = FSDirectory.open(Paths.get(indexPath));
         // 한국어 분석을 위한 analyzer를 선언한다.
-        CustomKoreanAnalyzer analyzer = new CustomKoreanAnalyzer();
+        KoreanAnalyzer analyzer = new KoreanAnalyzer();
 
         // 인덱스 생성을 위한 Writer 설정 정보를 구성한다. 한글로 되어 있는 음식점 정보를 분석하기 위해 한글 분석기를 설정한다.
         IndexWriterConfig config = new IndexWriterConfig(analyzer);

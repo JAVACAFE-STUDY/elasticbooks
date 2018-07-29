@@ -1,5 +1,6 @@
 package example;
 
+
 import org.apache.lucene.analysis.ko.KoreanAnalyzer;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.queryparser.classic.QueryParser;

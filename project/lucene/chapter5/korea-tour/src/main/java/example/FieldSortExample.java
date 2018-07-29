@@ -1,7 +1,7 @@
 package example;
 
-import analyzer.CustomKoreanAnalyzer;
 import helper.CsvLoader;
+import org.apache.lucene.analysis.ko.KoreanAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
@@ -46,7 +46,7 @@ public class FieldSortExample {
         SearchService searchService = new SearchService();
 
         // 원하는 정렬 필드를 이용해 Sort 생성
-        Query query = new QueryParser("description", new CustomKoreanAnalyzer()).parse("벚꽃");
+        Query query = new QueryParser("description", new KoreanAnalyzer()).parse("벚꽃");
         Sort sort = new Sort(new SortField("hour", SortField.Type.DOUBLE));
 
         //결과를 출력한다
@@ -57,7 +57,7 @@ public class FieldSortExample {
         SearchService searchService = new SearchService();
 
         // 원하는 정렬 필드를 이용해 Sort 생성
-        Query query = new QueryParser("description", new CustomKoreanAnalyzer()).parse("벚꽃");
+        Query query = new QueryParser("description", new KoreanAnalyzer()).parse("벚꽃");
 
         //내림차순 정렬
         Sort sort = new Sort(new SortField("hour", SortField.Type.DOUBLE, true));

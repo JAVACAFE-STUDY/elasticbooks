@@ -10,21 +10,25 @@ repositories {
 }
 
 dependencies {
-    // 루씬 라이브러리
+    // 루씬 라이브러
     compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.3.1'
+    // 루씬 쿼리 파서 라이브러리
+    compile group: 'org.apache.lucene', name: 'lucene-queryparser', version: '7.3.1'
+    // 루씬 하이라이터 라이브러리
+    compile group: 'org.apache.lucene', name: 'lucene-highlighter', version: '7.3.1'
 
     /**
      * 한글 형태소 분석기기
      */
     // 아리랑 형태소 분석기 라이브러리
-    compile files('lib/arirang.lucene-analyzer-7.2.1.1.jar')
-    compile files('lib/arirang-morph-1.1.4.jar')
+    compile files('src/main/resources/lib/arirang.lucene-analyzer-7.2.1.1.jar')
+    compile files('src/main/resources/lib/arirang-morph-1.1.4.jar')
 
     // 꼬꼬마 형태소 분석기
-    compile files('lib/kkma-2.1.jar')
-    compile files('lib/org.snu.ids.ha.jar')
+    compile files('src/main/resources/lib/kkma-2.1.jar')
+    compile files('src/main/resources/lib/org.snu.ids.ha.jar')
     // 한나눔 형태소 분석기
-    compile files('lib/jhannanum.jar')
+    compile files('src/main/resources/lib/jhannanum.jar')
     // 트위터 형태소 분석기
     compile group: 'com.twitter.penguin', name: 'korean-text', version: '4.4.4'
     // seunjeon 형태소 분석기
@@ -32,5 +36,6 @@ dependencies {
 
     //CSV 관련 라이브러리(opencsv)
     compile group: 'com.opencsv', name: 'opencsv', version: '4.1'
+
 }
 
