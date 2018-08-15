@@ -54,7 +54,7 @@ public class FilterExample {
     public static void getMustQuery(Directory index, int maxHitCount) throws Exception{
         Query baseQuery = new QueryParser("description", new KoreanAnalyzer()).parse("바다");
 
-        Query filterQuery = DoublePoint.newRangeQuery("hour", 4d, 5d);
+        Query filterQuery = DoublePoint.newRangeQuery("hour", 4d, 7d);
 
         BooleanQuery booleanQuery = new BooleanQuery.Builder()
                 .add(new BooleanClause(baseQuery, BooleanClause.Occur.MUST))
@@ -67,7 +67,7 @@ public class FilterExample {
     public static void getFilterQuery(Directory index, int maxHitCount) throws Exception{
         Query baseQuery = new QueryParser("description", new KoreanAnalyzer()).parse("바다");
 
-        Query filterQuery = DoublePoint.newRangeQuery("hour", 4d, 5d);
+        Query filterQuery = DoublePoint.newRangeQuery("hour", 4d, 7d);
 
         BooleanQuery booleanQuery = new BooleanQuery.Builder()
                 .add(new BooleanClause(baseQuery, BooleanClause.Occur.MUST))
