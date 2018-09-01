@@ -1,10 +1,5 @@
 # 디렉토리 정의
 
-## 기존에 존재하던 디렉토리
-/lucene : 루씬팀에서 원고 목적으로 운영하는 디렉토리
-<br>
-/Elasticsearch : 이건 삭제해주세요. (/project/elasticSearch/scrapTwitter로 이동)
-
 ## 책관련 디렉토리
 /project : Sample 프로젝트 소스가 들어가는 디렉토리
 <br>
