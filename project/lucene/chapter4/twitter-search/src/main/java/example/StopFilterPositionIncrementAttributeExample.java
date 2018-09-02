@@ -24,7 +24,7 @@ public class StopFilterPositionIncrementAttributeExample {
             // TokenStream 초기화
             tokenStream.reset();
             while (tokenStream.incrementToken()) {
-                //Token을 표시한다.
+                // 토큰을 표시한다.
                 System.out.println("CharTerm: " + cta
                     + " | " + "PositionIncrement: " + pa.getPositionIncrement());
             }
