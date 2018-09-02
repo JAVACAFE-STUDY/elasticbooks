@@ -55,7 +55,7 @@ public class IndexService {
 			// 삭제하기 전 색인된 도큐먼트의 수를 확인한다.
     		System.out.println("before delete. numDocs=" + w.numDocs());
 
-			// 삭제할 대상 도큐먼트를 고르는 쿼리.
+			// 쿼리로 삭제할 대상 문서를 고른다.
     		Query q = new QueryParser("reviewText", analyzer).parse(word);
 
 			// 쿼리의 대상이 되는 도큐먼트를 삭제한다.

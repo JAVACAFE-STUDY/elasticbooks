@@ -29,7 +29,7 @@ public class FieldExample {
 
 		try(IndexWriter w = new IndexWriter(index, config)) {
 			reviewList.stream().forEach( review-> {
-				// 도큐먼트 생성한다.
+				// 도큐먼트를 생성한다.
 				Document doc = new Document();
 
 				// 필드를 추가한다.

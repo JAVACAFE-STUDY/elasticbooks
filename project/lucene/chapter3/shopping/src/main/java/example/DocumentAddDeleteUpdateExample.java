@@ -1,29 +1,28 @@
 package example;
 
-import java.util.List;
-
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.RAMDirectory;
-
 import service.IndexService;
 import service.SearchService;
 import util.CsvLoader;
 import vo.CustomerReview;
 
+import java.util.List;
+
 public class DocumentAddDeleteUpdateExample {
 	public static void main(String args[]) {
-		//쇼핑몰 후기 데이터를 가져온다
+		// 쇼핑몰 후기 데이터를 가져온다
 		DocumentAddDeleteUpdateExample example = new DocumentAddDeleteUpdateExample();
         List<CustomerReview> reviewList = example.collectData().subList(0, 100);
 
-        //RAMDirectory 사용한다.
+        // RAMDirectory 사용한다.
         Directory ramDirectory = new RAMDirectory();
 
-        //색인을 한다
+        // 색인을 한다
         IndexService indexService = new IndexService();
         indexService.indexCustomerReview(ramDirectory, reviewList);
 
@@ -57,7 +56,7 @@ public class DocumentAddDeleteUpdateExample {
      * @return
      */
     public List<CustomerReview> collectData(){
-        //CSV 파일로 부터 데이터를 읽어온다.
+        // CSV 파일로 부터 데이터를 읽어온다.
         List<CustomerReview> reviewList = CsvLoader.readReview();
         return reviewList;
     }
@@ -69,8 +68,8 @@ public class DocumentAddDeleteUpdateExample {
      */
     public void searchResult(Directory directory){
 
-        //분석 결과를 확인한다.
-        //필드 이름이 reviewText이며 질의어가 shirt인 경우
+        // 분석 결과를 확인한다.
+        // 필드 이름이 reviewText이며 질의어가 shirt인 경우
         SearchService searchService = new SearchService();
         String userQuery = "shirt";
         String fieldName = "reviewText";

@@ -47,9 +47,8 @@ public class FSDirectoryExample {
      * @param
      */
     public void searchResult(Directory directory){
-
-        //분석 결과를 확인한다.
-        //필드 이름이 reviewText이며 질의어가 shirt인 경우
+        // 분석 결과를 확인한다.
+        // 필드 이름이 reviewText이며 질의어가 shirt인 경우
         SearchService searchService = new SearchService();
         String userQuery = "shirt";
         String fieldName = "reviewText";
