@@ -14,8 +14,8 @@ dependencies {
     compile group: 'com.opencsv', name: 'opencsv', version: '4.1'
 
     //루씬 관련 라이브러리
-    compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.3.1'
-    compile group: 'org.apache.lucene', name: 'lucene-queryparser', version: '7.3.1'
-    compile group: 'org.apache.lucene', name: 'lucene-analyzers-common', version: '7.3.1'
-    compile group: 'org.apache.lucene', name: 'lucene-queries', version: '7.3.1'
+    compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.4.0'
+    compile group: 'org.apache.lucene', name: 'lucene-queryparser', version: '7.4.0'
+    compile group: 'org.apache.lucene', name: 'lucene-analyzers-common', version: '7.4.0'
+    compile group: 'org.apache.lucene', name: 'lucene-queries', version: '7.4.0'
 }

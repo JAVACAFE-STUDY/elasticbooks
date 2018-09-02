@@ -11,11 +11,11 @@ repositories {
 
 dependencies {
     // 루씬 라이브러
-    compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.3.1'
+    compile group: 'org.apache.lucene', name: 'lucene-core', version: '7.4.0'
     // 루씬 쿼리 파서 라이브러리
-    compile group: 'org.apache.lucene', name: 'lucene-queryparser', version: '7.3.1'
+    compile group: 'org.apache.lucene', name: 'lucene-queryparser', version: '7.4.0'
     // 루씬 하이라이터 라이브러리
-    compile group: 'org.apache.lucene', name: 'lucene-highlighter', version: '7.3.1'
+    compile group: 'org.apache.lucene', name: 'lucene-highlighter', version: '7.4.0'
 
     /**
      * 한글 형태소 분석기기
