@@ -1,0 +1,153 @@
+GET movie/_search
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "match": {
+            "genreAlt": "성인물"
+          }
+        },
+        {
+          "match": {
+            "genreAlt": "에로"
+          }
+        },
+        {
+          "match": {
+            "companys.companyNm": "배드픽쳐스"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "uniq_genre": {
+      "terms": {
+        "field": "genreAlt",
+        "size": 10000
+      }
+    }
+  }
+}
+
+{
+  "took": 17,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 99770,
+    "max_score": 0,
+    "hits": []
+  },
+  "aggregations": {
+    "uniq_genre": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "드라마",
+          "doc_count": 33609
+        },
+        {
+          "key": "",
+          "doc_count": 17866
+        },
+        {
+          "key": "로맨스",
+          "doc_count": 11245
+        },
+        {
+          "key": "멜로",
+          "doc_count": 11245
+        },
+        {
+          "key": "코미디",
+          "doc_count": 10815
+        },
+        {
+          "key": "애니메이션",
+          "doc_count": 10595
+        },
+        {
+          "key": "액션",
+          "doc_count": 9923
+        },
+        {
+          "key": "기타",
+          "doc_count": 9630
+        },
+        {
+          "key": "다큐멘터리",
+          "doc_count": 8394
+        },
+        {
+          "key": "스릴러",
+          "doc_count": 7457
+        },
+        {
+          "key": "공포",
+          "doc_count": 4321
+        },
+        {
+          "key": "호러",
+          "doc_count": 4321
+        },
+        {
+          "key": "범죄",
+          "doc_count": 4039
+        },
+        {
+          "key": "어드벤처",
+          "doc_count": 2986
+        },
+        {
+          "key": "판타지",
+          "doc_count": 2767
+        },
+        {
+          "key": "SF",
+          "doc_count": 2553
+        },
+        {
+          "key": "가족",
+          "doc_count": 2047
+        },
+        {
+          "key": "미스터리",
+          "doc_count": 2034
+        },
+        {
+          "key": "전쟁",
+          "doc_count": 1387
+        },
+        {
+          "key": "사극",
+          "doc_count": 935
+        },
+        {
+          "key": "뮤지컬",
+          "doc_count": 626
+        },
+        {
+          "key": "공연",
+          "doc_count": 477
+        },
+        {
+          "key": "서부극",
+          "doc_count": 473
+        },
+        {
+          "key": "웨스턴",
+          "doc_count": 473
+        }
+      ]
+    }
+  }
+}

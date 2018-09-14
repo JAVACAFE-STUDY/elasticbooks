@@ -1,0 +1,36 @@
+GET movie/_analyze
+{
+  "analyzer": "korean",
+  "explain": true,
+  "text": "니모를 찾아서"
+}
+
+{
+  "tokens": [],
+  "detail": {
+    "custom_analyzer": true,
+    "tokenizer": {
+      "name": "seunjeon_default_tokenizer",
+      "tokens": [
+        {
+          "token": "니모/N",
+          "start_offset": 0,
+          "end_offset": 2,
+          "type": "N",
+          "position": 0,
+          "positionLength": 1,
+          "bytes": "[eb 8b 88 eb aa a8 2f 4e]"
+        },
+        {
+          "token": "찾/V",
+          "start_offset": 4,
+          "end_offset": 5,
+          "type": "V",
+          "position": 1,
+          "positionLength": 1,
+          "bytes": "[ec b0 be 2f 56]"
+        }
+      ]
+    }
+  }
+}

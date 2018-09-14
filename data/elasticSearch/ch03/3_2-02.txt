@@ -1,0 +1,12 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "text": {
+      "type": "text"
+    }
+  }
+}
+
+{
+  "acknowledged": true
+}

@@ -1,0 +1,52 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "isPublished": {
+      "type": "boolean"
+    }
+  }
+}
+
+{
+  "acknowledged": true
+}
+
+PUT tweets/tweet/1
+{
+  "isPublished": "false"
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "1",
+  "_version": 17,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 16,
+  "_primary_term": 1
+}
+
+PUT tweets/tweet/2
+{
+  "isPublished": true
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "2",
+  "_version": 11,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 10,
+  "_primary_term": 1
+}

@@ -1,0 +1,596 @@
+GET movie/_search
+{
+  "from": 0,
+  "size": 20,
+  "query": {
+    "bool": {
+      "filter": [],
+      "must_not": [
+        {
+          "match": {
+            "genreAlt": "성인물"
+          }
+        },
+        {
+          "match": {
+            "genreAlt": "에로"
+          }
+        },
+        {
+          "match": {
+            "companys.companyNm": "배드픽쳐스"
+          }
+        }
+      ],
+      "must": {
+        "match": {
+          "movieNm": "니모를 찾아서"
+        }
+      }
+    }
+  }
+}
+
+{
+  "took": 5,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 292,
+    "max_score": 36.000374,
+    "hits": [
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "c04MfGMBvmx0PcKWDJjO",
+        "_score": 36.000374,
+        "_source": {
+          "movieCd": "20030072",
+          "movieNm": "니모를 찾아서",
+          "movieNmEn": "Finding Nemo",
+          "prdtYear": "2003",
+          "openDt": "20030605",
+          "typeNm": "장편",
+          "prdtStatNm": "개봉",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "애니메이션",
+            "코미디",
+            "어드벤처",
+            "가족"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "애니메이션",
+          "directors": [
+            {
+              "peopleNm": "앤드류 스탠튼"
+            }
+          ],
+          "companys": [
+            {
+              "companyCd": "20101676",
+              "companyNm": "월트디즈니코리아㈜"
+            }
+          ]
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "Y04MfGMBvmx0PcKWBHEl",
+        "_score": 35.08169,
+        "_source": {
+          "movieCd": "20030072",
+          "movieNm": "니모를 찾아서",
+          "movieNmEn": "Finding Nemo",
+          "prdtYear": "2003",
+          "openDt": "20030605",
+          "typeNm": "장편",
+          "prdtStatNm": "개봉",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "애니메이션",
+            "코미디",
+            "어드벤처",
+            "가족"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "애니메이션",
+          "directors": [
+            {
+              "peopleNm": "앤드류 스탠튼"
+            }
+          ],
+          "companys": [
+            {
+              "companyCd": "20101676",
+              "companyNm": "월트디즈니코리아㈜"
+            }
+          ]
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "Ek1xN2IBvmx0PcKWOa5O",
+        "_score": 34.19773,
+        "_source": {
+          "movieCd": "20030072",
+          "movieNm": "니모를 찾아서",
+          "movieNmEn": "Finding Nemo",
+          "prdtYear": "2003",
+          "openDt": "20030605",
+          "typeNm": "장편",
+          "prdtStatNm": "개봉",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "애니메이션",
+            "코미디",
+            "어드벤처",
+            "가족"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "애니메이션",
+          "directors": [
+            {
+              "peopleNm": "앤드류 스탠튼"
+            }
+          ],
+          "companys": [
+            {
+              "companyCd": "20101676",
+              "companyNm": "월트디즈니코리아㈜"
+            }
+          ]
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "2U1xN2IBvmx0PcKWaOtd",
+        "_score": 22.048405,
+        "_source": {
+          "movieCd": "20158435",
+          "movieNm": "도쿠마니모",
+          "movieNmEn": "Dokumanimo",
+          "prdtYear": "2007",
+          "openDt": "",
+          "typeNm": "단편",
+          "prdtStatNm": "기타",
+          "nationAlt": "폴란드",
+          "genreAlt": [
+            "애니메이션"
+          ],
+          "repNationNm": "폴란드",
+          "repGenreNm": "애니메이션",
+          "directors": [],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "Sk4MfGMBvmx0PcKWXf0M",
+        "_score": 20.79474,
+        "_source": {
+          "movieCd": "20158435",
+          "movieNm": "도쿠마니모",
+          "movieNmEn": "Dokumanimo",
+          "prdtYear": "2007",
+          "openDt": "",
+          "typeNm": "단편",
+          "prdtStatNm": "기타",
+          "nationAlt": "폴란드",
+          "genreAlt": [
+            "애니메이션"
+          ],
+          "repNationNm": "폴란드",
+          "repGenreNm": "애니메이션",
+          "directors": [],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "4E1xN2IBvmx0PcKWOaxO",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20060430",
+          "movieNm": "행복을 찾아서",
+          "movieNmEn": "The Pursuit Of Happyness",
+          "prdtYear": "2006",
+          "openDt": "20070228",
+          "typeNm": "장편",
+          "prdtStatNm": "개봉",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "드라마",
+            "가족"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "드라마",
+          "directors": [
+            {
+              "peopleNm": "가브리엘 무치노"
+            }
+          ],
+          "companys": [
+            {
+              "companyCd": "20102179",
+              "companyNm": "콜럼비아 픽쳐스 필름 프로덕션"
+            }
+          ]
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "Tk1xN2IBvmx0PcKWObBP",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20159058",
+          "movieNm": "도리를 찾아서",
+          "movieNmEn": "Finding Dory",
+          "prdtYear": "2016",
+          "openDt": "20160706",
+          "typeNm": "장편",
+          "prdtStatNm": "개봉",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "애니메이션",
+            "어드벤처",
+            "코미디"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "애니메이션",
+          "directors": [
+            {
+              "peopleNm": "앤드류 스탠튼"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "bE1xN2IBvmx0PcKWOblQ",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20176909",
+          "movieNm": "다이애나를 찾아서",
+          "movieNmEn": "Just Like A Bitch",
+          "prdtYear": "2014",
+          "openDt": "",
+          "typeNm": "단편",
+          "prdtStatNm": "기타",
+          "nationAlt": "아일랜드",
+          "genreAlt": [
+            "기타"
+          ],
+          "repNationNm": "아일랜드",
+          "repGenreNm": "기타",
+          "directors": [],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "WU5xN2IBvmx0PcKWiwCZ",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20126295",
+          "movieNm": "개를 찾습니다",
+          "movieNmEn": "Lost Dog",
+          "prdtYear": "2012",
+          "openDt": "",
+          "typeNm": "단편",
+          "prdtStatNm": "기타",
+          "nationAlt": "한국",
+          "genreAlt": [
+            "드라마"
+          ],
+          "repNationNm": "한국",
+          "repGenreNm": "드라마",
+          "directors": [],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "XE4MfGMBvmx0PcKWBHIm",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20175762",
+          "movieNm": "이지를 찾아서",
+          "movieNmEn": "Izzie's Way Home",
+          "prdtYear": "2016",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "애니메이션"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "애니메이션",
+          "directors": [
+            {
+              "peopleNm": "사샤 버로우"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "Tk1xN2IBvmx0PcKWOcpR",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20169967",
+          "movieNm": "침묵을 찾아서",
+          "movieNmEn": "In Pursuit of Silence",
+          "prdtYear": "2015",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "기타"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "기타",
+          "directors": [],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "qk4MfGMBvmx0PcKWWcNl",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20126295",
+          "movieNm": "개를 찾습니다",
+          "movieNmEn": "Lost Dog",
+          "prdtYear": "2012",
+          "openDt": "",
+          "typeNm": "단편",
+          "prdtStatNm": "기타",
+          "nationAlt": "한국",
+          "genreAlt": [
+            "드라마"
+          ],
+          "repNationNm": "한국",
+          "repGenreNm": "드라마",
+          "directors": [],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "E04MfGMBvmx0PcKWWc5l",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20011580",
+          "movieNm": "통을 찾아서",
+          "movieNmEn": "Where Is Tong?",
+          "prdtYear": "2001",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "태국",
+          "genreAlt": [
+            "어드벤처"
+          ],
+          "repNationNm": "태국",
+          "repGenreNm": "어드벤처",
+          "directors": [
+            {
+              "peopleNm": "티라톤 시리푼바라폰"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "zU4MfGMBvmx0PcKWDKP3",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20176909",
+          "movieNm": "다이애나를 찾아서",
+          "movieNmEn": "Just Like A Bitch",
+          "prdtYear": "2014",
+          "openDt": "",
+          "typeNm": "단편",
+          "prdtStatNm": "기타",
+          "nationAlt": "아일랜드",
+          "genreAlt": [
+            "기타"
+          ],
+          "repNationNm": "아일랜드",
+          "repGenreNm": "기타",
+          "directors": [],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "1k4MfGMBvmx0PcKWDKz4",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20158093",
+          "movieNm": "엘리를 찾아서",
+          "movieNmEn": "Go To City ELE",
+          "prdtYear": "2015",
+          "openDt": "",
+          "typeNm": "단편",
+          "prdtStatNm": "기타",
+          "nationAlt": "중국",
+          "genreAlt": [
+            "애니메이션"
+          ],
+          "repNationNm": "중국",
+          "repGenreNm": "애니메이션",
+          "directors": [
+            {
+              "peopleNm": "리 웬유"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "v04MfGMBvmx0PcKWDJ72",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20172267",
+          "movieNm": "구원을 찾아서",
+          "movieNmEn": "The Salvation Hunters",
+          "prdtYear": "1925",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "드라마"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "드라마",
+          "directors": [
+            {
+              "peopleNm": "조세프 본 스텐버그"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "r04MfGMBvmx0PcKWDLT5",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20169967",
+          "movieNm": "침묵을 찾아서",
+          "movieNmEn": "In Pursuit of Silence",
+          "prdtYear": "2015",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "기타"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "기타",
+          "directors": [],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "O08MfGMBvmx0PcKWlxVi",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20090544",
+          "movieNm": "환생을 찾아서",
+          "movieNmEn": "Unmistaken Child",
+          "prdtYear": "2009",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "이스라엘",
+          "genreAlt": [
+            "다큐멘터리"
+          ],
+          "repNationNm": "이스라엘",
+          "repGenreNm": "다큐멘터리",
+          "directors": [
+            {
+              "peopleNm": "나티 바라츠"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "C08MfGMBvmx0PcKWlxdi",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "19988612",
+          "movieNm": "길찾기",
+          "movieNmEn": "Fission",
+          "prdtYear": "1998",
+          "openDt": "",
+          "typeNm": "단편",
+          "prdtStatNm": "기타",
+          "nationAlt": "한국",
+          "genreAlt": [
+            "드라마"
+          ],
+          "repNationNm": "한국",
+          "repGenreNm": "드라마",
+          "directors": [
+            {
+              "peopleNm": "김태연"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "Ik8MfGMBvmx0PcKWlyNj",
+        "_score": 13.957383,
+        "_source": {
+          "movieCd": "20081396",
+          "movieNm": "사람을 찾습니다",
+          "movieNmEn": "Missing Person",
+          "prdtYear": "2008",
+          "openDt": "20091217",
+          "typeNm": "장편",
+          "prdtStatNm": "개봉",
+          "nationAlt": "한국",
+          "genreAlt": [
+            "미스터리",
+            "드라마",
+            "스릴러"
+          ],
+          "repNationNm": "한국",
+          "repGenreNm": "미스터리",
+          "directors": [
+            {
+              "peopleNm": "이서"
+            }
+          ],
+          "companys": [
+            {
+              "companyCd": "20101098",
+              "companyNm": "슈픽쳐스"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

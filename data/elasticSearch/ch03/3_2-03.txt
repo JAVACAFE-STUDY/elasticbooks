@@ -1,0 +1,17 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "text": {
+      "type": "text",
+      "fields": {
+        "keyword_field" : {
+          "type" : "keyword"
+        }
+      }
+    }
+  }
+}
+
+{
+  "acknowledged": true
+}

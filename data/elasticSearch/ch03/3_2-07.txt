@@ -1,0 +1,115 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "createdAt": {
+      "type": "date"
+    }
+  }
+}
+
+{
+  "acknowledged": true
+}
+
+PUT tweets/tweet/1
+{
+  "createdAt" : "2018-01-01T12:10:30Z"
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "1",
+  "_version": 15,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 14,
+  "_primary_term": 1
+}
+
+PUT tweets/tweet/2
+{
+  "createdAt" : "2015-01-01"
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "2",
+  "_version": 9,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 8,
+  "_primary_term": 1
+}
+
+GET tweets/_search
+{
+  "sort": {"createdAt" : "asc"}
+}
+
+{
+  "took": 5,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 3,
+    "max_score": null,
+    "hits": [
+      {
+        "_index": "tweets",
+        "_type": "tweet",
+        "_id": "2",
+        "_score": null,
+        "_source": {
+          "createdAt": "2015-01-01"
+        },
+        "sort": [
+          1420070400000
+        ]
+      },
+      {
+        "_index": "tweets",
+        "_type": "tweet",
+        "_id": "1",
+        "_score": null,
+        "_source": {
+          "createdAt": "2018-01-01T12:10:30Z"
+        },
+        "sort": [
+          1514808630000
+        ]
+      },
+      {
+        "_index": "tweets",
+        "_type": "tweet",
+        "_id": "3",
+        "_score": null,
+        "_source": {
+          "text": "충청남도 충청남도청",
+          "location": {
+            "lat": 36.733374,
+            "lon": 126.658263
+          }
+        },
+        "sort": [
+          9223372036854776000
+        ]
+      }
+    ]
+  }
+}
+

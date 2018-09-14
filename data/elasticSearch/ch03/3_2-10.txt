@@ -1,0 +1,142 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "location": {
+      "type": "geo_point"
+    }
+  }
+}
+
+{
+  "acknowledged": true
+}
+
+PUT tweets/tweet/1
+{
+  "text" : "대전광역시청",
+  "location": {
+    "lat" : 36.350465, 
+    "lon" : 127.384822
+  }
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "1",
+  "_version": 18,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 17,
+  "_primary_term": 1
+}
+
+PUT tweets/tweet/2
+{
+  "text" : "대전광역시 서부교육지원",
+  "location": {
+    "lat" : 36.314150, 
+    "lon" : 127.378985
+  }
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "2",
+  "_version": 12,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 11,
+  "_primary_term": 1
+}
+
+PUT tweets/tweet/3
+{
+  "text" : "충청남도 충청남도청",
+  "location": {
+    "lat" : 36.733374, 
+    "lon" : 126.658263
+  }
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "3",
+  "_version": 5,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 4,
+  "_primary_term": 1
+}
+
+GET tweets/_search
+{
+  "query": {
+    "geo_bounding_box": {
+      "location": {
+        "top_left": "wy6x0vqyhuq6",
+        "bottom_right": {
+          "lat": 36.285773,
+          "lon": 127.504519
+        }
+      }
+    }
+  }
+}
+
+{
+  "took": 5,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 2,
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "tweets",
+        "_type": "tweet",
+        "_id": "2",
+        "_score": 1,
+        "_source": {
+          "text": "대전광역시 서부교육지원",
+          "location": {
+            "lat": 36.31415,
+            "lon": 127.378985
+          }
+        }
+      },
+      {
+        "_index": "tweets",
+        "_type": "tweet",
+        "_id": "1",
+        "_score": 1,
+        "_source": {
+          "text": "대전광역시청",
+          "location": {
+            "lat": 36.350465,
+            "lon": 127.384822
+          }
+        }
+      }
+    ]
+  }
+}

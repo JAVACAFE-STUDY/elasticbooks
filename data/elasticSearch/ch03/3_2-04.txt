@@ -1,0 +1,19 @@
+PUT tweets/tweet/1
+{
+  "text": "Don't find fault, find a remedy. Anybody can complain. (Heny Ford)"
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "1",
+  "_version": 14,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 13,
+  "_primary_term": 1
+}

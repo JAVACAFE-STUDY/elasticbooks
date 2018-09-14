@@ -1,0 +1,12 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "tweetLang": {
+      "type": "keyword"
+    }
+  }
+}
+
+{
+  "acknowledged": true
+}

@@ -1,0 +1,335 @@
+GET movie_autocomplete/_analyze
+{
+  "analyzer": "hangul_jamo_analyzer",
+  "explain": true,
+  "text": "니모를 찾아서"
+}
+
+{
+  "tokens": [],
+  "detail": {
+    "custom_analyzer": true,
+    "tokenizer": {
+      "name": "keyword",
+      "tokens": [
+        {
+          "token": "니모를 찾아서",
+          "start_offset": 0,
+          "end_offset": 7,
+          "type": "word",
+          "position": 0,
+          "positionLength": 1,
+          "bytes": "[eb 8b 88 eb aa a8 eb a5 bc 20 ec b0 be ec 95 84 ec 84 9c]",
+          "termFrequency": 1
+        }
+      ]
+    },
+    "tokenfilters": [
+      {
+        "name": "hangul_jamo_filter",
+        "tokens": [
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈㅇㅏㅅㅓ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88 e3 85 87 e3 85 8f e3 85 85 e3 85 93]",
+            "termFrequency": 1
+          }
+        ]
+      },
+      {
+        "name": "edge100Gram",
+        "tokens": [
+          {
+            "token": "ㄴ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈㅇ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88 e3 85 87]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈㅇㅏ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88 e3 85 87 e3 85 8f]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈㅇㅏㅅ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88 e3 85 87 e3 85 8f e3 85 85]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈㅇㅏㅅㅓ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88 e3 85 87 e3 85 8f e3 85 85 e3 85 93]",
+            "termFrequency": 1
+          }
+        ]
+      },
+      {
+        "name": "lowercase",
+        "tokens": [
+          {
+            "token": "ㄴ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈㅇ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88 e3 85 87]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈㅇㅏ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88 e3 85 87 e3 85 8f]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈㅇㅏㅅ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88 e3 85 87 e3 85 8f e3 85 85]",
+            "termFrequency": 1
+          },
+          {
+            "token": "ㄴㅣㅁㅗㄹㅡㄹㅊㅏㅈㅇㅏㅅㅓ",
+            "start_offset": 0,
+            "end_offset": 7,
+            "type": "word",
+            "position": 0,
+            "positionLength": 1,
+            "bytes": "[e3 84 b4 e3 85 a3 e3 85 81 e3 85 97 e3 84 b9 e3 85 a1 e3 84 b9 e3 85 8a e3 85 8f e3 85 88 e3 85 87 e3 85 8f e3 85 85 e3 85 93]",
+            "termFrequency": 1
+          }
+        ]
+      }
+    ]
+  }
+}

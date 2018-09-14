@@ -1,0 +1,99 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "publicationPeriod": {
+      "type": "date_range"
+    }
+  }
+}
+
+{
+  "acknowledged": true
+}
+
+PUT tweets/tweet/1
+{
+  "publicationPeriod": {
+      "gte": "2015-01-01",
+      "lte": "2015-12-31"
+  }
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "1",
+  "_version": 16,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 15,
+  "_primary_term": 1
+}
+
+PUT tweets/tweet/2
+{
+  "publicationPeriod": {
+      "gte": "2015-01-01",
+      "lte": "2016-12-31"
+  }
+}
+
+{
+  "_index": "tweets",
+  "_type": "tweet",
+  "_id": "2",
+  "_version": 10,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 9,
+  "_primary_term": 1
+}
+
+GET tweets/_search
+{
+  "query": {
+    "range": {
+      "publicationPeriod": {
+        "gte": "2016-05-01",
+        "lte": "2016-05-01"
+      }
+    }
+  }
+}
+
+{
+  "took": 3,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "tweets",
+        "_type": "tweet",
+        "_id": "2",
+        "_score": 1,
+        "_source": {
+          "publicationPeriod": {
+            "gte": "2015-01-01",
+            "lte": "2016-12-31"
+          }
+        }
+      }
+    ]
+  }
+}

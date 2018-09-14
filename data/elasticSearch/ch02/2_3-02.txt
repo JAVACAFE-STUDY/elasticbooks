@@ -1,0 +1,324 @@
+GET movie/_search
+{
+  "from": 0,
+  "size": 10,
+  "query": {
+    "bool": {
+      "filter": [],
+      "should": {
+        "match": {
+          "movieNm": "니ㅁ"
+        }
+      },
+      "must_not": [
+        {
+          "match": {
+            "genreAlt": "성인물"
+          }
+        },
+        {
+          "match": {
+            "genreAlt": "에로"
+          }
+        },
+        {
+          "match": {
+            "companys.companyNm": "배드픽쳐스"
+          }
+        }
+      ]
+    }
+  }
+}
+
+{
+  "took": 3,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 27,
+    "max_score": 18.33546,
+    "hits": [
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "4U5xN2IBvmx0PcKWiwiZ",
+        "_score": 18.33546,
+        "_source": {
+          "movieCd": "20028687",
+          "movieNm": "니샤드",
+          "movieNmEn": "Nishad",
+          "prdtYear": "2002",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "인도",
+          "genreAlt": [
+            "드라마"
+          ],
+          "repNationNm": "인도",
+          "repGenreNm": "드라마",
+          "directors": [
+            {
+              "peopleNm": "샤지 N. 카룬"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "Mk4MfGMBvmx0PcKWWcxl",
+        "_score": 18.33546,
+        "_source": {
+          "movieCd": "20028687",
+          "movieNm": "니샤드",
+          "movieNmEn": "Nishad",
+          "prdtYear": "2002",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "인도",
+          "genreAlt": [
+            "드라마"
+          ],
+          "repNationNm": "인도",
+          "repGenreNm": "드라마",
+          "directors": [
+            {
+              "peopleNm": "샤지 N. 카룬"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "yE8MfGMBvmx0PcKWxGP3",
+        "_score": 18.33546,
+        "_source": {
+          "movieCd": "20078601",
+          "movieNm": "니드",
+          "movieNmEn": "Need",
+          "prdtYear": "2007",
+          "openDt": "",
+          "typeNm": "단편",
+          "prdtStatNm": "기타",
+          "nationAlt": "",
+          "genreAlt": "",
+          "repNationNm": "",
+          "repGenreNm": "",
+          "directors": [],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "i08MfGMBvmx0PcKWlwhh",
+        "_score": 18.324903,
+        "_source": {
+          "movieCd": "20101220",
+          "movieNm": "니타보",
+          "movieNmEn": "Nitaboh",
+          "prdtYear": "2003",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "일본",
+          "genreAlt": [
+            "애니메이션",
+            "드라마"
+          ],
+          "repNationNm": "일본",
+          "repGenreNm": "애니메이션",
+          "directors": [
+            {
+              "peopleNm": "니시자와 아키오"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "KU8MfGMBvmx0PcKWokTb",
+        "_score": 18.324903,
+        "_source": {
+          "movieCd": "20038409",
+          "movieNm": "니코티나",
+          "movieNmEn": "Nicotina",
+          "prdtYear": "2003",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "멕시코",
+          "genreAlt": [
+            "코미디"
+          ],
+          "repNationNm": "멕시코",
+          "repGenreNm": "코미디",
+          "directors": [
+            {
+              "peopleNm": "휴고 로드리구즈"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "ak5xN2IBvmx0PcKWiw6a",
+        "_score": 17.952654,
+        "_source": {
+          "movieCd": "20018284",
+          "movieNm": "이그니션",
+          "movieNmEn": "Ignition",
+          "prdtYear": "2001",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "캐나다,영국",
+          "genreAlt": [
+            "액션",
+            "드라마"
+          ],
+          "repNationNm": "캐나다",
+          "repGenreNm": "액션",
+          "directors": [
+            {
+              "peopleNm": "이베스 시몬누"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "u04MfGMBvmx0PcKWWdFm",
+        "_score": 17.952654,
+        "_source": {
+          "movieCd": "20018284",
+          "movieNm": "이그니션",
+          "movieNmEn": "Ignition",
+          "prdtYear": "2001",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "캐나다,영국",
+          "genreAlt": [
+            "액션",
+            "드라마"
+          ],
+          "repNationNm": "캐나다",
+          "repGenreNm": "액션",
+          "directors": [
+            {
+              "peopleNm": "이베스 시몬누"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "oU8MfGMBvmx0PcKWolPc",
+        "_score": 17.337633,
+        "_source": {
+          "movieCd": "20000293",
+          "movieNm": "니딩 유",
+          "movieNmEn": "Needing You",
+          "prdtYear": "2000",
+          "openDt": "20001111",
+          "typeNm": "장편",
+          "prdtStatNm": "개봉",
+          "nationAlt": "홍콩",
+          "genreAlt": [
+            "멜로",
+            "로맨스",
+            "코미디"
+          ],
+          "repNationNm": "홍콩",
+          "repGenreNm": "멜로/로맨스",
+          "directors": [
+            {
+              "peopleNm": "두기봉"
+            }
+          ],
+          "companys": [
+            {
+              "companyCd": "20101711",
+              "companyNm": "차이나 스타"
+            }
+          ]
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "B04MfGMBvmx0PcKWBI4n",
+        "_score": 15.83381,
+        "_source": {
+          "movieCd": "20164185",
+          "movieNm": "쓰리매니웨딩",
+          "movieNmEn": "Three Many Weddings ",
+          "prdtYear": "2013",
+          "openDt": "20160830",
+          "typeNm": "장편",
+          "prdtStatNm": "개봉",
+          "nationAlt": "스페인",
+          "genreAlt": [
+            "코미디"
+          ],
+          "repNationNm": "스페인",
+          "repGenreNm": "코미디",
+          "directors": [
+            {
+              "peopleNm": "하비에르 루이즈 칼데라"
+            }
+          ],
+          "companys": []
+        }
+      },
+      {
+        "_index": "movie",
+        "_type": "info",
+        "_id": "MU4MfGMBvmx0PcKWWcxl",
+        "_score": 15.83381,
+        "_source": {
+          "movieCd": "20028722",
+          "movieNm": "니고시에이터",
+          "movieNmEn": "The Hostage Negotiator",
+          "prdtYear": "2001",
+          "openDt": "",
+          "typeNm": "장편",
+          "prdtStatNm": "기타",
+          "nationAlt": "미국",
+          "genreAlt": [
+            "드라마",
+            "스릴러"
+          ],
+          "repNationNm": "미국",
+          "repGenreNm": "드라마",
+          "directors": [
+            {
+              "peopleNm": "키오니 왁스먼"
+            }
+          ],
+          "companys": []
+        }
+      }
+    ]
+  }
+}

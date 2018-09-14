@@ -1,0 +1,59 @@
+GET tweets/_search
+{
+  "query" : {
+    "match": {
+      "text" : "remedy"
+    }
+  },
+  "sort": {
+    "text.keyword_field" : "asc"
+  },
+  "aggs": {
+    "word_cnt": {
+      "terms": {
+        "field": "text.keyword_field"
+      }
+    }
+  }
+}
+
+{
+  "took": 5,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": null,
+    "hits": [
+      {
+        "_index": "tweets",
+        "_type": "tweet",
+        "_id": "1",
+        "_score": null,
+        "_source": {
+          "text": "Don't find fault, find a remedy. Anybody can complain. (Heny Ford)"
+        },
+        "sort": [
+          "Don't find fault, find a remedy. Anybody can complain. (Heny Ford)"
+        ]
+      }
+    ]
+  },
+  "aggregations": {
+    "word_cnt": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "Don't find fault, find a remedy. Anybody can complain. (Heny Ford)",
+          "doc_count": 1
+        }
+      ]
+    }
+  }
+}
