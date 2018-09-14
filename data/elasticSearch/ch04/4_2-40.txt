@@ -1,0 +1,64 @@
+POST /wiki_analyzer/_close
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "mapping_analyzer": {
+        "tokenizer": "standard",
+        "char_filter": [
+          "mapping_char_filter"
+        ]
+      }
+    },
+    "char_filter": {
+      "mapping_char_filter": {
+        "type": "mapping",
+        "mappings": [
+          ":) => _happy_",
+          ":( => _sad_"
+        ]
+      }
+    }
+  }
+}
+POST /wiki_analyzer/_open
+
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "mapping_analyzer",
+  "text": "The elasticsearch is :)"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "The",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "elasticsearch",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "is",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "_happy_",
+      "start_offset": 21,
+      "end_offset": 23,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

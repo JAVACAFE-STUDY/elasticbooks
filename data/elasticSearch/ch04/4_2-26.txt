@@ -1,0 +1,316 @@
+POST /wiki_analyzer/_close
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "ngram_fileter_analyzer": {
+        "tokenizer": "standard",
+        "filter": [
+          "standard",
+          "ngram_filter"
+        ]
+      }
+    },
+    "filter": {
+      "ngram_filter": {
+        "type": "nGram",
+        "min_gram": 1,
+        "max_gram": 2
+      }
+    }
+  }
+}
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "ngram_fileter_analyzer",
+  "text": "The Elasticsearch is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "T",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "Th",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "h",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "he",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "e",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "E",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "El",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "l",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "la",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "a",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "as",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "s",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "st",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "t",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "ti",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "i",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "ic",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "c",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "cs",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "s",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "se",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "e",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "ea",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "a",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "ar",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "r",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "rc",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "c",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "ch",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "h",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "i",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "is",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "s",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "g",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "go",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "o",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "oo",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "o",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "od",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "d",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

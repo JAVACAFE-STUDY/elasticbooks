@@ -1,0 +1,17 @@
+POST /_aliases
+{
+  "actions": [
+    {
+      "remove": {
+        "index": "wiki",
+        "alias": "wiki_agriculture"
+      }
+    },
+    {
+      "add": {
+        "index": "wiki",
+        "alias": "wiki_agriculture"
+      }
+    }
+  ]
+}

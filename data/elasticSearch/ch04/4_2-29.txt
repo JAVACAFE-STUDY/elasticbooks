@@ -1,0 +1,62 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "stop_filter_analyzer": {
+        "tokenizer": "standard",
+        "filter": [
+          "standard",
+          "stop_filter"
+        ]
+      }
+    },
+    "filter": {
+      "stop_filter": {
+        "type": "stop",
+        "stopwords": [
+          "and",
+          "is",
+          "the"
+        ]
+      }
+    }
+  }
+}
+
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "stop_filter_analyzer",
+  "text": "The Elasticsearches is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "The",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "Elasticsearches",
+      "start_offset": 4,
+      "end_offset": 19,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "good",
+      "start_offset": 23,
+      "end_offset": 27,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

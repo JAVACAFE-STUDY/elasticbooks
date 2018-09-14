@@ -1,0 +1,142 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "edge_ngram_analyzer": {
+        "tokenizer": "edge_ngram_tokenizer"
+      }
+    },
+    "tokenizer": {
+      "edge_ngram_tokenizer": {
+        "type": "edge_ngram",
+        "min_gram": 2,
+        "max_gram": 10,
+        "token_chars": [
+          "letter"
+        ]
+      }
+    }
+  }
+}
+
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "tokenizer": "edge_ngram_tokenizer",
+  "text": "The Elasticsearch is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "Th",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "word",
+      "position": 0
+    },
+    {
+      "token": "The",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "word",
+      "position": 1
+    },
+    {
+      "token": "El",
+      "start_offset": 4,
+      "end_offset": 6,
+      "type": "word",
+      "position": 2
+    },
+    {
+      "token": "Ela",
+      "start_offset": 4,
+      "end_offset": 7,
+      "type": "word",
+      "position": 3
+    },
+    {
+      "token": "Elas",
+      "start_offset": 4,
+      "end_offset": 8,
+      "type": "word",
+      "position": 4
+    },
+    {
+      "token": "Elast",
+      "start_offset": 4,
+      "end_offset": 9,
+      "type": "word",
+      "position": 5
+    },
+    {
+      "token": "Elasti",
+      "start_offset": 4,
+      "end_offset": 10,
+      "type": "word",
+      "position": 6
+    },
+    {
+      "token": "Elastic",
+      "start_offset": 4,
+      "end_offset": 11,
+      "type": "word",
+      "position": 7
+    },
+    {
+      "token": "Elastics",
+      "start_offset": 4,
+      "end_offset": 12,
+      "type": "word",
+      "position": 8
+    },
+    {
+      "token": "Elasticse",
+      "start_offset": 4,
+      "end_offset": 13,
+      "type": "word",
+      "position": 9
+    },
+    {
+      "token": "Elasticsea",
+      "start_offset": 4,
+      "end_offset": 14,
+      "type": "word",
+      "position": 10
+    },
+    {
+      "token": "is",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "word",
+      "position": 11
+    },
+    {
+      "token": "go",
+      "start_offset": 21,
+      "end_offset": 23,
+      "type": "word",
+      "position": 12
+    },
+    {
+      "token": "goo",
+      "start_offset": 21,
+      "end_offset": 24,
+      "type": "word",
+      "position": 13
+    },
+    {
+      "token": "good",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "word",
+      "position": 14
+    }
+  ]
+}

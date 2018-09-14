@@ -1,0 +1,27 @@
+PUT /wiki_dynamic/_doc/1?op_type=create
+{
+  "user": "kimchy",
+  "post_date": "2009-11-15T14:12:12",
+  "message": "trying out Elasticsearch"
+}
+
+
+{
+  "error": {
+    "root_cause": [
+      {
+        "type": "version_conflict_engine_exception",
+        "reason": "[_doc][1]: version conflict, document already exists (current version [1])",
+        "index_uuid": "J94eLiPOTb6qUI9fftvHfw",
+        "shard": "3",
+        "index": "wiki_dynamic"
+      }
+    ],
+    "type": "version_conflict_engine_exception",
+    "reason": "[_doc][1]: version conflict, document already exists (current version [1])",
+    "index_uuid": "J94eLiPOTb6qUI9fftvHfw",
+    "shard": "3",
+    "index": "wiki_dynamic"
+  },
+  "status": 409
+}

@@ -1,0 +1,99 @@
+POST /wiki_analyzer/_close
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "edge_ngram_fileter_analyzer": {
+        "tokenizer": "standard",
+        "filter": [
+          "standard",
+          "edge_ngram_filter"
+        ]
+      }
+    },
+    "filter": {
+      "edge_ngram_filter": {
+        "type": "edgeNGram",
+        "min_gram": 2,
+        "max_gram": 4
+      }
+    }
+  }
+}
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "edge_ngram_fileter_analyzer",
+  "text": "The Elasticsearch is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "Th",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "The",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "El",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "Ela",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "Elas",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "is",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "go",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "goo",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "good",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "keyword",
+  "text": "The Elasticsearch is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "The Elasticsearch is good",
+      "start_offset": 0,
+      "end_offset": 25,
+      "type": "word",
+      "position": 0
+    }
+  ]
+}

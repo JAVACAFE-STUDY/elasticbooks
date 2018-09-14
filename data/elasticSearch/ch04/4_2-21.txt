@@ -1,0 +1,42 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+    "analysis": {
+      "analyzer": {
+        "path_hierarchy_analyzer": {
+          "tokenizer": "path_hierarchy_tokenizer"
+        }
+      },
+      "tokenizer": {
+        "path_hierarchy_tokenizer": {
+          "type": "path_hierarchy",
+          "delimiter": "-",
+          "replacement": "/",
+          "skip": 2
+        }
+      }
+    }
+  }
+
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "tokenizer": "path_hierarchy_tokenizer",
+  "text": "etc-sysconfig-hosts"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "/hosts",
+      "start_offset": 13,
+      "end_offset": 19,
+      "type": "word",
+      "position": 0
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+POST /wiki_analyzer/_close
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "uppercase_analyzer": {
+        "tokenizer": "standard",
+        "filter": [
+          "uppercase"
+        ]
+      }
+    }
+  }
+}
+
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "uppercase_analyzer",
+  "text": "The Elasticsearch is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "THE",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "ELASTICSEARCH",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "IS",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "GOOD",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

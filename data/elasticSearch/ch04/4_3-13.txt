@@ -1,0 +1,185 @@
+POST /_bulk
+{ "index" : { "_index" : "test", "_type" : "type1", "_id" : "1" } }
+{ "field1" : "value1" }
+{ "delete" : { "_index" : "test", "_type" : "type1", "_id" : "2" } }
+{ "create" : { "_index" : "test", "_type" : "type1", "_id" : "3" } }
+{ "field1" : "value3" }
+{ "update" : {"_id" : "1", "_type" : "type1", "_index" : "test"} }
+{ "doc" : {"field2" : "value2"} }
+
+
+#! Deprecation: the default number of shards will change from [5] to [1] in 7.0.0; if you wish to continue using the default of [5] shards, you must manage this on the create index request or with an index template
+{
+  "took": 2549,
+  "errors": false,
+  "items": [
+    {
+      "index": {
+        "_index": "test",
+        "_type": "type1",
+        "_id": "1",
+        "_version": 1,
+        "result": "created",
+        "_shards": {
+          "total": 2,
+          "successful": 2,
+          "failed": 0
+        },
+        "_seq_no": 0,
+        "_primary_term": 1,
+        "status": 201
+      }
+    },
+    {
+      "delete": {
+        "_index": "test",
+        "_type": "type1",
+        "_id": "2",
+        "_version": 1,
+        "result": "not_found",
+        "_shards": {
+          "total": 2,
+          "successful": 2,
+          "failed": 0
+        },
+        "_seq_no": 0,
+        "_primary_term": 1,
+        "status": 404
+      }
+    },
+    {
+      "create": {
+        "_index": "test",
+        "_type": "type1",
+        "_id": "3",
+        "_version": 1,
+        "result": "created",
+        "_shards": {
+          "total": 2,
+          "successful": 2,
+          "failed": 0
+        },
+        "_seq_no": 0,
+        "_primary_term": 1,
+        "status": 201
+      }
+    },
+    {
+      "update": {
+        "_index": "test",
+        "_type": "type1",
+        "_id": "1",
+        "_version": 2,
+        "result": "updated",
+        "_shards": {
+          "total": 2,
+          "successful": 2,
+          "failed": 0
+        },
+        "_seq_no": 1,
+        "_primary_term": 1,
+        "status": 200
+      }
+    }
+  ]
+}
+
+POST /_bulk
+{ "update" : {"_id" : "1", "_type" : "type1", "_index" : "index1", "retry_on_conflict" : 3} }
+{ "doc" : {"field" : "value"} }
+{ "update" : { "_id" : "0", "_type" : "type1", "_index" : "index1", "retry_on_conflict" : 3} }
+{ "script" : { "source": "ctx._source.counter += params.param1", "lang" : "painless", "params" : {"param1" : 1}}, "upsert" : {"counter" : 1}}
+{ "update" : {"_id" : "2", "_type" : "type1", "_index" : "index1", "retry_on_conflict" : 3} }
+{ "doc" : {"field" : "value"}, "doc_as_upsert" : true }
+{ "update" : {"_id" : "3", "_type" : "type1", "_index" : "index1", "_source" : true} }
+{ "doc" : {"field" : "value"} }
+{ "update" : {"_id" : "4", "_type" : "type1", "_index" : "index1"} }
+{ "doc" : {"field" : "value"}, "_source": true}¡¯
+
+
+#! Deprecation: the default number of shards will change from [5] to [1] in 7.0.0; if you wish to continue using the default of [5] shards, you must manage this on the create index request or with an index template
+{
+  "took": 2139,
+  "errors": true,
+  "items": [
+    {
+      "update": {
+        "_index": "index1",
+        "_type": "type1",
+        "_id": "1",
+        "status": 404,
+        "error": {
+          "type": "document_missing_exception",
+          "reason": "[type1][1]: document missing",
+          "index_uuid": "rA9baIkWRrGAveWniEA9pw",
+          "shard": "3",
+          "index": "index1"
+        }
+      }
+    },
+    {
+      "update": {
+        "_index": "index1",
+        "_type": "type1",
+        "_id": "0",
+        "_version": 1,
+        "result": "created",
+        "_shards": {
+          "total": 2,
+          "successful": 2,
+          "failed": 0
+        },
+        "_seq_no": 0,
+        "_primary_term": 1,
+        "status": 201
+      }
+    },
+    {
+      "update": {
+        "_index": "index1",
+        "_type": "type1",
+        "_id": "2",
+        "_version": 1,
+        "result": "created",
+        "_shards": {
+          "total": 2,
+          "successful": 2,
+          "failed": 0
+        },
+        "_seq_no": 0,
+        "_primary_term": 1,
+        "status": 201
+      }
+    },
+    {
+      "update": {
+        "_index": "index1",
+        "_type": "type1",
+        "_id": "3",
+        "status": 404,
+        "error": {
+          "type": "document_missing_exception",
+          "reason": "[type1][3]: document missing",
+          "index_uuid": "rA9baIkWRrGAveWniEA9pw",
+          "shard": "4",
+          "index": "index1"
+        }
+      }
+    },
+    {
+      "update": {
+        "_index": "index1",
+        "_type": "type1",
+        "_id": "4",
+        "status": 404,
+        "error": {
+          "type": "document_missing_exception",
+          "reason": "[type1][4]: document missing",
+          "index_uuid": "rA9baIkWRrGAveWniEA9pw",
+          "shard": "2",
+          "index": "index1"
+        }
+      }
+    }
+  ]
+}

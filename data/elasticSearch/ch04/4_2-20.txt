@@ -1,0 +1,49 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "pattern_comma_analyzer": {
+        "tokenizer": "pattern_tokenizer"
+      }
+    },
+    "tokenizer": {
+      "pattern_tokenizer": {
+        "type": "pattern",
+        "pattern": ","
+      }
+    }
+  }
+}
+
+#Index 상태 변경
+POST /wiki_analyzer/_open
+
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "tokenizer": "pattern_tokenizer",
+  "text": "The Elasticsearch, is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "The Elasticsearch",
+      "start_offset": 0,
+      "end_offset": 17,
+      "type": "word",
+      "position": 0
+    },
+    {
+      "token": " is good",
+      "start_offset": 18,
+      "end_offset": 26,
+      "type": "word",
+      "position": 1
+    }
+  ]
+}

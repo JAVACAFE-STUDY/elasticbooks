@@ -1,0 +1,57 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "porter_stem_analyzer": {
+        "tokenizer": "standard",
+        "filter": [
+          "standard",
+          "porter_stem"
+        ]
+      }
+    }
+  }
+}
+POST /wiki_analyzer/_open
+
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "porter_stem_analyzer",
+  "text": "The Elasticsearches is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "The",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "Elasticsearch",
+      "start_offset": 4,
+      "end_offset": 19,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "is",
+      "start_offset": 20,
+      "end_offset": 22,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "good",
+      "start_offset": 23,
+      "end_offset": 27,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

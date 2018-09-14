@@ -1,0 +1,75 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "standard_analyzer": {
+        "tokenizer": "standard_tokenizer"
+      }
+    },
+    "tokenizer": {
+      "standard_tokenizer": {
+        "type": "standard",
+        "max_token_length": 5
+      }
+    }
+  }
+}
+
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "tokenizer": "standard_tokenizer",
+  "text": "The Elasticsearch is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "The",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "Elast",
+      "start_offset": 4,
+      "end_offset": 9,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "icsea",
+      "start_offset": 9,
+      "end_offset": 14,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "rch",
+      "start_offset": 14,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "is",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "<ALPHANUM>",
+      "position": 4
+    },
+    {
+      "token": "good",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 5
+    }
+  ]
+}

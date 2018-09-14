@@ -1,0 +1,93 @@
+PUT /wiki_test_analyzer
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 5,
+      "number_of_replicas": 1
+    },
+    "analysis": {
+      "analyzer": {
+        "wiki_lower_test_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase"
+          ]
+        },
+        "wiki_stop_test_analyzer": {
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "english_stop"
+          ]
+        }
+      },
+      "filter": {
+        "english_stop": {
+          "type": "stop",
+          "stopwords": "_english_"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "title": {
+          "type": "text",
+          "analyzer": "wiki_lower_test_analyzer",
+          "search_analyzer": "wiki_stop_test_analyzer",
+          "search_quote_analyzer": "wiki_lower_test_analyzer"
+        }
+      }
+    }
+  }
+}
+
+PUT /wiki_test_analyzer/_doc/1
+{
+  "title": "The elasticsearch is good"
+}
+
+PUT /wiki_test_analzyer/_doc/2
+{
+  "title": "A elasticsearch is cool"
+}
+
+POST /wiki_test_analyzer/_search
+{
+  "query": {
+    "query_string": {
+      "default_operator": "AND",
+      "query": "the elasticsearch is good"
+    }
+  }
+}
+
+
+{
+  "took": 145,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.5753642,
+    "hits": [
+      {
+        "_index": "wiki_test_analyzer",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.5753642,
+        "_source": {
+          "title": "The elasticsearch is good"
+        }
+      }
+    ]
+  }
+}

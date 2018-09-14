@@ -1,0 +1,72 @@
+POST /wiki_analyzer/_close
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "stemmer_eng_analyzer": {
+        "tokenizer": "standard",
+        "filter": [
+          "standard",
+          "lowercase",
+          "stemmer_eng_filter"
+        ]
+      }
+    },
+    "filter": {
+      "stemmer_eng_filter": {
+        "type": "stemmer",
+        "name": "english"
+      }
+    }
+  }
+}
+
+POST /wiki_analyzer/_open
+
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "stemmer_eng_analyzer",
+  "text": "The Elasticsearch is searching app"
+}
+
+{
+  "tokens": [
+    {
+      "token": "the",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "elasticsearch",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "is",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "search",
+      "start_offset": 21,
+      "end_offset": 30,
+      "type": "<ALPHANUM>",
+      "position": 3
+    },
+    {
+      "token": "app",
+      "start_offset": 31,
+      "end_offset": 34,
+      "type": "<ALPHANUM>",
+      "position": 4
+    }
+  ]
+}

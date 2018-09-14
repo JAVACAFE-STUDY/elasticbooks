@@ -1,0 +1,53 @@
+POST /wiki_analyzer/_close
+
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "length_filter_analyzer": {
+        "tokenizer": "standard",
+        "filter": [
+          "standard",
+          "length_filter"
+        ]
+      }
+    },
+    "filter": {
+      "length_filter": {
+        "type": "length",
+        "min": 3,
+        "max": 10
+      }
+    }
+  }
+}
+
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "length_filter_analyzer",
+  "text": "The Elasticsearch is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "The",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "good",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

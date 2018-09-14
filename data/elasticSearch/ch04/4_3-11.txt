@@ -1,0 +1,134 @@
+PUT /wiki_script/_doc/1
+{
+    "user" : "kimchy",
+    "counter" : 1,
+    "title" : "Awesome Kimchy"
+}
+
+#문서 업데이트
+POST wiki_script/_doc/1/_update
+{
+    "script" : {
+        "source": "ctx._source.counter += params.count",
+        "lang": "painless",
+        "params" : {
+            "count" : 1
+        }
+    }
+}
+
+
+{
+  "_index": "wiki_script",
+  "_type": "_doc",
+  "_id": "1",
+  "_version": 2,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 1,
+  "_primary_term": 1
+}
+
+POST /wiki_script/_doc/1/_update
+{
+    "script" : "ctx._source.magicNum = 777"
+}
+
+
+{
+  "_index": "wiki_script",
+  "_type": "_doc",
+  "_id": "1",
+  "_version": 3,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 2,
+  "_primary_term": 1
+}
+
+POST /wiki_script/_doc/1/_delete
+{
+    "script" : "ctx._source.remove('magicNum')"
+}
+
+
+{
+  "_index": "wiki_script",
+  "_type": "_doc",
+  "_id": "1",
+  "_version": 4,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 3,
+  "_primary_term": 1
+}
+
+POST /wiki_script/_doc/_update
+{
+    "script" : {
+        "source": "if (ctx._source.user = params.user) { ctx._source.counter = ctx._source.counter+1 } else { ctx.op = 'delete' }",
+        "lang": "painless",
+        "params" : {
+            "user" : "kimchy"
+        }
+    }
+}
+
+
+{
+  "_index": "wiki_script",
+  "_type": "_doc",
+  "_id": "_update",
+  "_version": 2,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 1,
+  "_primary_term": 1
+}
+
+POST /wiki_script/_doc/1/_update
+{
+    "script" : {
+        "source": "ctx._source.counter += params.count",
+        "lang": "painless",
+        "params" : {
+            "count" : 1
+        }
+    },
+    "upsert" : {
+        "counter" : 1,
+	"user" : "kimchy"
+    }
+}
+
+
+{
+  "_index": "wiki_script",
+  "_type": "_doc",
+  "_id": "1",
+  "_version": 5,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 4,
+  "_primary_term": 1
+}
