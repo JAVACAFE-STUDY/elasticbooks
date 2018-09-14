@@ -1,0 +1,1 @@
+POST '/news,dictionary/_search?q=subject:조류독감' -d '{}'
