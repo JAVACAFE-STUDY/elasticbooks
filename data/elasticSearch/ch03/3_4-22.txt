@@ -1,0 +1,68 @@
+PUT idx_term
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "text": {
+          "type":        "text",
+          "term_vector": "with_positions_offsets"
+        }
+      }
+    }
+  }
+}
+
+PUT idx_term/_doc/1
+{
+  "text": "Quick brown fox"
+}
+
+GET idx_term/_search
+{
+  "query": {
+    "match": {
+      "text": "brown fox"
+    }
+  },
+  "highlight": {
+    "fields": {
+      "text": {} 
+    }
+  }
+}
+
+
+{
+  "took": 14,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.5753642,
+    "hits": [
+      {
+        "_index": "idx_term",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.5753642,
+        "_source": {
+          "text": "Quick brown fox"
+        },
+        "highlight": {
+          "text": [
+            "Quick <em>brown</em> <em>fox</em>"
+          ]
+        }
+      }
+    ]
+  }
+}

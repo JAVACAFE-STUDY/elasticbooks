@@ -1,0 +1,19 @@
+PUT tweets/tweet/1
+{
+  "userName": "@realDonaldTrump",
+  "locations": "Washington, DC",
+  "following": [
+    {
+      "userName": "@WhiteHouse",
+      "locations": "Washington, DC"
+    },
+    {
+      "userName": "@LaraLeaTrump",
+      "locations": "New York City"
+    },
+    {
+      "userName": "@TrumpChicago",
+      "locations": "Chicago, IL"
+    }
+  ]
+}

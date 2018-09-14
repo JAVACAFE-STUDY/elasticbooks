@@ -1,0 +1,23 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "userName": {
+      "type": "keyword"
+    },
+    "followers": {
+      "properties": {
+        "userName": {
+          "type": "keyword"
+        }
+      }
+    }
+  }
+}
+
+PUT tweets/tweet/1
+{
+  "userName": "@realDonaldTrump",
+  "followers": {
+    "userName": "@WhiteHouse"
+  }
+}

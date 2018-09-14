@@ -1,0 +1,13 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "ipAddr": {
+      "type": "ip"
+    }
+  }
+}
+
+PUT tweets/tweet/1
+{
+  "ipAddr" : "127.0.0.1"
+}

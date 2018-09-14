@@ -1,0 +1,95 @@
+PUT /idx_analyzer
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "text": { 
+          "type": "text",
+          "fields": {
+            "english": { 
+              "type":     "text",
+              "analyzer": "english"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+GET idx_analyzer/_analyze 
+{
+  "field": "text",
+  "text": "The quick Brown Foxes."
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "the",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "quick",
+      "start_offset": 4,
+      "end_offset": 9,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "brown",
+      "start_offset": 10,
+      "end_offset": 15,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "foxes",
+      "start_offset": 16,
+      "end_offset": 21,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}
+
+GET idx_analyzer/_analyze 
+{
+  "field": "text.english",
+  "text": "The quick Brown Foxes."
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "quick",
+      "start_offset": 4,
+      "end_offset": 9,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "brown",
+      "start_offset": 10,
+      "end_offset": 15,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "fox",
+      "start_offset": 16,
+      "end_offset": 21,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

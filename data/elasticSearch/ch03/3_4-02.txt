@@ -1,0 +1,88 @@
+PUT idx_normalizer
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1,
+    "analysis": {
+      "normalizer": {
+        "my_normalizer": {
+          "type": "custom",
+          "char_filter": [],
+          "filter": ["lowercase", "asciifolding"]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "foo": {
+          "type": "keyword",
+          "normalizer": "my_normalizer"
+        }
+      }
+    }
+  }
+}
+
+PUT idx_normalizer/_doc/1
+{
+  "foo": "BÀR"
+}
+
+PUT idx_normalizer/_doc/2
+{
+  "foo": "bar"
+}
+
+PUT idx_normalizer/_doc/3
+{
+  "foo": "baz"
+}
+
+POST idx_normalizer/_refresh
+
+GET idx_normalizer/_search
+{
+  "query": {
+    "match": {
+      "foo": "BAR"
+    }
+  }
+}
+
+
+{
+  "took": 9,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 2,
+    "max_score": 0.2876821,
+    "hits": [
+      {
+        "_index": "idx_normalizer",
+        "_type": "_doc",
+        "_id": "2",
+        "_score": 0.2876821,
+        "_source": {
+          "foo": "bar"
+        }
+      },
+      {
+        "_index": "idx_normalizer",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.2876821,
+        "_source": {
+          "foo": "BÀR"
+        }
+      }
+    ]
+  }
+}

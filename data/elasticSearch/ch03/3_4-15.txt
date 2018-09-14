@@ -1,0 +1,9 @@
+PUT idx_fields/_mapping/_doc
+{
+  "properties": {
+    "title": {
+      "type": "text",
+      "norms": false
+    }
+  }
+}

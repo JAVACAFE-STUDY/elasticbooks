@@ -1,0 +1,36 @@
+PUT idx_store
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "title": {
+          "type": "text",
+          "store": true 
+        },
+        "date": {
+          "type": "date",
+          "store": true 
+        },
+        "content": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+PUT idx_store/_doc/1
+{
+  "title":   "Some short title",
+  "date":    "2015-01-01",
+  "content": "A very long content field..."
+}
+
+GET idx_store/_search
+{
+  "stored_fields": [ "title", "date" ] 
+}
