@@ -7,3 +7,17 @@ PUT /ac_test
         }
     }
 }
+
+PUT /ac_test/_mapping/ac_test
+{
+	"properties": {
+		"itemSrc": {
+			"type": "keyword"
+		},
+		"itemCompletion": {
+			"type": "completion"
+		}
+	}
+}
+
+

@@ -1,0 +1,104 @@
+POST /ac_test3/_search
+{
+}
+
+
+
+{
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+        "total": 5,
+        "successful": 5,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": 3,
+        "max_score": 1,
+        "hits": [
+            {
+                "_index": "ac_test3",
+                "_type": "ac_test3",
+                "_id": "2",
+                "_score": 1,
+                "_source": {
+                    "item": "신혼가전",
+                    "itemChosung": "신혼가전"
+                }
+            },
+            {
+                "_index": "ac_test3",
+                "_type": "ac_test3",
+                "_id": "1",
+                "_score": 1,
+                "_source": {
+                    "item": "신혼",
+                    "itemChosung": "신혼"
+                }
+            },
+            {
+                "_index": "ac_test3",
+                "_type": "ac_test3",
+                "_id": "3",
+                "_score": 1,
+                "_source": {
+                    "item": "신혼가전특별전",
+                    "itemChosung": "신혼가전특별전"
+                }
+            }
+        ]
+    }
+}
+
+
+POST /ac_test3/_search
+{
+	"query" : {
+		"bool" : {
+			"should" : [{
+				"term" : {
+					"itemChosung" : "ㅅㅎㄱㅈ"
+				}
+			}],
+			"minimum_should_match" : 1
+		}
+	}
+}
+
+{
+    "took": 4,
+    "timed_out": false,
+    "_shards": {
+        "total": 5,
+        "successful": 5,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": 2,
+        "max_score": 4.430304,
+        "hits": [
+            {
+                "_index": "ac_test3",
+                "_type": "ac_test3",
+                "_id": "3",
+                "_score": 4.430304,
+                "_source": {
+                    "item": "신혼가전특별전",
+                    "itemChosung": "신혼가전특별전"
+                }
+            },
+            {
+                "_index": "ac_test3",
+                "_type": "ac_test3",
+                "_id": "2",
+                "_score": 4.1501675,
+                "_source": {
+                    "item": "신혼가전",
+                    "itemChosung": "신혼가전"
+                }
+            }
+        ]
+    }
+}

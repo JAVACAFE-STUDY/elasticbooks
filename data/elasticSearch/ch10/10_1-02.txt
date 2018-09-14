@@ -1,0 +1,9 @@
+PUT /ac_test/ac_test/1
+{"itemSrc" : "신혼", "itemCompletion" : "신혼"}
+
+PUT /ac_test/ac_test/2
+{"itemSrc" : "신혼가전", "itemCompletion" : "신혼가전"}
+
+PUT /ac_test/ac_test/3
+{"itemSrc" : "신혼가전특별전", "itemCompletion" : "신혼가전특별전"}
+

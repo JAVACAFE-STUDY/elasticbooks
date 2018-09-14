@@ -1,0 +1,9 @@
+
+PUT /ac_test2/ac_test2/1
+{"item" : "신혼", "itemNgram" : "신혼", "itemNgramEdge" : "신혼", "itemNgramEdgeBack" : "신혼"}
+
+PUT /ac_test2/ac_test2/2
+{"item" : "신혼가전", "itemNgram" : "신혼가전", "itemNgramEdge" : "신혼가전", "itemNgramEdgeBack" : "신혼가전"}
+
+PUT /ac_test2/ac_test2/3
+{"item" : "신혼가전특별전", "itemNgram" : "신혼가전특별전", "itemNgramEdge" : "신혼가전특별전", "itemNgramEdgeBack" : "신혼가전특별전"}

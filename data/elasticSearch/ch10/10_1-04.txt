@@ -1,0 +1,39 @@
+POST /ac_test/_search
+{
+	"suggest": {
+		"s1": {
+		  "prefix": "가전",
+		  "completion": {
+			"field": "itemCompletion",
+			"size" : 10
+		  }
+		}
+	}
+}
+
+
+{
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+        "total": 5,
+        "successful": 5,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": 0,
+        "max_score": 0,
+        "hits": []
+    },
+    "suggest": {
+        "s1": [
+            {
+                "text": "가전",
+                "offset": 0,
+                "length": 2,
+                "options": []
+            }
+        ]
+    }
+}

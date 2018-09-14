@@ -1,0 +1,84 @@
+PUT /ac_test3
+{
+    "settings" : {
+        "index" : {
+            "number_of_shards" : 5,
+            "number_of_replicas" : 1
+        },
+		"analysis": {
+			"analyzer": {
+				"hangul_chosung_analyzer": {
+					"type": "custom",
+					"tokenizer": "keyword",
+					"filter": [
+						"hangul_chosung_filter",
+						"lowercase",
+						"trim",
+						"edge_ngram_filter_front"
+					]
+				},
+				"hangul_chosung_search_analyzer": {
+					"type": "custom",
+					"tokenizer": "keyword",
+					"filter": [
+						"lowercase",
+						"trim"
+					]
+				}
+			},
+			"tokenizer" : {
+				"edge_ngram_tokenizer" : {
+					"type" : "edgeNGram",
+					"min_gram" : "1",
+					"max_gram" : "50",
+					"token_chars" : [
+						"letter",
+						"digit",
+						"punctuation",
+						"symbol"
+					]
+				}
+			},
+			"filter": {
+				"edge_ngram_filter_front" : {
+					"type" : "edgeNGram",
+					"min_gram" : "1",
+					"max_gram" : "50",
+					"side" : "front"
+				},
+				"hangul_chosung_filter": {
+					"type": "hangul_chosung",
+					"name": "chosung"
+				}
+			}
+		}
+	}
+}
+
+
+PUT /ac_test3/_mapping/ac_test3
+{
+	"properties": {
+		"item": {
+			"type": "keyword",
+			"boost": 30
+		},
+		"itemChosung": {
+			"type": "text",
+			"analyzer": "hangul_chosung_analyzer",
+			"search_analyzer": "hangul_chosung_search_analyzer",
+			"boost": 10
+		}
+	}
+}
+
+
+PUT /ac_test3/ac_test3/1
+{"item" : "신혼", "itemChosung" : "신혼"}
+
+PUT /ac_test3/ac_test3/2
+{"item" : "신혼가전", "itemChosung" : "신혼가전"}
+
+PUT /ac_test3/ac_test3/3
+{"item" : "신혼가전특별전", "itemChosung" : "신혼가전특별전"}
+

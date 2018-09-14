@@ -1,0 +1,87 @@
+POST /ac_test2/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "prefix": {
+            "item": "신혼"
+          }
+        },
+         {"term": {
+            "item": "신혼"
+          }
+        },
+        {
+          "term": {
+            "itemNgram": "신혼"
+          }
+        },
+        {
+          "term": {
+            "itemNgramEdge": "신혼"
+          }
+        },
+        {
+          "term": {
+            "itemNgramEdgeBack": "신혼"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}
+
+{
+  "took": 22,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 3,
+    "max_score": 11.4928255,
+    "hits": [
+      {
+        "_index": "ac_test2",
+        "_type": "ac_test2",
+        "_id": "1",
+        "_score": 11.4928255,
+        "_source": {
+          "item": "신혼",
+          "itemNgram": "신혼",
+          "itemNgramEdge": "신혼",
+          "itemNgramEdgeBack": "신혼"
+        }
+      },
+      {
+        "_index": "ac_test2",
+        "_type": "ac_test2",
+        "_id": "3",
+        "_score": 3.442018,
+        "_source": {
+          "item": "신혼가전특별전",
+          "itemNgram": "신혼가전특별전",
+          "itemNgramEdge": "신혼가전특별전",
+          "itemNgramEdgeBack": "신혼가전특별전"
+        }
+      },
+      {
+        "_index": "ac_test2",
+        "_type": "ac_test2",
+        "_id": "2",
+        "_score": 3.2818537,
+        "_source": {
+          "item": "신혼가전",
+          "itemNgram": "신혼가전",
+          "itemNgramEdge": "신혼가전",
+          "itemNgramEdgeBack": "신혼가전"
+        }
+      }
+    ]
+  }
+}
