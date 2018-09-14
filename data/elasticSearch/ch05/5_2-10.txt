@@ -1,0 +1,64 @@
+GET news/_doc/tVBBjWMBvmx0PcKWOSti/_explain
+{
+  "query" : {
+    "term": {
+      "press": "서울신문"
+    }
+  }
+}
+
+{
+  "_index": "news",
+  "_type": "_doc",
+  "_id": "tVBBjWMBvmx0PcKWOSti",
+  "matched": true,
+  "explanation": {
+    "value": 1.8252175,
+    "description": "weight(press:서울신문 in 607) [PerFieldSimilarity], result of:",
+    "details": [
+      {
+        "value": 1.8252175,
+        "description": "score(doc=607,freq=1.0 = termFreq=1.0\n), product of:",
+        "details": [
+          {
+            "value": 1.8252175,
+            "description": "idf, computed as log(1 + (docCount - docFreq + 0.5) / (docFreq + 0.5)) from:",
+            "details": [
+              {
+                "value": 651,
+                "description": "docFreq",
+                "details": []
+              },
+              {
+                "value": 4041,
+                "description": "docCount",
+                "details": []
+              }
+            ]
+          },
+          {
+            "value": 1,
+            "description": "tfNorm, computed as (freq * (k1 + 1)) / (freq + k1) from:",
+            "details": [
+              {
+                "value": 1,
+                "description": "termFreq=1.0",
+                "details": []
+              },
+              {
+                "value": 1.2,
+                "description": "parameter k1",
+                "details": []
+              },
+              {
+                "value": 0,
+                "description": "parameter b (norms omitted for field)",
+                "details": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

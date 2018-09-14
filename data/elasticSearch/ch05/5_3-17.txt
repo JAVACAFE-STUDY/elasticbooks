@@ -1,14 +1,15 @@
 GET news/_search
 {
   "query" : {
-    "prefix": {
-      "press": "서울"
+    "wildcard": {
+      "press": "서?*"
         }
     }
 }
 
+
 {
-  "took": 12,
+  "took": 21,
   "timed_out": false,
   "_shards": {
     "total": 5,

@@ -1,12 +1,14 @@
 GET news/_search
 {
+  "profile": true,
   "query": {
     "match_all": {}
   }
 }
 
+
 {
-  "took": 5,
+  "took": 57,
   "timed_out": false,
   "_shards": {
     "total": 5,
@@ -287,6 +289,230 @@ GET news/_search
           "url": "http://news.kmib.co.kr/article/view.asp?arcid=0923946488&code=11151300",
           "analysisYn": null
         }
+      }
+    ]
+  },
+  "profile": {
+    "shards": [
+      {
+        "id": "[3O0alCnFT8e0G81kkQ_zWQ][news][0]",
+        "searches": [
+          {
+            "query": [
+              {
+                "type": "MatchAllDocsQuery",
+                "description": "*:*",
+                "time_in_nanos": 2150033,
+                "breakdown": {
+                  "score": 502576,
+                  "build_scorer_count": 8,
+                  "match_count": 0,
+                  "create_weight": 1900,
+                  "next_doc": 808088,
+                  "match": 0,
+                  "create_weight_count": 1,
+                  "next_doc_count": 4034,
+                  "score_count": 4029,
+                  "build_scorer": 829397,
+                  "advance": 0,
+                  "advance_count": 0
+                }
+              }
+            ],
+            "rewrite_time": 1500,
+            "collector": [
+              {
+                "name": "CancellableCollector",
+                "reason": "search_cancelled",
+                "time_in_nanos": 14481743,
+                "children": [
+                  {
+                    "name": "SimpleTopScoreDocCollector",
+                    "reason": "search_top_hits",
+                    "time_in_nanos": 12604511
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "aggregations": []
+      },
+      {
+        "id": "[3O0alCnFT8e0G81kkQ_zWQ][news][1]",
+        "searches": [
+          {
+            "query": [
+              {
+                "type": "MatchAllDocsQuery",
+                "description": "*:*",
+                "time_in_nanos": 2167640,
+                "breakdown": {
+                  "score": 553560,
+                  "build_scorer_count": 8,
+                  "match_count": 0,
+                  "create_weight": 20000,
+                  "next_doc": 287090,
+                  "match": 0,
+                  "create_weight_count": 1,
+                  "next_doc_count": 4045,
+                  "score_count": 4041,
+                  "build_scorer": 1298895,
+                  "advance": 0,
+                  "advance_count": 0
+                }
+              }
+            ],
+            "rewrite_time": 11400,
+            "collector": [
+              {
+                "name": "CancellableCollector",
+                "reason": "search_cancelled",
+                "time_in_nanos": 10400758,
+                "children": [
+                  {
+                    "name": "SimpleTopScoreDocCollector",
+                    "reason": "search_top_hits",
+                    "time_in_nanos": 9554162
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "aggregations": []
+      },
+      {
+        "id": "[3ZqQvY69T_CoW0cpbo7_Rw][news][3]",
+        "searches": [
+          {
+            "query": [
+              {
+                "type": "MatchAllDocsQuery",
+                "description": "*:*",
+                "time_in_nanos": 32120934,
+                "breakdown": {
+                  "score": 515567,
+                  "build_scorer_count": 6,
+                  "match_count": 0,
+                  "create_weight": 19800,
+                  "next_doc": 30768490,
+                  "match": 0,
+                  "create_weight_count": 1,
+                  "next_doc_count": 3988,
+                  "score_count": 3985,
+                  "build_scorer": 809097,
+                  "advance": 0,
+                  "advance_count": 0
+                }
+              }
+            ],
+            "rewrite_time": 11600,
+            "collector": [
+              {
+                "name": "CancellableCollector",
+                "reason": "search_cancelled",
+                "time_in_nanos": 5907779,
+                "children": [
+                  {
+                    "name": "SimpleTopScoreDocCollector",
+                    "reason": "search_top_hits",
+                    "time_in_nanos": 3237531
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "aggregations": []
+      },
+      {
+        "id": "[m3TrPFm1SMWSqWcjKJHpow][news][2]",
+        "searches": [
+          {
+            "query": [
+              {
+                "type": "MatchAllDocsQuery",
+                "description": "*:*",
+                "time_in_nanos": 677788,
+                "breakdown": {
+                  "score": 330385,
+                  "build_scorer_count": 10,
+                  "match_count": 0,
+                  "create_weight": 9100,
+                  "next_doc": 309711,
+                  "match": 0,
+                  "create_weight_count": 1,
+                  "next_doc_count": 3993,
+                  "score_count": 3988,
+                  "build_scorer": 20600,
+                  "advance": 0,
+                  "advance_count": 0
+                }
+              }
+            ],
+            "rewrite_time": 14200,
+            "collector": [
+              {
+                "name": "CancellableCollector",
+                "reason": "search_cancelled",
+                "time_in_nanos": 1036194,
+                "children": [
+                  {
+                    "name": "SimpleTopScoreDocCollector",
+                    "reason": "search_top_hits",
+                    "time_in_nanos": 554924
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "aggregations": []
+      },
+      {
+        "id": "[m3TrPFm1SMWSqWcjKJHpow][news][4]",
+        "searches": [
+          {
+            "query": [
+              {
+                "type": "MatchAllDocsQuery",
+                "description": "*:*",
+                "time_in_nanos": 2317056,
+                "breakdown": {
+                  "score": 597153,
+                  "build_scorer_count": 8,
+                  "match_count": 0,
+                  "create_weight": 18500,
+                  "next_doc": 861875,
+                  "match": 0,
+                  "create_weight_count": 1,
+                  "next_doc_count": 3963,
+                  "score_count": 3959,
+                  "build_scorer": 831597,
+                  "advance": 0,
+                  "advance_count": 0
+                }
+              }
+            ],
+            "rewrite_time": 2000,
+            "collector": [
+              {
+                "name": "CancellableCollector",
+                "reason": "search_cancelled",
+                "time_in_nanos": 4860585,
+                "children": [
+                  {
+                    "name": "SimpleTopScoreDocCollector",
+                    "reason": "search_top_hits",
+                    "time_in_nanos": 3701607
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "aggregations": []
       }
     ]
   }

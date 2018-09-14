@@ -1,0 +1,54 @@
+POST /script_test/_doc/1/_update
+{
+ "script": "ctx._source.movie.Black_Panther = 3.7"
+}
+
+{
+  "_index": "script_test",
+  "_type": "_doc",
+  "_id": "1",
+  "_version": 2,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 1,
+  "_primary_term": 1
+}
+
+
+POST /script_test/_doc/_search
+{
+}
+
+{
+  "took": 7,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "script_test",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 1,
+        "_source": {
+          "movie": {
+            "Death Wish": 5.5,
+            "About Time": 7,
+            "black_panther": 3.7
+          }
+        }
+      }
+    ]
+  }
+}

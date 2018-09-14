@@ -1,0 +1,22 @@
+http://localhost:9200/news/_count?q=content:스승의날
+
+GET news/_count
+{
+  "query": {
+    "query_string": {
+      "default_field": "content",
+      "query": "스승의날"
+    }
+  }
+}
+
+
+{
+  "count": 3137,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  }
+}

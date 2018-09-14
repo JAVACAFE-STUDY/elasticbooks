@@ -1,0 +1,21 @@
+PUT news/_doc/1?routing=user1&refresh=true 
+{
+  "subject": "다시 판문점으로 가는 미국 협상단"
+}
+
+{
+  "_index": "news",
+  "_type": "_doc",
+  "_id": "1",
+  "_version": 13,
+  "result": "updated",
+  "forced_refresh": true,
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 3999,
+  "_primary_term": 4
+}
+
