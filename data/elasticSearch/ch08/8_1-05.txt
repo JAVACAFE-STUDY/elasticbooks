@@ -1,0 +1,56 @@
+PUT /nori_analyzer
+{
+  "settings": {
+    "index": {
+      "analysis": {
+        "tokenizer": {
+          "nori_user_dict_tokenizer": {
+            "type": "nori_tokenizer",
+            "decompound_mode": "mixed",
+            "user_dictionary": "userdict_ko.txt"
+          }
+        },
+        "analyzer": {
+          "nori_token_analyzer": {
+            "type": "custom",
+            "tokenizer": "nori_user_dict_tokenizer"
+          }
+        }
+      }
+    }
+  }
+}
+
+GET /nori_analyzer/_analyze
+{
+  "analyzer": "nori_token_analyzer",
+  "text": "잠실역"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "잠실역",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "word",
+      "position": 0,
+      "positionLength": 2
+    },
+    {
+      "token": "잠실",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "word",
+      "position": 0
+    },
+    {
+      "token": "역",
+      "start_offset": 2,
+      "end_offset": 3,
+      "type": "word",
+      "position": 1
+    }
+  ]
+}
