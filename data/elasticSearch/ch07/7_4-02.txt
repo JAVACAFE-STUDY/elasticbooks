@@ -1,0 +1,42 @@
+PUT template_test/_doc/1 { "name": "blood" }
+
+GET _scripts/find_blood_by_name
+
+
+
+PUT template_test/_doc/1
+{ "name": "blood" }
+
+GET template_test/_search/template
+{
+    "id": "title_test",
+    "params": {
+        "blood_name": "blood"
+    }
+}
+
+{
+  "took": 13,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.2876821,
+    "hits": [
+      {
+        "_index": "template_test",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.2876821,
+        "_source": {
+          "name": "blood"
+        }
+      }
+    ]
+  }
+}

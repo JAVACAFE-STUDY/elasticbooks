@@ -1,0 +1,21 @@
+POST highlighting_test/_search
+ {
+   "query": {
+     "match": {
+       "name": {
+         "query": "iphone"
+       }
+     }
+   },
+   "highlight": {
+        "pre_tags": [
+       "<strong>"
+     ],
+     "post_tags": [
+       "</strong>"
+     ],
+     "fields": {
+       "name": {}
+     }
+   }
+ }

@@ -1,0 +1,28 @@
+POST _search/template
+{
+  "id": "find_blood_by_name",
+  "source": {
+    "query": {
+      "match": {
+        "name": "{{ blood_name }}"
+      }
+    }
+  }
+}
+
+{
+  "took": 154,
+  "timed_out": false,
+  "_shards": {
+    "total": 176,
+    "successful": 176,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 0,
+    "max_score": null,
+    "hits": []
+  }
+}
+
