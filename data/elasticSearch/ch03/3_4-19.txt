@@ -1,0 +1,81 @@
+PUT idx_search
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1, 
+    "analysis": {
+      "filter": {
+        "autocomplete_filter": {
+          "type": "edge_ngram",
+          "min_gram": 1,
+          "max_gram": 20
+        }
+      },
+      "analyzer": {
+        "autocomplete": { 
+          "type": "custom",
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "autocomplete_filter"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "text": {
+          "type": "text",
+          "analyzer": "autocomplete", 
+          "search_analyzer": "standard" 
+        }
+      }
+    }
+  }
+}
+
+PUT idx_search/_doc/1
+{
+  "text": "Quick Brown Fox" 
+}
+
+GET idx_search/_search
+{
+  "query": {
+    "match": {
+      "text": {
+        "query": "Quick Br", 
+        "operator": "and"
+      }
+    }
+  }
+}
+
+
+{
+  "took": 7,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.839562,
+    "hits": [
+      {
+        "_index": "idx_search",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.839562,
+        "_source": {
+          "text": "Quick Brown Fox"
+        }
+      }
+    ]
+  }
+}

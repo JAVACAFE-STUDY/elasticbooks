@@ -1,0 +1,70 @@
+PUT idx_copyto
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "first_name": {
+          "type": "text",
+          "copy_to": "full_name" 
+        },
+        "last_name": {
+          "type": "text",
+          "copy_to": "full_name" 
+        },
+        "full_name": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+PUT idx_copyto/_doc/1
+{
+  "first_name": "John",
+  "last_name": "Smith"
+}
+
+GET idx_copyto/_search
+{
+  "query": {
+    "match": {
+      "full_name": { 
+        "query": "John Smith",
+        "operator": "and"
+      }
+    }
+  }
+}
+
+
+{
+  "took": 9,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.5753642,
+    "hits": [
+      {
+        "_index": "idx_copyto",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.5753642,
+        "_source": {
+          "first_name": "John",
+          "last_name": "Smith"
+        }
+      }
+    ]
+  }
+}

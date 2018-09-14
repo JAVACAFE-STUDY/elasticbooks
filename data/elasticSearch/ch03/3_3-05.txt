@@ -1,0 +1,93 @@
+PUT tweets/_mapping/tweet
+{
+  "properties": {
+    "userName": {
+      "type": "keyword"
+    },
+    "following": {
+      "type": "nested"
+    }
+  }
+}
+
+PUT tweets/tweet/1
+{
+  "userName": "@realDonaldTrump",
+  "locations": "Washington, DC",
+  "following": [
+    {
+      "userName": "@WhiteHouse",
+      "locations": "Washington, DC"
+    },
+    {
+      "userName": "@LaraLeaTrump",
+      "locations": "New York City"
+    },
+    {
+      "userName": "@TrumpChicago",
+      "locations": "Chicago, IL"
+    }
+  ]
+}
+
+GET tweets/_search
+{
+  "query": {
+    "nested": {
+      "path": "following",
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "match": { "following.userName": "@WhiteHouse" }
+            },
+            {
+              "match": { "following.locations": "Washington, DC" }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+
+{
+  "took": 63,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 3.0642455,
+    "hits": [
+      {
+        "_index": "tweets",
+        "_type": "tweet",
+        "_id": "1",
+        "_score": 3.0642455,
+        "_source": {
+          "userName": "@realDonaldTrump",
+          "locations": "Washington, DC",
+          "following": [
+            {
+              "userName": "@WhiteHouse",
+              "locations": "Washington, DC"
+            },
+            {
+              "userName": "@LaraLeaTrump",
+              "locations": "New York City"
+            },
+            {
+              "userName": "@TrumpChicago",
+              "locations": "Chicago, IL"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

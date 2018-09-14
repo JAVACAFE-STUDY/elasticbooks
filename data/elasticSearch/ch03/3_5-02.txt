@@ -1,0 +1,136 @@
+PUT idx_dynamic_templates
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "_doc": {
+      "dynamic_templates": [
+        {
+          "language_template": {
+            "match": "*lang",
+            "mapping": {
+              "type": "keyword"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "latlong": {
+          "type": "geo_point"
+        }
+      }
+    }
+  }
+}
+
+POST idx_dynamic_templates/_doc/1
+{
+  "tweetId": 977770775577948200,
+  "createdAt": "2018-03-25T04:54:53.000Z",
+  "tweetlang": "ko",
+  "text": "RT @motheryyy: hello world",
+  "source": "Twitter for Android",
+  "tweetFavouritesCount": 0,
+  "userFollowersCount": 354,
+  "userFriendsCount": 126,
+  "userLocation": "¥Î«—πŒ±π",
+  "userName": "nobaksan",
+  "userScreenName": "nobaksan",
+  "latlong": [
+    127,
+    30
+  ]
+}
+
+
+GET /idx_dynamic_templates/_mapping
+
+
+{
+  "idx_dynamic_templates": {
+    "mappings": {
+      "_doc": {
+        "dynamic_templates": [
+          {
+            "language_template": {
+              "match": "*lang",
+              "mapping": {
+                "type": "keyword"
+              }
+            }
+          }
+        ],
+        "properties": {
+          "createdAt": {
+            "type": "date"
+          },
+          "latlong": {
+            "type": "geo_point"
+          },
+          "source": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "text": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "tweetFavouritesCount": {
+            "type": "long"
+          },
+          "tweetId": {
+            "type": "long"
+          },
+          "tweetlang": {
+            "type": "keyword"
+          },
+          "userFollowersCount": {
+            "type": "long"
+          },
+          "userFriendsCount": {
+            "type": "long"
+          },
+          "userLocation": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "userName": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "userScreenName": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+http://localhost:9200/news/_validate/query?q=writeDate:-1
+
+GET news/_validate/query
+{
+  "query" : {
+    "match": {
+      "writeDate": -1
+    }
+  }
+}
+
+
+{
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "failed": 0
+  },
+  "valid": false
+}

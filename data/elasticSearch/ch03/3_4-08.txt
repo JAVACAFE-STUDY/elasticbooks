@@ -1,0 +1,25 @@
+PUT idx_enabled
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "user_id": {
+          "type":  "keyword"
+        },
+        "desc": {
+          "type":  "text"
+        },
+        "last_updated": {
+          "type": "date"
+        },
+        "session_data": { 
+          "enabled": false
+        }
+      }
+    }
+  }
+}

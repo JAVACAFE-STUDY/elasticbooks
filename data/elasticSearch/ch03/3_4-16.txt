@@ -1,0 +1,63 @@
+PUT idx_null
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "status_code": {
+          "type":       "keyword",
+          "null_value": "NULL" 
+        }
+      }
+    }
+  }
+}
+
+PUT idx_null/_doc/1
+{
+  "status_code": null
+}
+
+PUT idx_null/_doc/2
+{
+  "status_code": [] 
+}
+
+GET idx_null/_search
+{
+  "query": {
+    "term": {
+      "status_code": "NULL" 
+    }
+  }
+}
+
+
+{
+  "took": 4,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.2876821,
+    "hits": [
+      {
+        "_index": "idx_null",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.2876821,
+        "_source": {
+          "status_code": null
+        }
+      }
+    ]
+  }
+}

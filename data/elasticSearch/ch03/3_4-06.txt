@@ -1,0 +1,20 @@
+PUT idx_docvalues
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "status_code": { 
+          "type":       "keyword"
+        },
+        "session_id": { 
+          "type":       "keyword",
+          "doc_values": false
+        }
+      }
+    }
+  }
+}

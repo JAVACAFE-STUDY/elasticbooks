@@ -1,0 +1,9 @@
+PUT idx_malform/_mapping/_doc
+{
+  "properties": {
+    "number_three": {
+      "type": "integer",
+      "index": false
+    }
+  }
+}

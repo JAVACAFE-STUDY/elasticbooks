@@ -1,0 +1,4 @@
+{"index" : "news"}
+{"query" : {"match_all" : {}}, "from" : 0, "size": 10}
+{"index" : "movie"}
+{"query" : {"match_all" : {}}, "from" : 0, "size" : 10}

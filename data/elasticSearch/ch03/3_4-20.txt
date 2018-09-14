@@ -1,0 +1,24 @@
+PUT idx_similarity
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "default_field": { 
+          "type": "text"
+        },
+        "classic_field": {
+          "type": "text",
+          "similarity": "BM25" 
+        },
+        "boolean_sim_field": {
+          "type": "text",
+          "similarity": "boolean" 
+        }
+      }
+    }
+  }
+}

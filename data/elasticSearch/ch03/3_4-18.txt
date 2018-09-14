@@ -1,0 +1,60 @@
+PUT idx_prop
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": { 
+      "properties": {
+        "manager": { 
+          "properties": {
+            "age":  { "type": "integer" },
+            "name": { "type": "text"  }
+          }
+        },
+        "employees": { 
+          "type": "nested",
+          "properties": {
+            "age":  { "type": "integer" },
+            "name": { "type": "text"  }
+          }
+        }
+      }
+    }
+  }
+}
+
+PUT idx_prop/_doc/1 
+{
+  "region": "US",
+  "manager": {
+    "name": "Alice White",
+    "age": 30
+  },
+  "employees": [
+    {
+      "name": "John Smith",
+      "age": 34
+    },
+    {
+      "name": "Peter Brown",
+      "age": 26
+    }
+  ]
+}
+
+{
+  "_index": "idx_prop",
+  "_type": "_doc",
+  "_id": "1",
+  "_version": 1,
+  "result": "created",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 0,
+  "_primary_term": 1
+}

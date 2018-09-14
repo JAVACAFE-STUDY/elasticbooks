@@ -1,0 +1,41 @@
+GET news/_validate/query?rewrite=true
+{
+  "query" : {
+    "match": {
+      "writeDate": -1
+    }
+  }
+}
+
+
+{
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "failed": 0
+  },
+  "valid": false,
+  "explanations": [
+    {
+      "index": "news",
+      "valid": false,
+      "error": """
+[news/DN6lCooVRqSV8gTc6WGCbQ] QueryShardException[failed to create query: {
+  "match" : {
+    "writeDate" : {
+      "query" : -1,
+      "operator" : "OR",
+      "prefix_length" : 0,
+      "max_expansions" : 50,
+      "fuzzy_transpositions" : true,
+      "lenient" : false,
+      "zero_terms_query" : "NONE",
+      "auto_generate_synonyms_phrase_query" : true,
+      "boost" : 1.0
+    }
+  }
+}]; nested: ElasticsearchParseException[failed to parse date field [-1] with format [yyyyMMdd]]; nested: IllegalArgumentException[Parse failure at index [2] of [-1]];; ElasticsearchParseException[failed to parse date field [-1] with format [yyyyMMdd]]; nested: IllegalArgumentException[Parse failure at index [2] of [-1]];; java.lang.IllegalArgumentException: Parse failure at index [2] of [-1]
+"""
+    }
+  ]
+}

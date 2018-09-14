@@ -1,0 +1,9 @@
+PUT idx_enabled/_mapping/_doc
+{
+  "properties": {
+    "desc": { 
+      "type":     "text",
+      "fielddata": true
+    }
+  }
+}

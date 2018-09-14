@@ -1,0 +1,25 @@
+PUT idx_dynamic
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": {
+      "dynamic": false, 
+      "properties": {
+        "user": { 
+          "properties": {
+            "name": {
+              "type": "text"
+            },
+            "social_networks": { 
+              "dynamic": true,
+              "properties": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

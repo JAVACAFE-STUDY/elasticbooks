@@ -1,0 +1,20 @@
+PUT idx_boost
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  },  
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "title": {
+          "type": "text",
+          "boost": 2 
+        },
+        "content": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}

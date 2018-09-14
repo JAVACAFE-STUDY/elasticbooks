@@ -1,0 +1,108 @@
+PUT idx_fields
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "city": {
+          "type": "text",
+          "fields": {
+            "raw": { 
+              "type":  "keyword"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+PUT idx_fields/_doc/1
+{
+  "city": "New York"
+}
+
+PUT idx_fields/_doc/2
+{
+  "city": "York"
+}
+
+GET idx_fields/_search
+{
+  "query": {
+    "match": {
+      "city": "york" 
+    }
+  },
+  "sort": {
+    "city.raw": "asc" 
+  },
+  "aggs": {
+    "Cities": {
+      "terms": {
+        "field": "city.raw" 
+      }
+    }
+  }
+}
+
+
+{
+  "took": 13,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 2,
+    "max_score": null,
+    "hits": [
+      {
+        "_index": "idx_fields",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": null,
+        "_source": {
+          "city": "New York"
+        },
+        "sort": [
+          "New York"
+        ]
+      },
+      {
+        "_index": "idx_fields",
+        "_type": "_doc",
+        "_id": "2",
+        "_score": null,
+        "_source": {
+          "city": "York"
+        },
+        "sort": [
+          "York"
+        ]
+      }
+    ]
+  },
+  "aggregations": {
+    "Cities": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "New York",
+          "doc_count": 1
+        },
+        {
+          "key": "York",
+          "doc_count": 1
+        }
+      ]
+    }
+  }
+}

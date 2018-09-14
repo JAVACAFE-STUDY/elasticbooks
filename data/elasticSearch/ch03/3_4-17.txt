@@ -1,0 +1,74 @@
+PUT idx_pos
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "names": {
+          "type":       "text"
+        }
+      }
+    }
+  }
+}
+
+
+PUT idx_pos/_doc/1
+{
+    "names": [ "John Abraham", "Lincoln Smith"]
+}
+
+GET idx_pos/_search
+{
+    "query": {
+        "match_phrase": {
+            "names": {
+                "query": "Abraham Lincoln" 
+            }
+        }
+    }
+}
+
+{
+  "took": 2,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 0,
+    "max_score": null,
+    "hits": []
+  }
+}
+
+
+GET idx_pos/_search
+{
+    "query": {
+        "match_phrase": {
+            "names": {
+                "query": "Abraham Lincoln",
+                "slop": 101 
+            }
+        }
+    }
+}
+
+GET idx_pos/_search
+{
+    "query": {
+        "match_phrase": {
+            "names": {
+                "query": "Abraham Lincoln",
+                "slop": 101 
+            }
+        }
+    }
+}

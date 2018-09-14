@@ -1,0 +1,88 @@
+delete idx_ignore
+
+PUT idx_ignore
+{
+  "settings": {
+    "number_of_shards": 5,
+    "number_of_replicas": 1
+  }, 
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "msg": {
+          "type": "keyword",
+          "ignore_above": 20 
+        }
+      }
+    }
+  }
+}
+
+PUT idx_ignore/_doc/1 
+{
+  "msg": "Syntax error"
+}
+
+PUT idx_ignore/_doc/2 
+{
+  "msg": "Syntax error with some long stacktrace"
+}
+
+GET idx_ignore/_search 
+{
+  "aggs": {
+    "messages": {
+      "terms": {
+        "field": "msg"
+      }
+    }
+  }
+}
+
+
+{
+  "took": 6,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 2,
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "idx_ignore",
+        "_type": "_doc",
+        "_id": "2",
+        "_score": 1,
+        "_source": {
+          "msg": "Syntax error with some long stacktrace"
+        }
+      },
+      {
+        "_index": "idx_ignore",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 1,
+        "_source": {
+          "msg": "Syntax error"
+        }
+      }
+    ]
+  },
+  "aggregations": {
+    "messages": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": "Syntax error",
+          "doc_count": 1
+        }
+      ]
+    }
+  }
+}
