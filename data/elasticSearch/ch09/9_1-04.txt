@@ -1,0 +1,101 @@
+PUT /company/_mapping/_doc
+{
+  "_doc": {
+    "properties": {
+      "name": {
+        "type": "keyword"
+      }
+    }
+  }
+}
+
+PUT /typo_suggest_api/_mapping/_doc
+{
+  "_doc": {
+    "properties": {
+      "name": {
+        "type": "keyword",
+        "copy_to":["suggest"]
+      },
+      "suggest": {
+        "type": "text",
+        "search_analyzer": "typo_analyzer",
+        "analyzer": "keyword"
+      }
+    }
+  }
+}
+
+PUT /company/_doc/1
+{"name" : "삼성전자"}
+PUT /company/_doc/2
+{"name" : "iphone"}
+
+
+PUT /typo_suggest_api/_doc/1
+{"name" : "삼성전자"}
+PUT /typo_suggest_api/_doc/2
+{"name" : "iphone"}
+
+POST /typo_suggest_api/_doc/_search?q=suggest:tkatjdwjswk
+
+{
+  "took": 7,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.2876821,
+    "hits": [
+      {
+        "_index": "typo_suggest_api",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.2876821,
+        "_source": {
+          "name": "삼성전자"
+        }
+      }
+    ]
+  }
+}
+
+GET /company/_doc/_search
+{
+  "query":{
+    "term":{
+      "name":"삼성전자"
+    }
+  }
+}
+
+{
+  "took": 4,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.2876821,
+    "hits": [
+      {
+        "_index": "company",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.2876821,
+        "_source": {
+          "name": "삼성전자"
+        }
+      }
+    ]
+  }
+}

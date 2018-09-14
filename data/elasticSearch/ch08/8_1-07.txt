@@ -1,0 +1,35 @@
+PUT nori_readingform
+{
+    "settings": {
+        "index":{
+            "analysis":{
+                "analyzer" : {
+                    "nori_readingform_analyzer" : {
+                        "tokenizer" : "nori_tokenizer",
+                        "filter" : ["nori_readingform"]
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+GET nori_readingform/_analyze
+{
+  "analyzer": "nori_readingform_analyzer",
+  "text": "中國"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "중국",
+      "start_offset": 0,
+      "end_offset": 2,
+      "type": "word",
+      "position": 0
+    }
+  ]
+}

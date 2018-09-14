@@ -1,0 +1,41 @@
+PUT /company
+{
+  "settings": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "typo_analyzer": {
+            "type": "custom",
+            "tokenizer": "standard",
+            "filter": [
+              "trim",
+              "lowercase"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+
+PUT /typo_suggest_api
+{
+  "settings": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "typo_analyzer": {
+            "type": "custom",
+            "tokenizer": "standard",
+            "filter": [
+              "trim",
+              "lowercase",
+              "english_to_korean",
+              "korean_to_english"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

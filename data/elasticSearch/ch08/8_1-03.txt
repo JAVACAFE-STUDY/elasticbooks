@@ -1,0 +1,16 @@
+PUT /arirang_analyzer
+{
+ "settings": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "analysis-korean": {
+            "type": "custom",
+            "tokenizer": "arirang_tokenizer",
+            "filter": [ "trim", "lowercase", "arirang_filter" ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+PUT nori_full_analyzer/_analyze
+{
+  "mappings": {
+    "doc": {
+      "properties": {
+        "description": {
+          "type": "text",
+          "analyzer": "korean_analyzer"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "korean_analyzer": {
+            "filter": [
+              "pos_filter",
+              "nori_readingform",
+              "lowercase"
+            ],
+            "tokenizer": "nori_user_dict"
+          },
+        "tokenizer": {
+          "nori_user_dict": {
+            "mode": "MIXED",
+            "type": "nori_tokenizer",
+            "user_dictionary": "userdic_ko.txt"
+          }
+        },
+        "filter": {
+          "pos_filter": {
+            "type": "nori_part_of_speech",
+            "stoptags": [
+              "E","IC","J","MAG","MM","SP","SSC",
+              "SSO","SC","SE","XPN","XSA","XSN",
+              "XSV","UNA","NA","VSV"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+PUT /openkoreantext_analyzer
+{
+ "settings": {
+    "index" : {
+        "analysis" : {
+            "analyzer" : {
+                "openkoreantext-analyzer" : {
+                    "tokenizer" : "openkoreantext-tokenizer",
+                    "char_filter":["openkoreantext-normalizer"],
+                    "filter":[
+                        "openkoreantext-stemmer",
+                        "openkoreantext-redundant-filter",
+                        "lowercase"
+                    ]
+                }
+            }
+        }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+group 'org.openkoreantext'
+version '6.4.0.0'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'signing'
+apply plugin: 'jacoco'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+configurations {
+    distJars {
+        extendsFrom runtime
+    }
+}
+
+ext {
+    elasticsearchVersion = '6.4.0'
+    openKoreanTextVersion = '2.1.0'
+}
+
+dependencies {
+    compile group: 'org.openkoreantext', name: 'open-korean-text', version: openKoreanTextVersion
+
+    compileOnly group: 'org.elasticsearch', name: 'elasticsearch', version: elasticsearchVersion
+
+    testCompile group: 'org.elasticsearch.test', name: 'framework', version: elasticsearchVersion
+    testCompile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.9.1'
+    testCompile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.9.1'
+}
+
+task makePluginDescriptor(type: Copy) {
+    from 'src/main/resources'
+    into 'build/tmp/plugin'
+    expand([
+        'descriptor': [
+            'name': 'elasticsearch-analysis-openkoreantext',
+            'classname': 'org.elasticsearch.plugin.analysis.openkoreantext.AnalysisOpenKoreanTextPlugin',
+            'description': 'Korean analysis plugin integrates open-korean-text module into elasticsearch.',
+            'version': '1.0.0',
+            'javaVersion': sourceCompatibility,
+            'elasticsearchVersion' : elasticsearchVersion
+        ]
+    ])
+}
+
+task buildPluginZip(type: Zip, dependsOn: [':jar', ':makePluginDescriptor']) {
+    from configurations.distJars
+    from jar.archivePath
+    from 'build/tmp/plugin'
+    into '.'
+    classifier = 'plugin'
+}
+
+build.finalizedBy(buildPluginZip)
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives jar
+    archives javadocJar
+    archives sourcesJar
+}
+
+test {
+    jvmArgs '-Dtests.security.manager=false'
+}
+
+jacoco {
+    toolVersion = '0.7.1.201405082137'
+}
+
+jacocoTestReport {
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = false
+    }
+}
+
+task jacocoRootReport(type: org.gradle.testing.jacoco.tasks.JacocoReport) {
+    sourceDirectories = files(sourceSets.main.allSource.srcDirs)
+    classDirectories =  files(sourceSets.main.output)
+    executionData = files(jacocoTestReport.executionData)
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = false
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.4'
+}
+
+test.onlyIf { ! Boolean.getBoolean('skip.tests') }

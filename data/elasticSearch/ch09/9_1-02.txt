@@ -1,0 +1,68 @@
+
+POST /term-suggest-api/_search
+{
+ "suggest": {
+  "my-suggestion": {
+   "text": "샴성전자",
+   "term": {
+    "field": "suggest"
+   }
+  }
+ }
+}
+
+
+{
+  "took": 51,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 0,
+    "max_score": 0,
+    "hits": []
+  },
+  "suggest": {
+    "my-suggestion": [
+      {
+        "text": "ㅅㅑㅁㅅㅓㅇㅈㅓㄴㅈㅏ",
+        "offset": 0,
+        "length": 4,
+        "options": [
+          {
+            "text": "ㅅㅏㅁㅅㅓㅇㅈㅓㄴㅈㅏ",
+            "score": 0.9090909,
+            "freq": 1
+          }
+        ]
+      },
+      {
+        "text": "샴성전자",
+        "offset": 0,
+        "length": 4,
+        "options": []
+      }
+    ]
+  }
+}
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) throws HangulParserException {
+        List<String>  data = new ArrayList<>();
+
+        String hangul = "ㅅㅏㅁㅅㅓㅇㅈㅓㄴㅈㅏ";
+        char[] charHanguls = hangul.toCharArray();
+        for(char charHangul : charHanguls ){
+            data.add(String.valueOf(charHangul));
+        }
+        String completeHangul = HangulParser.assemble(data);
+        System.out.println(completeHangul);
+    }
+}

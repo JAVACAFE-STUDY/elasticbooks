@@ -1,0 +1,80 @@
+POST /nori_analyzer/_close
+
+PUT /nori_analyzer/_settings
+{
+      "index": {
+      "analysis": {
+        "analyzer": {
+          "nori_stoptags_analyzer": {
+            "tokenizer": "nori_tokenizer",
+            "filter": [
+              "nori_posfilter"
+            ]
+          }
+        },
+        "filter": {
+          "nori_posfilter": {
+            "type": "nori_part_of_speech",
+            "stoptags": [
+              "VV"
+            ]
+          }
+        }
+      }
+    }
+}
+
+POST /nori_analyzer/_open
+
+GET nori_analyzer/_analyze
+{
+  "analyzer": "nori_stoptags_analyzer",
+  "text": "아버지가 방에 들어가신다"
+}
+
+{
+  "tokens": [
+    {
+      "token": "아버지",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "word",
+      "position": 0
+    },
+    {
+      "token": "가",
+      "start_offset": 3,
+      "end_offset": 4,
+      "type": "word",
+      "position": 1
+    },
+    {
+      "token": "방",
+      "start_offset": 5,
+      "end_offset": 6,
+      "type": "word",
+      "position": 2
+    },
+    {
+      "token": "에",
+      "start_offset": 6,
+      "end_offset": 7,
+      "type": "word",
+      "position": 3
+    },
+    {
+      "token": "시",
+      "start_offset": 11,
+      "end_offset": 13,
+      "type": "word",
+      "position": 5
+    },
+    {
+      "token": "ㄴ다",
+      "start_offset": 11,
+      "end_offset": 13,
+      "type": "word",
+      "position": 6
+    }
+  ]
+}
