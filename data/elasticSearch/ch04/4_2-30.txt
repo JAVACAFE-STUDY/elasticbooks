@@ -1,0 +1,84 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "word_delimiter_filter_analyzer": {
+        "tokenizer": "keyword",
+        "filter": [
+          "word_delimiter_filter"
+        ]
+      }
+    },
+    "filter": {
+      "word_delimiter_filter": {
+        "type": "word_delimiter",
+        "generate_word_parts": true,
+        "catenate_numbers": true
+      }
+    }
+  }
+}
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "word_delimiter_filter_analyzer",
+  "text": "The ElasticSearch is 1&1"
+}
+
+{
+  "tokens": [
+    {
+      "token": "The",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "word",
+      "position": 0
+    },
+    {
+      "token": "Elastic",
+      "start_offset": 4,
+      "end_offset": 11,
+      "type": "word",
+      "position": 1
+    },
+    {
+      "token": "Search",
+      "start_offset": 11,
+      "end_offset": 17,
+      "type": "word",
+      "position": 2
+    },
+    {
+      "token": "is",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "word",
+      "position": 3
+    },
+    {
+      "token": "1",
+      "start_offset": 21,
+      "end_offset": 22,
+      "type": "word",
+      "position": 4
+    },
+    {
+      "token": "11",
+      "start_offset": 21,
+      "end_offset": 24,
+      "type": "word",
+      "position": 4
+    },
+    {
+      "token": "1",
+      "start_offset": 23,
+      "end_offset": 24,
+      "type": "word",
+      "position": 5
+    }
+  ]
+}

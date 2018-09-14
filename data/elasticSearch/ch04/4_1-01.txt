@@ -1,0 +1,97 @@
+PUT /wiki
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 3,
+      "number_of_replicas": 2,
+      "analysis": {
+        "analyzer": {
+          "korean": {
+            "type": "custom",
+            "tokenizer": "seunjeon_default_tokenizer"
+          }
+        },
+        "tokenizer": {
+          "seunjeon_default_tokenizer": {
+            "type": "seunjeon_tokenizer",
+            "index_eojeol": "false"
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "category": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "title": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "summary": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "rgstDttm": {
+          "type": "date"
+        },
+        "subTitle1": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "subTitle2": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "subTitle3": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "subTitle4": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "subTitle5": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "subContent1": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "subContent2": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "subContent3": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "subContent4": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        },
+        "subContent5": {
+          "type": "text",
+          "analyzer": "korean",
+          "search_analyzer": "korean"
+        }
+      }
+    }
+  }
+}

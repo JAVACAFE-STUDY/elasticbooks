@@ -1,0 +1,39 @@
+POST /_analyze
+{
+  "analyzer": "standard",
+  "text": "Elasticsearch is good-job"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "elasticsearch",
+      "start_offset": 0,
+      "end_offset": 13,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "is",
+      "start_offset": 14,
+      "end_offset": 16,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "good",
+      "start_offset": 17,
+      "end_offset": 21,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "job",
+      "start_offset": 22,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

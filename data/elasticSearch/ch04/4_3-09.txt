@@ -1,0 +1,4 @@
+DELETE /wiki_dynamic
+
+
+{"acknowledged":true}

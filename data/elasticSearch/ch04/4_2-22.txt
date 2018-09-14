@@ -1,0 +1,45 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "asciifolding_analyzer": {
+        "tokenizer": "standard",
+        "filter": [
+          "standard",
+          "asciifolding"
+        ]
+      }
+    }
+  }
+}
+
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "asciifolding_analyzer",
+  "text": "hello javacáfe"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "hello",
+      "start_offset": 0,
+      "end_offset": 5,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "javacafe",
+      "start_offset": 6,
+      "end_offset": 14,
+      "type": "<ALPHANUM>",
+      "position": 1
+    }
+  ]
+}

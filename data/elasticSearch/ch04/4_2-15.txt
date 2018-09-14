@@ -1,0 +1,39 @@
+POST /wiki_analyzer/_analyze
+{
+  "tokenizer": "whitespace",
+  "text": "The Elasticsearch is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "The",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "word",
+      "position": 0
+    },
+    {
+      "token": "Elasticsearch",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "word",
+      "position": 1
+    },
+    {
+      "token": "is",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "word",
+      "position": 2
+    },
+    {
+      "token": "good",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "word",
+      "position": 3
+    }
+  ]
+}

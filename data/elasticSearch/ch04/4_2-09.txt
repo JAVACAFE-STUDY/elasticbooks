@@ -1,0 +1,52 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "stop_analyzer": {
+        "type": "stop",
+        "stopwords": [
+          "the",
+          "over"
+        ]
+      }
+    }
+  }
+}
+
+
+POST /wiki_analyzer/_open
+
+
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "stop_analyzer",
+  "text": "The Elasticsearch is good"
+}
+
+{
+  "tokens": [
+    {
+      "token": "elasticsearch",
+      "start_offset": 4,
+      "end_offset": 17,
+      "type": "word",
+      "position": 1
+    },
+    {
+      "token": "is",
+      "start_offset": 18,
+      "end_offset": 20,
+      "type": "word",
+      "position": 2
+    },
+    {
+      "token": "good",
+      "start_offset": 21,
+      "end_offset": 25,
+      "type": "word",
+      "position": 3
+    }
+  ]
+}

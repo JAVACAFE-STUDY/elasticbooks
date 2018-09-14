@@ -1,0 +1,252 @@
+POST /_reindex
+{
+ "source": {
+   "index": "wiki_script"
+ },
+ "dest": {
+   "index": "wiki_script_new"
+ }
+}
+
+
+{
+  "took": 2333,
+  "timed_out": false,
+  "total": 2,
+  "updated": 0,
+  "created": 2,
+  "deleted": 0,
+  "batches": 1,
+  "version_conflicts": 0,
+  "noops": 0,
+  "retries": {
+    "bulk": 0,
+    "search": 0
+  },
+  "throttled_millis": 0,
+  "requests_per_second": -1,
+  "throttled_until_millis": 0,
+  "failures": []
+}
+
+
+POST /_reindex
+{
+  "source": {
+    "index": "wiki_script"
+  },
+  "dest": {
+    "index": "wiki_script_new",
+    "version_type": "internal"
+  }
+}
+
+
+{
+  "took": 151,
+  "timed_out": false,
+  "total": 2,
+  "updated": 2,
+  "created": 0,
+  "deleted": 0,
+  "batches": 1,
+  "version_conflicts": 0,
+  "noops": 0,
+  "retries": {
+    "bulk": 0,
+    "search": 0
+  },
+  "throttled_millis": 0,
+  "requests_per_second": -1,
+  "throttled_until_millis": 0,
+  "failures": []
+}
+
+POST /_reindex
+{
+ "source": {
+   "index": "wiki_script"
+ },
+ "dest": {
+   "index": "wiki_script_new",
+   "op_type": "create"
+ }
+}
+
+
+{
+  "took": 11,
+  "timed_out": false,
+  "total": 2,
+  "updated": 0,
+  "created": 0,
+  "deleted": 0,
+  "batches": 1,
+  "version_conflicts": 2,
+  "noops": 0,
+  "retries": {
+    "bulk": 0,
+    "search": 0
+  },
+  "throttled_millis": 0,
+  "requests_per_second": -1,
+  "throttled_until_millis": 0,
+  "failures": [
+    {
+      "index": "wiki_script_new",
+      "type": "_doc",
+      "id": "_update",
+      "cause": {
+        "type": "version_conflict_engine_exception",
+        "reason": "[_doc][_update]: version conflict, document already exists (current version [2])",
+        "index_uuid": "tTFuh7kGT1GfLQxWCqIfZQ",
+        "shard": "0",
+        "index": "wiki_script_new"
+      },
+      "status": 409
+    },
+    {
+      "index": "wiki_script_new",
+      "type": "_doc",
+      "id": "1",
+      "cause": {
+        "type": "version_conflict_engine_exception",
+        "reason": "[_doc][1]: version conflict, document already exists (current version [2])",
+        "index_uuid": "tTFuh7kGT1GfLQxWCqIfZQ",
+        "shard": "3",
+        "index": "wiki_script_new"
+      },
+      "status": 409
+    }
+  ]
+}
+
+POST /_reindex
+{
+  "source": {
+    "index": "wiki_script",
+    "type": "_doc",
+    "query": {
+      "term": {
+        "user": "kimchy"
+      }
+    }
+  },
+  "dest": {
+    "index": "wiki_script_kimchy"
+  }
+}
+
+
+{
+  "took": 1671,
+  "timed_out": false,
+  "total": 1,
+  "updated": 0,
+  "created": 1,
+  "deleted": 0,
+  "batches": 1,
+  "version_conflicts": 0,
+  "noops": 0,
+  "retries": {
+    "bulk": 0,
+    "search": 0
+  },
+  "throttled_millis": 0,
+  "requests_per_second": -1,
+  "throttled_until_millis": 0,
+  "failures": []
+}
+
+POST /_reindex
+{
+  "size": 10000,
+  "source": {
+    "index": "wiki_script",
+    "sort": {
+      "counter": "desc"
+    }
+  },
+  "dest": {
+    "index": "wiki_script_ordered"
+  }
+}
+
+{
+  "took": 2067,
+  "timed_out": false,
+  "total": 2,
+  "updated": 0,
+  "created": 2,
+  "deleted": 0,
+  "batches": 1,
+  "version_conflicts": 0,
+  "noops": 0,
+  "retries": {
+    "bulk": 0,
+    "search": 0
+  },
+  "throttled_millis": 0,
+  "requests_per_second": -1,
+  "throttled_until_millis": 0,
+  "failures": []
+}
+
+POST /_reindex
+{
+  "source": {
+    "index": "wiki_script",
+    "size": 10
+  },
+  "dest": {
+    "index": "wiki_script_remove_counter"
+  },
+  "script": {
+    "source": "ctx._source.remove('counter')",
+    "lang": "painless"
+  }
+}
+
+
+{
+  "took": 2171,
+  "timed_out": false,
+  "total": 2,
+  "updated": 0,
+  "created": 2,
+  "deleted": 0,
+  "batches": 1,
+  "version_conflicts": 0,
+  "noops": 0,
+  "retries": {
+    "bulk": 0,
+    "search": 0
+  },
+  "throttled_millis": 0,
+  "requests_per_second": -1,
+  "throttled_until_millis": 0,
+  "failures": []
+}
+
+
+POST /_reindex
+{
+ "source": {
+   "remote": {
+     "host": "http://otherhost:9200",
+     "username": "user",
+     "password": "pass",
+      "socket_timeout": "1m",
+      "connect_timeout": "10s"
+   },
+   "index": "source",
+   "query": {
+     "match": {
+       "test": "data"
+     }
+   }
+ },
+ "dest": {
+   "index": "dest"
+ }
+}

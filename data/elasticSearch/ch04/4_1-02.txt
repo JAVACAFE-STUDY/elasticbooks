@@ -1,0 +1,11 @@
+POST /_aliases
+{
+  "actions": [
+    {
+      "add": {
+        "index": "wiki",
+        "alias": "wiki_agriculture"
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+POST /wiki_analyzer/_close
+
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "stemmed_and_unstemmed_analyzer": {
+        "type": "custom",
+        "tokenizer": "standard",
+        "filter": [
+          "lowercase",
+          "keyword_repeat",
+          "porter_stem",
+          "stemmed_and_unstemmed_filter"
+        ]
+      }
+    },
+    "filter": {
+      "stemmed_and_unstemmed_filter": {
+        "type": "unique",
+        "only_on_same_position": true
+      }
+    }
+  }
+}
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "keyword_maker_protect_analyzer",
+  "text": "The Elasticsearches is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "the",
+      "start_offset": 0,
+      "end_offset": 3,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "elasticsearches",
+      "start_offset": 4,
+      "end_offset": 19,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "is",
+      "start_offset": 20,
+      "end_offset": 22,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "good",
+      "start_offset": 23,
+      "end_offset": 27,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+PUT wiki_dynamic/_doc/1?version=2
+{
+  "message": "elasticsearch now has versioning support, double cool!"
+}
+
+
+{
+  "error": {
+    "root_cause": [
+      {
+        "type": "version_conflict_engine_exception",
+        "reason": "[_doc][1]: version conflict, current version [1] is different than the one provided [2]",
+        "index_uuid": "J94eLiPOTb6qUI9fftvHfw",
+        "shard": "3",
+        "index": "wiki_dynamic"
+      }
+    ],
+    "type": "version_conflict_engine_exception",
+    "reason": "[_doc][1]: version conflict, current version [1] is different than the one provided [2]",
+    "index_uuid": "J94eLiPOTb6qUI9fftvHfw",
+    "shard": "3",
+    "index": "wiki_dynamic"
+  },
+  "status": 409
+}

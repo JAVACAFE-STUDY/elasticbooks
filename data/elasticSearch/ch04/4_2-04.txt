@@ -1,0 +1,62 @@
+POST /wiki_analyzer/_open
+
+PUT /wiki_analyzer/_doc/1
+{
+  "text": "Elasticsearch is good-job"
+}
+
+
+{
+  "_index": "wiki_analyzer",
+  "_type": "_doc",
+  "_id": "1",
+  "_version": 1,
+  "result": "created",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 0,
+  "_primary_term": 2
+}
+
+POST /wiki_analyzer/_analyze
+{
+  "field": "text",
+  "text": "Elasticsearch is good-job"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "elasticsearch",
+      "start_offset": 0,
+      "end_offset": 13,
+      "type": "<ALPHANUM>",
+      "position": 0
+    },
+    {
+      "token": "is",
+      "start_offset": 14,
+      "end_offset": 16,
+      "type": "<ALPHANUM>",
+      "position": 1
+    },
+    {
+      "token": "good",
+      "start_offset": 17,
+      "end_offset": 21,
+      "type": "<ALPHANUM>",
+      "position": 2
+    },
+    {
+      "token": "job",
+      "start_offset": 22,
+      "end_offset": 25,
+      "type": "<ALPHANUM>",
+      "position": 3
+    }
+  ]
+}

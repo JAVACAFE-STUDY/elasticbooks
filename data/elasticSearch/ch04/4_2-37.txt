@@ -1,0 +1,34 @@
+POST /wiki_analyzer/_close
+PUT /wiki_analyzer/_settings
+{
+  "analysis": {
+    "analyzer": {
+      "trim_analyzer": {
+        "tokenizer": "keyword",
+        "filter": [
+          "lowercase",
+          "trim"
+        ]
+      }
+    }
+  }
+}
+POST /wiki_analyzer/_open
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "trim_analyzer",
+  "text": " The Elasticcsearch is good "
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "the elasticcsearch is good",
+      "start_offset": 0,
+      "end_offset": 28,
+      "type": "word",
+      "position": 0
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+POST /wiki_analyzer/_close
+PUT /wiki_analyzer/_settings
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "html_strip_analyzer": {
+          "tokenizer": "keyword",
+          "char_filter": [
+            "html_strip_char_filter"
+          ]
+        }
+      },
+      "char_filter": {
+        "html_strip_char_filter": {
+          "type": "html_strip",
+          "escaped_tags": [
+            "b"
+          ]
+        }
+      }
+    }
+  }
+}
+POST /wiki_analyzer/_open
+
+#분석기 테스트
+POST /wiki_analyzer/_analyze
+{
+  "analyzer": "html_strip_analyzer",
+  "text": "The <span>elasticsearch</span> is good"
+}
+
+
+{
+  "tokens": [
+    {
+      "token": "The elasticsearch is good",
+      "start_offset": 0,
+      "end_offset": 38,
+      "type": "word",
+      "position": 0
+    }
+  ]
+}
