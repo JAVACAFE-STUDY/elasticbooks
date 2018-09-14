@@ -1,0 +1,54 @@
+POST /script_test/_doc/1/_update
+{
+ "script": "ctx._source.movie.remove(\"Suits\")"
+}
+
+{
+  "_index": "script_test",
+  "_type": "_doc",
+  "_id": "1",
+  "_version": 3,
+  "result": "updated",
+  "_shards": {
+    "total": 2,
+    "successful": 2,
+    "failed": 0
+  },
+  "_seq_no": 2,
+  "_primary_term": 1
+}
+
+POST /script_test/_doc/_search
+{
+}
+
+
+{
+  "took": 6,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "script_test",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 1,
+        "_source": {
+          "movie": {
+            "Death Wish": 5.5,
+            "About Time": 7,
+            "black_panther": 3.7
+          }
+        }
+      }
+    ]
+  }
+}

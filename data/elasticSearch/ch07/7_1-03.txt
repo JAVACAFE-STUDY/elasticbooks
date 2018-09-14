@@ -1,0 +1,108 @@
+PUT term-suggest-api
+ {
+     "mappings": {
+     "_doc": {
+       "properties": {
+         "name": {
+           "type": "completion"
+         }
+       }
+     }
+   }
+ }
+
+
+PUT /term-suggest-api/_doc/1 -d  {"name": "bald"}
+PUT /term-suggest-api/_doc/2 -d  {"name": "bold"}
+PUT /term-suggest-api/_doc/3 -d  {"name": "blend"}
+PUT /term-suggest-api/_doc/4 -d  {"name": "bend"}
+PUT /term-suggest-api/_doc/5 -d  {"name": "blood"}
+
+
+{
+  "suggest": {
+    "my_suggestion": {
+      "prefix": "b",
+      "completion": {
+        "field": "name"
+      }
+    }
+  }
+}
+
+{
+  "took": 82,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 0,
+    "max_score": 0,
+    "hits": []
+  },
+  "suggest": {
+    "my_suggestion": [
+      {
+        "text": "b",
+        "offset": 0,
+        "length": 1,
+        "options": [
+          {
+            "text": "bald",
+            "_index": "term-suggest-api",
+            "_type": "_doc",
+            "_id": "1",
+            "_score": 1,
+            "_source": {
+              "name": "bald"
+            }
+          },
+          {
+            "text": "bend",
+            "_index": "term-suggest-api",
+            "_type": "_doc",
+            "_id": "4",
+            "_score": 1,
+            "_source": {
+              "name": "bend"
+            }
+          },
+          {
+            "text": "blend",
+            "_index": "term-suggest-api",
+            "_type": "_doc",
+            "_id": "3",
+            "_score": 1,
+            "_source": {
+              "name": "blend"
+            }
+          },
+          {
+            "text": "blood",
+            "_index": "term-suggest-api",
+            "_type": "_doc",
+            "_id": "5",
+            "_score": 1,
+            "_source": {
+              "name": "blood"
+            }
+          },
+          {
+            "text": "bold",
+            "_index": "term-suggest-api",
+            "_type": "_doc",
+            "_id": "2",
+            "_score": 1,
+            "_source": {
+              "name": "bold"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

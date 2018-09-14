@@ -1,0 +1,43 @@
+PUT /term-suggest-api/_doc/6 {"name": "ㅅ ㅏㅁㅅㅓㅇ"}
+PUT /term-suggest-api/_doc/7 {"name": "ㅅㅏㅁㅈㅏㅇ"}
+PUT /term-suggest-api/_doc/8 {"name": "ㅅㅏㅈㅏㅇ"}
+PUT /term-suggest-api/_doc/9 {"name": "ㅅㅏㅅㅓㅇ"}
+
+POST /term-suggest-api/_search
+{
+ "suggest": {
+  "my-suggestion": {
+   "text": "ㅅㅣㅁㅅㅓㅇ",
+   "term": {
+    "field": "name"
+   }
+  }
+ }
+}
+
+
+{
+  "took": 75,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 0,
+    "max_score": 0,
+    "hits": []
+  },
+  "suggest": {
+    "my-suggestion": [
+      {
+        "text": "ㅅㅣㅁㅅㅓㅇ",
+        "offset": 0,
+        "length": 6,
+        "options": []
+      }
+    ]
+  }
+}

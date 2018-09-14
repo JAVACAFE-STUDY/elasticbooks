@@ -1,0 +1,36 @@
+PUT highlighting_test/_doc/1
+{
+  "name": "iphone plus"
+}
+
+
+{
+  "took": 195,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 1,
+    "max_score": 0.2876821,
+    "hits": [
+      {
+        "_index": "highlighting_test",
+        "_type": "_doc",
+        "_id": "1",
+        "_score": 0.2876821,
+        "_source": {
+          "name": "iphone plus"
+        },
+        "highlight": {
+          "name": [
+            "<em>iphone</em> plus"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+PUT /term-suggest-api/_doc/1 {"name": "bald"}
+PUT /term-suggest-api/_doc/2 {"name": "bold"}
+PUT /term-suggest-api/_doc/3 {"name": "blend"}
+PUT /term-suggest-api/_doc/4 {"name": "bend"}
+PUT /term-suggest-api/_doc/5 {"name": "blood"}
+
+POST /term-suggest-api/_search
+{
+ "suggest": {
+  "my-suggestion": {
+   "text": "blod",
+   "term": {
+    "field": "name"
+   }
+  }
+ }
+}
+
+
+{
+  "took": 26,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 0,
+    "max_score": 0,
+    "hits": []
+  },
+  "suggest": {
+    "my-suggestion": [
+      {
+        "text": "blod",
+        "offset": 0,
+        "length": 4,
+        "options": [
+          {
+            "text": "blood",
+            "score": 0.75,
+            "freq": 1
+          },
+          {
+            "text": "bold",
+            "score": 0.75,
+            "freq": 1
+          },
+          {
+            "text": "bald",
+            "score": 0.5,
+            "freq": 1
+          },
+          {
+            "text": "bend",
+            "score": 0.5,
+            "freq": 1
+          },
+          {
+            "text": "blend",
+            "score": 0.5,
+            "freq": 1
+          }
+        ]
+      }
+    ]
+  }
+}
