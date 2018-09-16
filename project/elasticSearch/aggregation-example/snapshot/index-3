@@ -1,0 +1,1 @@
+{"snapshots":[{"name":"applied-mapping","uuid":"VnTciyUlTg65FKJtS8EEaQ","state":1},{"name":"default","uuid":"X2P_kxgtSlm1ns1i1lUxIA","state":1}],"indices":{"apache-web-log-applied-mapping":{"id":"onLs-a3rSC-T5PcW_5k7bg","snapshots":["VnTciyUlTg65FKJtS8EEaQ"]},"apache-web-log":{"id":"EFAGo_FlQ_6uQstWBkEjyQ","snapshots":["X2P_kxgtSlm1ns1i1lUxIA"]}}}
