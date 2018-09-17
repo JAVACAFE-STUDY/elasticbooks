@@ -1,1 +1,77 @@
-to do
+PUT blogs
+{
+  "settings": {
+    "number_of_replicas": 1,
+    "number_of_shards": 5
+  }, 
+  "mappings": {
+    "series": {
+      "properties": {
+        "comments": {
+          "type": "nested",
+          "properties": {
+            "name":    { "type": "text"  },
+            "comment": { "type": "text"  },
+            "age":     { "type": "short"   },
+            "rating":   { "type": "short"  },
+            "date":    { "type": "date"    }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+GET blogs/series/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "title": "supergiant"
+          }
+        },
+        {
+          "nested": {
+            "path": "comments",
+            "query": {
+              "bool": {
+                "must": [
+                  {
+                    "match": {
+                      "comments.name": "adam"
+                    }
+                  },
+                  {
+                    "match": {
+                      "comments.age": 32
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+{
+  "took": 27,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 0,
+    "max_score": null,
+    "hits": []
+  }
+}

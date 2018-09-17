@@ -1,2 +1,7 @@
-to do
-
+POST /news/_doc?refresh
+{
+    "location": {
+        "type": "geo_point",
+        "location": [13.400544, 52.530286]
+    }
+}
