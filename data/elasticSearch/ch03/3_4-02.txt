@@ -5,7 +5,7 @@ PUT idx_normalizer
     "number_of_replicas": 1,
     "analysis": {
       "normalizer": {
-        "my_normalizer": {
+        "alphabet_normalizer": {
           "type": "custom",
           "char_filter": [],
           "filter": ["lowercase", "asciifolding"]
@@ -16,9 +16,9 @@ PUT idx_normalizer
   "mappings": {
     "_doc": {
       "properties": {
-        "foo": {
+        "userName": {
           "type": "keyword",
-          "normalizer": "my_normalizer"
+          "normalizer": "alphabet_normalizer"
         }
       }
     }
@@ -27,33 +27,30 @@ PUT idx_normalizer
 
 PUT idx_normalizer/_doc/1
 {
-  "foo": "BÀR"
+  "userName": "javacafe"
 }
 
 PUT idx_normalizer/_doc/2
 {
-  "foo": "bar"
+  "userName": "javaCafe"
 }
 
 PUT idx_normalizer/_doc/3
 {
-  "foo": "baz"
+  "userName": "javaCafé"
 }
 
-POST idx_normalizer/_refresh
-
-GET idx_normalizer/_search
+POST idx_normalizer/_search
 {
   "query": {
-    "match": {
-      "foo": "BAR"
+    "term": {
+      "userName": "JAVACAFE"
     }
   }
 }
 
-
 {
-  "took": 9,
+  "took": 12,
   "timed_out": false,
   "_shards": {
     "total": 5,
@@ -62,7 +59,7 @@ GET idx_normalizer/_search
     "failed": 0
   },
   "hits": {
-    "total": 2,
+    "total": 3,
     "max_score": 0.2876821,
     "hits": [
       {
@@ -71,7 +68,7 @@ GET idx_normalizer/_search
         "_id": "2",
         "_score": 0.2876821,
         "_source": {
-          "foo": "bar"
+          "userName": "javaCafe"
         }
       },
       {
@@ -80,7 +77,16 @@ GET idx_normalizer/_search
         "_id": "1",
         "_score": 0.2876821,
         "_source": {
-          "foo": "BÀR"
+          "userName": "javacafe"
+        }
+      },
+      {
+        "_index": "idx_normalizer",
+        "_type": "_doc",
+        "_id": "3",
+        "_score": 0.2876821,
+        "_source": {
+          "userName": "javaCafé"
         }
       }
     ]

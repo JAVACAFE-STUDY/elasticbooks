@@ -1,41 +1,58 @@
 PUT idx_copyto
 {
   "settings": {
-    "number_of_shards": 5,
-    "number_of_replicas": 1
-  }, 
+    "index": {
+      "number_of_shards": 5,
+      "number_of_replicas": 1
+    }
+  },
   "mappings": {
     "_doc": {
       "properties": {
-        "first_name": {
-          "type": "text",
-          "copy_to": "full_name" 
-        },
-        "last_name": {
-          "type": "text",
-          "copy_to": "full_name" 
-        },
-        "full_name": {
+        "text": {
           "type": "text"
+        },
+        "tweetLang": {
+          "type": "keyword"
+        },
+        "userInfo": {
+          "type": "text"
+        },
+        "userName": {
+          "type": "keyword",
+          "copy_to": [
+            "userInfo"
+          ]
+        },
+        "userScreenName": {
+          "type": "keyword",
+          "copy_to": [
+            "userInfo"
+          ]
         }
       }
     }
   }
 }
 
+
+
 PUT idx_copyto/_doc/1
 {
-  "first_name": "John",
-  "last_name": "Smith"
+  "tweetLang": "ko",
+  "text": "고운 사랑 모아 우리 함께 만들어봐요 아름다운 세상",
+  "userName": "javacafe",
+  "userScreenName": "자바카페"
 }
 
-GET idx_copyto/_search
-{
+
+POST idx_copyto/_search
+ {
   "query": {
     "match": {
-      "full_name": { 
-        "query": "John Smith",
-        "operator": "and"
+      "userInfo": {
+        "query": "자바카페 javacafe",
+        "operator": "AND"
       }
     }
   }
@@ -43,7 +60,7 @@ GET idx_copyto/_search
 
 
 {
-  "took": 9,
+  "took": 10,
   "timed_out": false,
   "_shards": {
     "total": 5,
@@ -61,8 +78,10 @@ GET idx_copyto/_search
         "_id": "1",
         "_score": 0.5753642,
         "_source": {
-          "first_name": "John",
-          "last_name": "Smith"
+          "tweetLang": "ko",
+          "text": "고운 사랑 모아 우리 함께 만들어봐요 아름다운 세상",
+          "userName": "javacafe",
+          "userScreenName": "자바카페"
         }
       }
     ]
