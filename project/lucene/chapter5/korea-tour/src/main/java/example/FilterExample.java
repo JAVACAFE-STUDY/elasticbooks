@@ -38,7 +38,7 @@ public class FilterExample {
         int maxHitCount = 10;
 
         System.out.println("\n==========QUERY");
-        getTermQuery(index, maxHitCount);
+        getSingleQuery(index, maxHitCount);
         System.out.println("\n==========MUST QUERY");
         getMustQuery(index, maxHitCount);
         System.out.println("\n==========FILTER QUERY");
@@ -46,9 +46,9 @@ public class FilterExample {
     }
 
 
-    public static void getTermQuery(Directory index, int maxHitCount) throws Exception{
-        TermQuery termQuery = new TermQuery(new Term("description","바다"));
-        printResult(index, maxHitCount, termQuery);
+    public static void getSingleQuery(Directory index, int maxHitCount) throws Exception{
+        Query baseQuery = new QueryParser("description", new KoreanAnalyzer()).parse("바다");
+        printResult(index, maxHitCount, baseQuery);
     }
 
     public static void getMustQuery(Directory index, int maxHitCount) throws Exception{
