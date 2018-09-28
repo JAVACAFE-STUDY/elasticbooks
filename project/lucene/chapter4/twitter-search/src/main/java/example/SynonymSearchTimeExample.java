@@ -8,6 +8,8 @@ import org.apache.lucene.search.Query;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.CharsRef;
+
+import analyzer.SynonymAnalyzer;
 import service.IndexService;
 import service.SearchService;
 import util.CsvLoader;
@@ -37,7 +39,7 @@ public class SynonymSearchTimeExample {
         builder.add(new CharsRef("nice"), new CharsRef("good"), true);
 
         // 쿼리를 생성할 때 SynonymAnalyzer를 사용한다.
-        Query q = new QueryParser("text", new StandardAnalyzer()).parse("nice");
+        Query q = new QueryParser("text", new SynonymAnalyzer(builder.build())).parse("nice");
 
         // 쿼리로 검색하여 결과를 확인한다.
         SearchService.searchTweetData(index, q);
