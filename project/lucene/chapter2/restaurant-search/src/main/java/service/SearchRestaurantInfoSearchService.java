@@ -1,4 +1,4 @@
-package search;
+package service;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -17,12 +17,12 @@ import org.apache.lucene.store.FSDirectory;
 
 import util.PropertyLoader;
 
-public class SearchRestaurantInfo {
+public class SearchRestaurantInfoSearchService {
     // 검색한 인덱스 경로
     private String indexPath;
 
     // 클래스 생성 시 인덱스 존재하는 경로를 설정한다.
-    public SearchRestaurantInfo() {
+    public SearchRestaurantInfoSearchService() {
         indexPath = PropertyLoader.getInstance().getPropertyValue("INDEX_DIR_PATH");
 
     }
