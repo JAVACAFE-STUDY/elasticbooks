@@ -17,12 +17,12 @@ import org.apache.lucene.store.FSDirectory;
 import util.PropertyLoader;
 import vo.RestaurantInfoVo;
 
-public class IndexRestaurantInfoIndexService {
+public class RestaurantInfoIndexService {
     // 색인할 경로
     private String indexPath;
 
     // 클래스 생성 시 인덱스 경로를 설정한다.
-    public IndexRestaurantInfoIndexService() {
+    public RestaurantInfoIndexService() {
         indexPath = PropertyLoader.getInstance().getPropertyValue("INDEX_DIR_PATH");
     }
 

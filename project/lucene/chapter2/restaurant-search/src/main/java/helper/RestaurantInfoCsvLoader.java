@@ -10,10 +10,10 @@ import com.opencsv.bean.CsvToBeanBuilder;
 import util.PropertyLoader;
 import vo.RestaurantInfoVo;
 
-public class LoadRestaurantInfoCsvLoader {
+public class RestaurantInfoCsvLoader {
     private String restaurantInfoCsvFilePath;
 
-    public LoadRestaurantInfoCsvLoader() {
+    public RestaurantInfoCsvLoader() {
         restaurantInfoCsvFilePath = PropertyLoader.getInstance().getPropertyValue("RESTAURANT_INFO_CSV_FILE_PATH");
     }
 
