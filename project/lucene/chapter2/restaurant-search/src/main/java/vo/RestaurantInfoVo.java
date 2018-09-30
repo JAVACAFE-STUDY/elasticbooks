@@ -36,49 +36,6 @@ public class RestaurantInfoVo {
         this.description = description;
     }
 
-    public RestaurantInfoVo restaurantName(String restaurantName) {
-        this.restaurantName = restaurantName;
-        return this;
-    }
-
-    public RestaurantInfoVo category1(String category1) {
-        this.category1 = category1;
-        return this;
-    }
-
-    public RestaurantInfoVo category2(String category2) {
-        this.category2 = category2;
-        return this;
-    }
-
-    public RestaurantInfoVo category3(String category3) {
-        this.category3 = category3;
-        return this;
-    }
-
-    public RestaurantInfoVo region(String region) {
-        this.region = region;
-        return this;
-    }
-
-    public RestaurantInfoVo city(String city) {
-        this.city = city;
-        return this;
-    }
-
-    public RestaurantInfoVo description(String description) {
-        this.description = description;
-        return this;
-    }
-
-    public RestaurantInfoVo build() {
-        return new RestaurantInfoVo(restaurantName, category1, category2, category3, region, city, description);
-    }
-
-    public static RestaurantInfoVo builder() {
-        return new RestaurantInfoVo();
-    }
-
     public String getRestaurantName() {
         return restaurantName;
     }
