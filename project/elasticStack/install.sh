@@ -9,7 +9,7 @@ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-$1.tar.g
 wget https://artifacts.elastic.co/downloads/logstash/logstash-$1.tar.gz
 wget https://artifacts.elastic.co/downloads/kibana/kibana-$1-linux-x86_64.tar.gz
 wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-$1-linux-x86_64.tar.gz
-wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-$1-linux-x86.tar.gz
+wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-$1-linux-x86_64.tar.gz
 wget https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-$1-linux-x86_64.tar.gz
 wget https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-$1-linux-x86_64.tar.gz 
 wget https://artifacts.elastic.co/downloads/beats/auditbeat/auditbeat-$1-linux-x86_64.tar.gz
