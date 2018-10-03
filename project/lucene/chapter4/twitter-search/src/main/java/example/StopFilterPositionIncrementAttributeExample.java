@@ -15,7 +15,7 @@ public class StopFilterPositionIncrementAttributeExample {
         // TokenStream 생성
         TokenStream tokenStream = analyzer.tokenStream("string", s);
 
-        // 토큰 값을 확인하기 위한 CharTermAttribute 설정
+        // 토큰의 값을 확인하기 위한 CharTermAttribute 설정
         CharTermAttribute cta = tokenStream.addAttribute(CharTermAttribute.class);
 
         // PositionIncrement를 확인하기 위한 PositionIncrementAttribute 설정

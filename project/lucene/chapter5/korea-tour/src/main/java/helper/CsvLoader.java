@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class CsvLoader {
     public List<TourInfo>  readTourInfo(){
-        //CSV 파일 Path 를 설정한다.
+        // CSV 파일 경로를 설정한다.
         String fileName = "src/main/resources/한국관광공사_걷는길_인코딩_정제본.csv";
         List<TourInfo> tourList = null;
 

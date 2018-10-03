@@ -6,33 +6,33 @@ import com.opencsv.bean.CsvBindByPosition;
  * Created by hwang on 2018. 4. 8..
  */
 
-//걷는길 명칭,코스명,지역1,난이도,상세거리(km),소요시간(시),소개
+// 걷는길 명칭,코스명,지역1,난이도,상세거리(km),소요시간(시),소개
 public class TourInfo {
-    //걷는길 명칭
+    // 걷는길 명칭
     @CsvBindByPosition(position = 0)
     private String pathName;
 
-    //코스명
+    // 코스명
     @CsvBindByPosition(position = 1)
     private String courseName;
 
-    //지역
+    // 지역
     @CsvBindByPosition(position = 2)
     private String area;
 
-    //난이도
+    // 난이도
     @CsvBindByPosition(position = 3)
     private String level;
 
-    //상세거리
+    // 상세거리
     @CsvBindByPosition(position = 4)
     private String distance;
 
-    //소요시간
+    // 소요시간
     @CsvBindByPosition(position = 5)
     private String hour;
 
-    //소개
+    // 소개
     @CsvBindByPosition(position = 6)
     private String description;
 

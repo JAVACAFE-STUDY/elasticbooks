@@ -19,15 +19,15 @@ import java.util.List;
 
 public class SynonymIndexTimeExample {
     public static void main(String args[]) throws Exception{
-        //CSV 파일로 부터 데이터를 읽어온다.
+        //CSV 파일에서 데이터를 읽는다.
         CsvLoader csvUtil = new CsvLoader();
         List<TweetPost> reviewList = csvUtil.readEnglishReview();
         reviewList.forEach(System.out::println);
 
-        //색인을 한다.
+        //색인한다.
         Directory index = new RAMDirectory();
 
-        // 동의어를 처리하기 위해 SynonymMap 설정한다.
+        // 동의어를 처리하기 위해 SynonymMap을 설정한다.
         SynonymMap.Builder builder = new SynonymMap.Builder(true);
         builder.add(new CharsRef("good"), new CharsRef("nice"), true);
         builder.add(new CharsRef("great"), new CharsRef("nice"), true);

@@ -33,7 +33,7 @@ public class IndexService {
                 doc.add(new StringField("age", review.getAge(), Field.Store.YES));
 
                 try{
-					// 인덱스에 Document 추가
+					// 색인에 Document 추가
                     w.addDocument(doc);
                 }catch (Exception e){
                     e.printStackTrace();
@@ -64,10 +64,10 @@ public class IndexService {
 			// 삭제 후 도큐먼트 수를 확인한다.
     		System.out.println("after delete. numDocs="+ w.numDocs());
 
-			// 삭제 처리에 대한 flush를 수행한다.
+			// 삭제 처리에 대한 플러시(flush)를 수행한다.
     		w.flush();
 
-			// flush를 실행한 후 도큐먼트 수를 확인한다.
+			// 플러시를 실행한 후 도큐먼트 수를 확인한다.
     		System.out.println("after delete and flush. numDocs="+ w.numDocs());
     		w.close();
     	} catch (Exception e) {
@@ -92,10 +92,10 @@ public class IndexService {
 			// 수정 후 도큐먼트 수를 확인한다.
     		System.out.println("after update. numDocs="+ w.numDocs());
 
-			// 수정 작업에 대한 flush를 수행한다.
+			// 수정 작업에 대한 플러시를 수행한다.
     		w.flush();
 
-			// flush 후 도큐먼트 수를 확인한다.
+			// 플러시 후 도큐먼트 수를 확인한다.
     		System.out.println("after update and flush. numDocs="+ w.numDocs());
     		w.close();
     	} catch (Exception e) {

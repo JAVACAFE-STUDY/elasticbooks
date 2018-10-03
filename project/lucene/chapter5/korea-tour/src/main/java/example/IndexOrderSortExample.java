@@ -18,30 +18,30 @@ import java.util.List;
 public class IndexOrderSortExample {
 
     public static void main(String args[]) throws Exception{
-        //CSV 파일로 부터 데이터를 읽어온다.
+        // CSV 파일로 부터 데이터를 읽어온다.
         CsvLoader csvHelper = new CsvLoader();
         List<TourInfo> tourInfoList = csvHelper.readTourInfo();
 
-        //Directory를 사용한다.
+        // Directory를 사용한다.
         Directory index = new RAMDirectory();
 
-        //색인을 하고 색인 시간을 기록한다
+        // 색인을 하고 색인 시간을 기록한다
         IndexService indexService = new IndexService();
 
         IndexOrderSortExample indexOrderSortExample = new IndexOrderSortExample();
         indexOrderSortExample.indexTourInfoWithTime(index, tourInfoList);
 
-        //검색을 한다
+        // 검색을 한다
         int maxHitCount = 10;
         TermQuery termQuery = new TermQuery(new Term("description","섬진강"));
 
-        //Sort 순으로 정렬한다
+        // Sort 순으로 정렬한다
         indexOrderSortExample.getQueryResult(index, maxHitCount, termQuery);
     }
 
-    //색인을 하고 색인 시간을 기록한다
+    // 색인을 하고 색인 시간을 기록한다
     private void indexTourInfoWithTime(Directory index, List<TourInfo> tourInfoList) throws Exception {
-        //분석기를 설정을 한다.
+        // 분석기를 설정을 한다.
         KoreanAnalyzer analyzer = new KoreanAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
 
@@ -74,7 +74,7 @@ public class IndexOrderSortExample {
         doc.add(new StoredField("hour", hour));
         doc.add(new TextField("description", tourInfo.getDescription(), Field.Store.YES));
 
-        //현재시간을 색인한다
+        // 현재시간을 색인한다
         doc.add(new StoredField("date", System.currentTimeMillis()));
 
         try{
@@ -96,7 +96,7 @@ public class IndexOrderSortExample {
 
         try(IndexReader reader = DirectoryReader.open(index)){
             IndexSearcher searcher = new IndexSearcher(reader);
-            //관련도 기준으로 정렬한다
+            // 유사도 기준으로 정렬한다
             TopDocs docs = searcher.search(query, hitsPerPage, Sort.INDEXORDER, true, false);
             ScoreDoc[] hits = docs.scoreDocs;
             System.out.println(hits.length + " 개의 결과를 찾았습니다.");
@@ -115,7 +115,4 @@ public class IndexOrderSortExample {
             e.printStackTrace();
         }
     }
-
-
-
 }

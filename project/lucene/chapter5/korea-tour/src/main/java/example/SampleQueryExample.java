@@ -19,23 +19,23 @@ import java.util.List;
  */
 public class SampleQueryExample {
     public static void main(String args[]) throws Exception{
-        //CSV 파일로 부터 데이터를 읽어온다.
+        // CSV 파일로 부터 데이터를 읽어온다.
         CsvLoader csvHelper = new CsvLoader();
         List<TourInfo> tourInfoList = csvHelper.readTourInfo();
 
-        //Directory를 사용한다.
+        // Directory를 사용한다.
         Directory index = new RAMDirectory();
 
-        //색인을 한다.
+        // 색인을 한다.
         IndexService indexService = new IndexService();
         indexService.indexTourInfo(index, tourInfoList);
 
         int maxHitCount = 10;
 
-        System.out.println("====================================>> 1. 여행코스 설명에서 '해변'이라는 용어가 있는 문서를 QueryParser 객체를 사용해 검색한다.");
+        System.out.println("====================================>> 1. 여행코스 설명에서 '해변'이라는 텀이 있는 문서를 QueryParser 객체를 사용해 검색한다.");
         getQueryParser(index, maxHitCount);
 
-        System.out.println("====================================>> 2. 여행코스 설명에서 '벚꽃'이라는 용어가 있는 문서를 TermQuery 객체를 사용해 검색한다.");
+        System.out.println("====================================>> 2. 여행코스 설명에서 '벚꽃'이라는 텀이 있는 문서를 TermQuery 객체를 사용해 검색한다.");
         getTermQuery(index, maxHitCount);
 
         System.out.println("====================================>> 3. 여행코스의 소요시간 1~3시간인 여행정보를 PointRangeQuery 객체를 사용해 검색한다.");

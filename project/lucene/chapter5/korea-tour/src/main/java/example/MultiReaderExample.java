@@ -55,14 +55,14 @@ public class MultiReaderExample {
         index1 = new RAMDirectory();
         index2 = new RAMDirectory();
 
-        // 인덱스 생성을 위한 Writer를 구성한다
+        // 색인 생성을 위한 Writer를 구성한다
         IndexWriterConfig config1 = new IndexWriterConfig(new KoreanAnalyzer());
         IndexWriterConfig config2 = new IndexWriterConfig(new KoreanAnalyzer());
         IndexWriter w1 = new IndexWriter(index1, config1);
         IndexWriter w2 = new IndexWriter(index2, config2);
 
         IndexService indexService = new IndexService();
-        // document 추가한다.
+        // 도큐먼트를 추가한다.
         tour1.stream().forEach(tour->{
             indexService.addDocument(tour, w1);
         });

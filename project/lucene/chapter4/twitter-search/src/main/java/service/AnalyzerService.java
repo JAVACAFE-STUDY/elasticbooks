@@ -21,9 +21,9 @@ public class AnalyzerService {
                     // 스트림의 시작을 리셋한다.(필수)
                     tokenStream.reset();
                     System.out.println();
-                    // Token을 순차적으로 읽는다
+                    // 토큰을 순차적으로 읽는다
                     while (tokenStream.incrementToken()) {
-                        // Token들을 String Value를 표시한다.
+                        // 토큰을 String Value로 표시한다.
                         System.out.print(cta);
                         System.out.print(" | ");
                     }

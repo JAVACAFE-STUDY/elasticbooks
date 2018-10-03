@@ -21,7 +21,7 @@ public class RestaurantInfoManager {
 
         // 5. 색인된 음식점 정보를 검색한 클래스 객체를 생성한다
         RestaurantInfoSearchService restaurantInfoSearchService = new RestaurantInfoSearchService();
-        // 6. 인덱스에서 바다으로 음식점 정보를 검색한다
+        // 6. 색인에서 바다으로 음식점 정보를 검색한다
         restaurantInfoSearchService.search("바다");
     }
 }
