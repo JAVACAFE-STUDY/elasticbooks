@@ -16,7 +16,8 @@ public class SearchService {
 
 
     /**
-     *     // 음식점 명
+     *
+     // 음식점 명
      @CsvBindByPosition(position = 0)
      private String restaurantName;
      // 카테고리 1

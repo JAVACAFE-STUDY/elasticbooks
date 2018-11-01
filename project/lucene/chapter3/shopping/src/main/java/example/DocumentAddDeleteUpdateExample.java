@@ -32,7 +32,7 @@ public class DocumentAddDeleteUpdateExample {
         // love가 들어가 있는 구매자 리뷰를 삭제 한다.
         indexService.deleteCustomerReview(ramDirectory, "love");
         
-        // 다시 검색 한다.
+        // 다시 검색한다.
         example.searchResult(ramDirectory);
         
         // 변경할 문서를 생성한다.
@@ -43,7 +43,7 @@ public class DocumentAddDeleteUpdateExample {
         doc.add(new TextField("reviewText", "Just received this in the mail, tried it on and am smitten. i'm usually a l, but sometimes i'm a xl (if no stretch), in retailer tops. i bought this one in l and i'm sure glad i did. very flowy, stretchy and comfortable. i also bought the meda lace top from one september and they are very similar expect this is more of a t-shirt and the other is more of a blouse. i almost think i could've gotten a m in this because there is a lot of extra fabric at the chest which is usually never the issue for me", Field.Store.YES));
         doc.add(new TextField("rating", "4", Field.Store.YES));
         
-        // 변경할 문서를 생성한다.
+        // 변경할 도큐먼트를 생성한다.
         indexService.updateCustomerReview(ramDirectory, "66", doc);
         
         // 다시 검색 한다.

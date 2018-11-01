@@ -21,22 +21,25 @@ import kr.ac.kaist.swrc.jhannanum.hannanum.Workflow;
 import kr.ac.kaist.swrc.jhannanum.hannanum.WorkflowFactory;
 import scala.collection.Seq;
 
+// 아리랑 형태소 분석기 테스트 클래스
 public class KoreanMorphemeAnalyzerTest {
 
     public interface KoreanMorphemeAnalyzer {
-        void analyze(String contents);
-        void printResult();
-        String getName();
+        void analyze(String contents); // 실제 분석하는 영역만 담은 메소드
+        void printResult(); // 분석기의 결과를 출력하는 메소드
+        String getName();   // 분석기의 이름을 가져오는 메소드
     }
 
     public static class ArirangMorphemeAnalyzer implements KoreanMorphemeAnalyzer {
         private WordSegmentAnalyzer wordSegmentAnalyzer;
         private List<List<AnalysisOutput>> resultList;
 
+        // 생성자
         public ArirangMorphemeAnalyzer() {
             wordSegmentAnalyzer = new WordSegmentAnalyzer();
         }
 
+        // 실제 분석을 하는 메소드로 성능을 측정한다.
         @Override
         public void analyze(String contents) {
             try {
@@ -46,6 +49,7 @@ public class KoreanMorphemeAnalyzerTest {
             }
         }
 
+        // 분석한 결과를 출력하는 부분
         @Override
         public void printResult() {
             System.out.println(resultList);
@@ -57,6 +61,7 @@ public class KoreanMorphemeAnalyzerTest {
         }
     }
 
+    // 한나눔 형태소 분석기
     public static class HannanumMorphemeAnalyzer implements KoreanMorphemeAnalyzer {
         private Workflow workflow;
         private LinkedList<SetOfSentences> resultOfDocument;
@@ -106,9 +111,11 @@ public class KoreanMorphemeAnalyzerTest {
         }
     }
 
+    // seunjeon
     public static class EunjeonMorphemeAnalyzer implements KoreanMorphemeAnalyzer {
         private List<org.bitbucket.eunjeon.seunjeon.Eojeol> eojeols;
 
+        // 생성자로 로딩 부분을 분리할 수 없기 때문에 바로 static 메소드로 분석을 한다.
         @Override
         public void analyze(String contents) {
             eojeols = Analyzer.parseEojeolJava(contents);
@@ -133,6 +140,7 @@ public class KoreanMorphemeAnalyzerTest {
         }
     }
 
+    // 꼬꼬마 분석기
     public static class KkmaMorphemeAnalyzer implements KoreanMorphemeAnalyzer {
         private org.snu.ids.ha.ma.MorphemeAnalyzer analyzer;
         private List<org.snu.ids.ha.ma.MExpression> resultList;
@@ -168,6 +176,7 @@ public class KoreanMorphemeAnalyzerTest {
         }
     }
 
+    // 트위터 분석기
     public static class TwitterMorphemeAnalyzer implements KoreanMorphemeAnalyzer {
         private List<KoreanTokenJava> koreanTokenJavas;
 

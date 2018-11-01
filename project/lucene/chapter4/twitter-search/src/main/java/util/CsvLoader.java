@@ -12,7 +12,7 @@ import java.util.List;
 public class CsvLoader {
 
     public List<TweetPost> readEnglishReview(){
-        //CSV 파일 Path 를 설정한다.
+        // CSV 파일의 경로를 설정한다.
         String fileName = "src/main/resources/tweet_en.csv";
         return getReview(fileName);
     }

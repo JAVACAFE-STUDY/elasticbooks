@@ -14,11 +14,11 @@ import java.util.List;
  */
 public class TermVectorExample {
     public static void main(String args[]) throws Exception{
-        //CSV 파일로 부터 데이터를 읽어온다.
+        // CSV 파일로 부터 데이터를 읽어온다.
         CsvLoader csvHelper = new CsvLoader();
         List<TourInfo> tourInfoList = csvHelper.readTourInfo();
 
-        //Term Vector를 분석한다
+        // 텀벡터를 분석한다
         analyzeTermVector(tourInfoList.get(0), new KoreanAnalyzer());
     }
 
@@ -36,11 +36,11 @@ public class TermVectorExample {
             CharTermAttribute charTermAttribute = tokenStream.addAttribute(CharTermAttribute.class);
             TermToBytesRefAttribute termToBytesRefAttribute = tokenStream.addAttribute(TermToBytesRefAttribute.class);
             try {
-                //스트림의 시작을 리셋한다.(필수)
+                // 토큰스트림의 시작을 리셋한다.(필수)
                 tokenStream.reset();
                 System.out.println();
                 while (tokenStream.incrementToken()) {
-                    //Token들을 표시한다.
+                    // 토큰들을 표시한다.
                     System.out.println("typeAttribute : " + typeAttribute.type());
                     System.out.println("positionIncrementAttribute : " + positionIncrementAttribute.getPositionIncrement());
                     System.out.println("positionLengthAttribute : " +positionLengthAttribute.getPositionLength());

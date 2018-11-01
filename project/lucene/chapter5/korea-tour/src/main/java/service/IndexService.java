@@ -16,7 +16,7 @@ import java.util.List;
 public class IndexService {
 
     public void indexTourInfo(Directory index, List<TourInfo> tourInfoList) throws Exception {
-        //분석기를 설정을 한다.
+        // 분석기를 설정을 한다.
         KoreanAnalyzer analyzer = new KoreanAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
 
@@ -47,12 +47,12 @@ public class IndexService {
         // 값을 저장하려면 동일한 이름의 StoredField를 추가해야 한다.
         doc.add(new StoredField("hour", hour));
 
-        //Sorting 하려면 아래값을 설정하여야 한다
+        // 값을 저장하려면 같은 이름의 StoredField를 추가해야 한다.
         doc.add(new DoubleDocValuesField("hour", hour));
 
         doc.add(new TextField("description", tourInfo.getDescription(), Field.Store.YES));
 
-        //Sorting 하려면 아래값을 설정하여야 한다
+        // 정렬하려면 다음 값을 설정해야 한다.
         doc.add(new SortedDocValuesField("courseName", new BytesRef(tourInfo.getDescription())));
 
         try{

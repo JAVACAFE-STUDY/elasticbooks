@@ -5,14 +5,18 @@ import java.util.List;
 import example.korean.compare.common.LoadCsv;
 
 public class ComparePerformanceAnalysisTest {
+    // 성능 측정에 공통적으로 사용할 음식점의 소개 글 리스트
     private List<String> contentList;
+    // 분석 시간을 기록할 timer
     private Timer timer;
 
+    // 테스트 전 음식점 소개 글을 CSV 파일에서 로딩하고 타이머를 생성한다.
     public ComparePerformanceAnalysisTest() {
         contentList = LoadCsv.loadCsv();
         timer = new Timer();
     }
 
+    // 실제 성능 측정을 하는 메소드
     public void arirangIndexTest() {
         KoreanMorphemeAnalyzerTest.ArirangMorphemeAnalyzer arirangMorphemeAnalyzer = new KoreanMorphemeAnalyzerTest.ArirangMorphemeAnalyzer();
         testRun(timer, contentList, arirangMorphemeAnalyzer);
@@ -42,11 +46,13 @@ public class ComparePerformanceAnalysisTest {
         System.out.println("########### start " + morphemeAnalyzer.getName());
         timer.init();
         timer.start();
+        // 리스트에 저장된 음식점 소개 글을 하나씩 형태소 분석한다.
         contentList.stream().forEach(morphemeAnalyzer::analyze);
         timer.end();
         System.out.println(timer.getResult());
     }
 
+    // 시간을 기록할 타이머
     public static class Timer {
         long startTime = 0;
         long endTime = 0;

@@ -17,18 +17,18 @@ import java.util.List;
  */
 public class QueryParserExample {
     public static void main(String args[]) throws Exception {
-        //CSV 파일로 부터 데이터를 읽어온다.
+        // CSV 파일로 부터 데이터를 읽어온다.
         CsvLoader csvHelper = new CsvLoader();
         List<TourInfo> tourInfoList = csvHelper.readTourInfo();
 
-        //Directory를 사용한다.
+        // Directory를 사용한다.
         Directory index = new RAMDirectory();
 
-        //색인을 한다.
+        // 색인을 한다.
         IndexService indexService = new IndexService();
         indexService.indexTourInfo(index, tourInfoList);
 
-        //분석 결과를 확인한다.
+        // 분석 결과를 확인한다.
         int maxHitCount = 10;
 
         System.out.println("====================================>> '해변'과 '시골'이 포함되고 '산이 포함되지 않은 여행정보");

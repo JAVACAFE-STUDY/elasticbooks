@@ -15,7 +15,7 @@ import java.util.List;
 public class IndexService {
 
     public void indexRestaurantInfo(Directory index, List<RestaurantInfoVo> restaurantInfoList) throws Exception {
-        //분석기를 설정을 한다.
+        // 분석기를 설정을 한다.
         CustomKoreanAnalyzer analyzer = new CustomKoreanAnalyzer();
         IndexWriterConfig config = new IndexWriterConfig(analyzer);
 

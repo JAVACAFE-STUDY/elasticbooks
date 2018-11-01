@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class CsvLoader {
     public List<RestaurantInfoVo> readRestaurantnfo(){
-        //CSV 파일 Path 를 설정한다.
+        // CSV 파일 경로를 설정한다.
         String fileName = "src/main/resources/restaurant_Info_explain_20160906.csv";
         List<RestaurantInfoVo> restaurantInfoList = null;
 

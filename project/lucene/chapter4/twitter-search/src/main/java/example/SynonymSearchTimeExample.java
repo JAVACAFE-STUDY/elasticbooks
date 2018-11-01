@@ -19,14 +19,14 @@ import java.util.List;
 
 public class SynonymSearchTimeExample {
     public static void main(String args[]) throws Exception{
-        // CSV 파일로 부터 데이터를 읽어온다.
+        // CSV 파일에서 데이터를 읽는다.
         CsvLoader csvUtil = new CsvLoader();
 
         // 영문 날씨 반응을 TweetPost 리스트로 가져온다.
         List<TweetPost> reviewList = csvUtil.readEnglishReview();
         reviewList.forEach(System.out::println);
 
-        // 색인을 한다.
+        // 색인한다.
         Directory index = new RAMDirectory();
 
         // 색인 시 분석기는 기본 분석기를 사용한다.

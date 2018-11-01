@@ -20,18 +20,18 @@ import java.util.List;
  */
 public class MultiFieldSortExample {
     public static void main(String args[]) throws Exception{
-        //CSV 파일로 부터 데이터를 읽어온다.
+        // CSV 파일로 부터 데이터를 읽어온다.
         CsvLoader csvHelper = new CsvLoader();
         List<TourInfo> tourInfoList = csvHelper.readTourInfo();
 
-        //Directory를 사용한다.
+        // Directory를 사용한다.
         Directory index = new RAMDirectory();
 
-        //색인을 한다.
+        // 색인을 한다.
         IndexService indexService = new IndexService();
         indexService.indexTourInfo(index, tourInfoList);
 
-        //분석 결과를 확인한다.
+        // 분석 결과를 확인한다.
         int maxHitCount = 10;
 
         getMultiFieldSortQuery(index, maxHitCount);
@@ -48,7 +48,7 @@ public class MultiFieldSortExample {
                 new SortedNumericSortField("hour", SortField.Type.DOUBLE),
                 new SortField("courseName", SortField.Type.STRING));
 
-        //결과를 출력한다
+        // 결과를 출력한다
         printResult(index, maxHitCount, query, sort);
     }
 
@@ -57,7 +57,7 @@ public class MultiFieldSortExample {
 
         try(IndexReader reader = DirectoryReader.open(index)){
             IndexSearcher searcher = new IndexSearcher(reader);
-            //쿼리, hitsPerPage, sort를 파라미터로 지정한다
+            // 쿼리, hitsPerPage, sort를 파라미터로 지정한다
             TopDocs docs = searcher.search(query, hitsPerPage, sort);
             ScoreDoc[] hits = docs.scoreDocs;
             System.out.println(hits.length + " 개의 결과를 찾았습니다.");
