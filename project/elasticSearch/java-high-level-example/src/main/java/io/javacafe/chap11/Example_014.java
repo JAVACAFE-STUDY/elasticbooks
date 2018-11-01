@@ -1,0 +1,58 @@
+package io.javacafe.chap11;
+
+import org.apache.http.HttpHost;
+import org.elasticsearch.action.search.ClearScrollRequest;
+import org.elasticsearch.action.search.ClearScrollResponse;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
+import org.elasticsearch.client.RequestOptions;
+import org.elasticsearch.client.Response;
+import org.elasticsearch.client.RestClient;
+import org.elasticsearch.client.RestHighLevelClient;
+import org.elasticsearch.common.unit.TimeValue;
+import org.elasticsearch.script.ScriptType;
+import org.elasticsearch.script.mustache.SearchTemplateRequest;
+import org.elasticsearch.script.mustache.SearchTemplateResponse;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
+
+public class Example_014 {
+    public static void main(String[] args) throws IOException {
+        RestHighLevelClient client = new RestHighLevelClient(
+                RestClient.builder(
+                        new HttpHost("127.0.0.1", 9200, "http")));
+
+        String INDEX_NAME = "tweet";
+        String FIELD_NAME = "userName";
+        String QUERY_TEXT = "nobaksan";
+
+        SearchTemplateRequest searchRequest = new SearchTemplateRequest();
+        searchRequest.setRequest(new SearchRequest(INDEX_NAME));
+
+        searchRequest.setScriptType(ScriptType.INLINE);
+        searchRequest.setScript(
+                "{" +
+                        "  \"query\": { \"match\" : { \"{{field}}\" : \"{{value}}\" } }," +
+                        "  \"size\" : \"{{size}}\"" +
+                        "}");
+
+        Map<String, Object> scriptParams = new HashMap<>();
+        scriptParams.put("field", FIELD_NAME);
+        scriptParams.put("value", QUERY_TEXT);
+        scriptParams.put("size", 10);
+        searchRequest.setScriptParams(scriptParams);
+
+        SearchTemplateResponse searchTemplateResponse = client.searchTemplate(searchRequest, RequestOptions.DEFAULT);
+        SearchResponse response = searchTemplateResponse.getResponse();
+
+
+
+
+
+    }
+}

@@ -30,7 +30,7 @@ public class NgramExample {
         IndexService.indexingTweetData(reviewList, index, config);
 
         // 먼지로 쿼리를 생성한다.
-        Query q = new QueryParser("text", new StandardAnalyzer()).parse("먼지");
+        Query q = new QueryParser("text", new NgramAnalyzer()).parse("미세먼지");
 
         // 쿼리로 검색한 결과를 확인한다.
         SearchService.searchTweetData(index, q);
