@@ -1,0 +1,16 @@
+input {
+  file {
+    path => "${ELASTICSTACK_HOME}/pilot01/apache-access.log"
+    start_position => "beginning"
+  }
+}
+
+filter {
+    grok {
+        match => { "message" => "%{HTTPD_COMBINEDLOG}"}
+    }
+}
+
+output {
+  stdout {}
+}

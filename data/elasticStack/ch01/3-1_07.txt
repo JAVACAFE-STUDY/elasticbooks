@@ -1,0 +1,32 @@
+input {
+  file {
+    path => "${ELASTICSTACK_HOME}/pilot01/apache-access.log"
+    start_position => "beginning"
+  }
+}
+
+filter {
+    grok {
+        match => { "message" => "%{HTTPD_COMBINEDLOG}"}
+    }
+
+    mutate {
+      remove_field => [ "auth", "ident" ]
+      convert => { "bytes" => "integer" }
+      convert => { "response" => "integer" }
+    }
+
+    date {
+      match => [ "timestamp", "dd/MMM/yyyy:HH:mm:SS Z" ]
+      target => "timestamp"
+    }
+
+    geoip {
+      source => "clientip"
+      target => “geoip”
+    }
+}
+
+output {
+  stdout {}
+}
