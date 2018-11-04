@@ -1,0 +1,37 @@
+input {
+  beats {
+    port => 5044
+  }
+}
+
+filter {
+    grok {
+        match => { "message" => "%{HTTPD_COMBINEDLOG}"}
+    }
+
+    mutate {
+      remove_field => [ "auth", "ident" ]
+      convert => { "bytes" => "integer" }
+      convert => { "response" => "integer" }
+    }
+
+    date {
+      match => [ "timestamp", "dd/MMM/yyyy:HH:mm:SS Z" ]
+      target => "timestamp"
+    }
+
+    geoip {
+        source => "clientip"
+    }
+}
+
+output {
+  elasticsearch {
+        hosts => [ "localhost:9200" ]
+        index => "filebeat-using-logstash-%{+yyyy.MM.dd}"
+  }
+
+  stdout {
+
+  }
+}
