@@ -1,0 +1,17 @@
+PUT _template/apache
+{
+  "index_patterns": "apache-*", 
+  "mappings": {
+    "doc": {
+      "properties": {
+        "geoip": {
+          "properties": {
+            "location": {
+              "type": "geo_point"
+            }
+          }
+        }
+      }
+    }
+  }
+}

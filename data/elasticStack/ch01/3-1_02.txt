@@ -1,0 +1,11 @@
+input {
+  file {
+    path => "${ELASTICSTACK_HOME}/pilot01/apache-access.log"
+    start_position => "beginning"
+    sincedb_path => "/dev/null"
+  }
+}
+
+output {
+  stdout {}
+}
