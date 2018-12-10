@@ -11,6 +11,9 @@ import java.net.InetAddress;
 
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
+/**
+ * 인덱스 생성
+ * */
 public class Example2 {
     public static void main(String[] args) throws IOException {
         Settings settings = Settings.builder() .put("cluster.name", "javacafe-es").build();

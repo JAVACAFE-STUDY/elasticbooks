@@ -14,6 +14,11 @@ import java.io.IOException;
 import java.net.InetAddress;
 
 public class Example7 {
+
+    /**
+     * 하나/여러개의 문서 삭제
+     * */
+
     public static void main(String[] args) throws IOException {
         Settings settings = Settings.builder() .put("cluster.name", "javacafe-es").build();
 

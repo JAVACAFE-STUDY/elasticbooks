@@ -18,6 +18,12 @@ import java.net.InetAddress;
 import java.util.concurrent.ExecutionException;
 
 public class Example12 {
+
+    /**
+     * Scroll이용하여 재검색하기
+     * */
+
+
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
         Settings settings = Settings.builder() .put("cluster.name", "javacafe-es").build();
 

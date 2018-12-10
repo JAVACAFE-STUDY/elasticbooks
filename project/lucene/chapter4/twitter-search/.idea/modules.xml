@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/twitter-search.iml" filepath="$PROJECT_DIR$/twitter-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/twitter-search_main.iml" filepath="$PROJECT_DIR$/.idea/modules/twitter-search_main.iml" group="twitter-search" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/twitter-search_test.iml" filepath="$PROJECT_DIR$/.idea/modules/twitter-search_test.iml" group="twitter-search" />
+    </modules>
+  </component>
+</project>

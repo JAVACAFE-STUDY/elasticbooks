@@ -17,6 +17,11 @@ import java.util.List;
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 public class Example5 {
+
+    /**
+     * 대량의 문서 추가
+     * */
+
     public static void main(String[] args) throws IOException {
         Settings settings = Settings.builder() .put("cluster.name", "javacafe-es").build();
 

@@ -12,6 +12,11 @@ import java.net.InetAddress;
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 public class Example3 {
+
+    /**
+     * 한글 형태소 분석기 추가
+     * */
+
     public static void main(String[] args) throws IOException {
         Settings settings = Settings.builder() .put("cluster.name", "javacafe-es").build();
 

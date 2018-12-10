@@ -13,6 +13,11 @@ import java.net.InetAddress;
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 public class Example4 {
+
+    /**
+     * 하나의 문서 추가
+     * */
+
     public static void main(String[] args) throws IOException {
         Settings settings = Settings.builder() .put("cluster.name", "javacafe-es").build();
 

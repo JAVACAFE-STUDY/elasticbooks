@@ -21,6 +21,11 @@ import java.net.InetAddress;
 import java.util.concurrent.ExecutionException;
 
 public class Example13 {
+
+    /**
+     * Terms Aggregation 사용하기
+     * */
+
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
         Settings settings = Settings.builder() .put("cluster.name", "javacafe-es").build();
 

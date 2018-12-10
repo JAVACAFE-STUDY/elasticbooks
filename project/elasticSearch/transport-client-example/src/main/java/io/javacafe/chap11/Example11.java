@@ -21,6 +21,10 @@ import java.util.concurrent.ExecutionException;
 import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 public class Example11 {
+
+    /**
+     * 쿼리 문서 조회
+     * */
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
         Settings settings = Settings.builder() .put("cluster.name", "javacafe-es").build();
 

@@ -1,4 +1,8 @@
-curl -XGET ‘http://localhost:9200/movie/_doc/HZuX6mEB06UMLL9exnak?pretty=true’
+curl -XGET 'http://localhost:9200/movie/_doc/HZuX6mEB06UMLL9exnak?pretty=true'
+{
+}
+
+
 
 {
   "_index": "movie",

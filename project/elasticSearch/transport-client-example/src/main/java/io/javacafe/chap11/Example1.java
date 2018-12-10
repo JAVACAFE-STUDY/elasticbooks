@@ -8,6 +8,9 @@ import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
+/**
+ * Transport 연결
+ * */
 public class Example1 {
     public static void main(String[] args) throws UnknownHostException {
         Settings settings = Settings.builder() .put("cluster.name", "javacafe-es").build();
