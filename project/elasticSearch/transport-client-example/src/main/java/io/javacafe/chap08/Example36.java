@@ -24,7 +24,7 @@ import static org.elasticsearch.index.query.QueryBuilders.geoShapeQuery;
 import static org.elasticsearch.index.query.QueryBuilders.termQuery;
 
 /**
- * FUNCTION SCORE QUERY API
+ * GEO QUERY API
  * */
 public class Example36 {
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {

@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.ElasticsearchException;
@@ -18,7 +18,7 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 public class Example_005 {
     /**
-     * 인덱스 오픈 및 종료
+     * GET API
      * */
     public static void main(String[] args) throws IOException {
         RestHighLevelClient client = new RestHighLevelClient(
@@ -26,7 +26,7 @@ public class Example_005 {
                         new HttpHost("127.0.0.1", 9200, "http")));
 
         //인덱스 명
-        String INDEX_NAME = "tweet";
+        String INDEX_NAME = "movie_auto_java";
         //타입 명
         String TYPE_NAME="_doc";
         //문서 키값

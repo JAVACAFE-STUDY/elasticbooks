@@ -2,109 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd5f741-f86f-4e96-b3ab-020aa5d23347" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../java-high-level-example/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../java-high-level-example/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__com_opencsv_opencsv_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__org_apache_commons_commons_lang3_3_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__org_apache_commons_commons_text_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__org_apache_lucene_lucene_analyzers_common_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__org_apache_lucene_lucene_analyzers_nori_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__org_apache_lucene_lucene_core_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__org_apache_lucene_lucene_queries_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__org_apache_lucene_lucene_queryparser_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/libraries/Gradle__org_apache_lucene_lucene_sandbox_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/modules/twitter-search_main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/modules/twitter-search_test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter4/twitter-search/twitter-search.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__com_opencsv_opencsv_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__org_apache_commons_commons_lang3_3_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__org_apache_commons_commons_text_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__org_apache_lucene_lucene_analyzers_common_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__org_apache_lucene_lucene_analyzers_nori_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__org_apache_lucene_lucene_core_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__org_apache_lucene_lucene_queries_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__org_apache_lucene_lucene_queryparser_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/libraries/Gradle__org_apache_lucene_lucene_sandbox_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/modules/korea-tour_main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/modules/korea-tour_test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__com_github_tototoshi_scala_csv_2_11_1_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__com_opencsv_opencsv_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__com_twitter_penguin_korean_text_4_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__com_twitter_twitter_text_1_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__com_typesafe_scala_logging_scala_logging_api_2_11_2_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__com_typesafe_scala_logging_scala_logging_slf4j_2_11_2_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__commons_collections_commons_collections_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_commons_commons_lang3_3_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_commons_commons_text_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_lucene_lucene_analyzers_common_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_lucene_lucene_core_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_lucene_lucene_highlighter_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_lucene_lucene_join_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_lucene_lucene_memory_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_lucene_lucene_queries_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_lucene_lucene_queryparser_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_apache_lucene_lucene_sandbox_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_bitbucket_eunjeon_seunjeon_2_11_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_scala_lang_scala_library_2_11_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_scala_lang_scala_reflect_2_11_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_7_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/libraries/Gradle__org_slf4j_slf4j_jdk14_1_7_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/modules/restaurant-search-advance_main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/modules/restaurant-search-advance_test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/restaurant-search-advance.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_001.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_001.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_002.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_002.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_003.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_003.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_004.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_004.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_005.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_005.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_006.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_006.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_007.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_007.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_008.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_008.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_009.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_009.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_010.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_010.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_011.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_011.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_012.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_012.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_013.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_013.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_014.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_014.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_015.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-high-level-example/src/main/java/io/javacafe/chap08/Example_015.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example13.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example14.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example15.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example18.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example19.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example19.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example20.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example20.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example21.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example21.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example22.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example22.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example23.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example23.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example24.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example24.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example25.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example25.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example26.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example26.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example6.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example7.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example8.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example9.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transport-client-example.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lucene/chapter5/korea-tour/build/resources/main/한국관광공사_걷는길_인코딩_정제본.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lucene/chapter8/restaurant-search-advance/out/production/classes/restaurant_Info_explain_20160906.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example13.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example26.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example26.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example36.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example36.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example37.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example37.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example38.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example38.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example39.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example39.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example4.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -148,31 +69,36 @@
     <session id="-53021055">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="26" />
-          <entry key="xml" value="1" />
+          <entry key="java" value="241" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="26" />
-          <entry key="XML" value="1" />
+          <entry key="JAVA" value="241" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="308" />
+          <entry key="java" value="357" />
+          <entry key="txt" value="25" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="308" />
+          <entry key="JAVA" value="357" />
+          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -180,52 +106,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example21.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="36" column="41" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example13.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example12.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example22.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example23.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="20" column="11" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example24.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example28.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
               <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
@@ -234,40 +115,82 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example25.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example27.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="64">
-              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example26.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example25.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example27.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="64">
+              <caret line="18" column="12" selection-start-line="18" selection-end-line="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example24.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="64">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example32.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example30.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example29.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example35.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example33.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example36.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -305,23 +228,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example27.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example3.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example4.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example5.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example6.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example7.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example8.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example9.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example10.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example11.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example12.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example14.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example15.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example16.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example17.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example18.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example19.java" />
@@ -333,6 +239,46 @@
         <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example24.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example25.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example26.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example25.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example6.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example7.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example8.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example9.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example10.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example11.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example14.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example15.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example16.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example17.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example18.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example19.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example20.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example21.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example22.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example23.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example24.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example27.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example28.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example29.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example30.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example31.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example32.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example33.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example35.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example34.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example13.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example26.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example4.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example12.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example37.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example38.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example39.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example36.java" />
       </list>
     </option>
   </component>
@@ -349,10 +295,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="2862" />
-    <option name="width" value="782" />
-    <option name="height" value="830" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -360,6 +307,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -391,7 +339,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="chap11" type="462c0819:PsiDirectoryNode" />
+              <item name="chap08" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -399,23 +347,24 @@
       </pane>
       <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="ctx&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541164281230" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java-high-level-example" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545792105705" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="io.javacafe.chap08" />
       <recent name="io.javacafe.chap11" />
     </key>
   </component>
@@ -443,16 +392,27 @@
       <updated>1536943957838</updated>
       <workItem from="1536943960819" duration="2982000" />
       <workItem from="1541070513038" duration="2735000" />
+      <workItem from="1545631514157" duration="1627000" />
+      <workItem from="1545641019439" duration="3361000" />
     </task>
+    <task id="LOCAL-00001" summary="trnsport 예제 추가">
+      <created>1545632532557</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545632532557</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5717000" />
+    <option name="totallyTimeSpent" value="10705000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2862" y="0" width="782" height="830" extended-state="0" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.80055404" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32249466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -470,6 +430,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -516,209 +477,302 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="trnsport 예제 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="trnsport 예제 추가" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example1.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example14.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example11.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example12.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example13.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example21.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example22.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example23.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example24.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example25.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example26.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example27.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="528">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example15.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example19.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example23.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example26.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="37" column="36" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example14.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
-          <caret line="16" selection-start-line="13" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example3.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+        <state relative-caret-position="16">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example4.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        <state relative-caret-position="288">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example5.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example20.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        <state relative-caret-position="16">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example6.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example21.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        <state relative-caret-position="64">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example7.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example13.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="336">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example12.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example11.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-169">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example8.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example8.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
+        <state relative-caret-position="496">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding>
+            <element signature="e#1357#1374#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example9.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example16.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="64">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example10.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example17.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="78" column="39" lean-forward="true" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+        <state relative-caret-position="64">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example15.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example18.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        <state relative-caret-position="47">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example18.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example22.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state relative-caret-position="47">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example19.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example31.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        <state relative-caret-position="464">
+          <caret line="43" column="35" selection-start-line="33" selection-start-column="8" selection-end-line="43" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example20.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example34.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="496">
+          <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example17.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example37.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        <state relative-caret-position="80">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example16.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example38.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        <state relative-caret-position="80">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example14.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example39.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state relative-caret-position="80">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example11.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example36.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+        <state relative-caret-position="80">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example12.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example35.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state relative-caret-position="272">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example13.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example33.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="304">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example21.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example32.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="36" column="41" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="41" />
+        <state relative-caret-position="304">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example22.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example23.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example24.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example30.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example25.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example29.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example28.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example27.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example26.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example25.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="64">
+          <caret line="18" column="12" selection-start-line="18" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap11/Example27.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/javacafe/chap08/Example24.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="16" selection-end-column="19" />
+        <state relative-caret-position="64">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -779,7 +833,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

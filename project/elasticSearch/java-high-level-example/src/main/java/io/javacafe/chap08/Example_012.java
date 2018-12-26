@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.*;
@@ -13,16 +13,18 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
 import java.io.IOException;
 
 import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
-
+/**
+ * SCROLL API
+ * */
 public class Example_012 {
     public static void main(String[] args) throws IOException {
         RestHighLevelClient client = new RestHighLevelClient(
                 RestClient.builder(
                         new HttpHost("127.0.0.1", 9200, "http")));
 
-        String INDEX_NAME = "tweet";
-        String FIELD_NAME = "userName";
-        String QUERY_TEXT = "nobaksan";
+        String INDEX_NAME = "movie_auto_java";
+        String FIELD_NAME = "movieNm";
+        String QUERY_TEXT = "캡틴아메리카";
         final Scroll scroll = new Scroll(TimeValue.timeValueMinutes(1L));
 
         SearchRequest searchRequest = new SearchRequest(INDEX_NAME);
@@ -33,7 +35,7 @@ public class Example_012 {
 
         searchRequest.scroll (scroll);
 
-        SearchResponse searchResponse = client.search(searchRequest);
+        SearchResponse searchResponse = client.search(searchRequest,RequestOptions.DEFAULT);
         String scrollId = searchResponse.getScrollId();
         SearchHit[] searchHits = searchResponse.getHits().getHits();
 

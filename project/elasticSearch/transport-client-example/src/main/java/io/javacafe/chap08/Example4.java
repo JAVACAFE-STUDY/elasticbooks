@@ -26,7 +26,7 @@ public class Example4 {
                         .addTransportAddress(new TransportAddress(
                                 InetAddress.getByName("127.0.0.1"), 9300));
         //Index명
-        String INDEX_NAME="moive_auto_java";
+        String INDEX_NAME="movie_auto_java";
 
         //타입명
         String TYPE_NAME = "_doc";

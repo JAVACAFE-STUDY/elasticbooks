@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.DocWriteRequest;
@@ -23,7 +23,7 @@ import java.io.IOException;
 
 public class Example_010 {
     /**
-     * 인덱스 오픈 및 종료
+     * Bulk API
      * */
     public static void main(String[] args) throws IOException {
         RestHighLevelClient client = new RestHighLevelClient(
@@ -31,11 +31,11 @@ public class Example_010 {
                         new HttpHost("127.0.0.1", 9200, "http")));
 
         //인덱스 명
-        String INDEX_NAME = "tweet";
+        String INDEX_NAME = "movie_auto_java";
         //타입 명
         String TYPE_NAME="_doc";
 
-        String FIELD_NAME = "userName";
+        String FIELD_NAME = "movieNm";
 
 
         BulkProcessor.Listener listener = new BulkProcessor.Listener() {
@@ -67,11 +67,11 @@ public class Example_010 {
 
         BulkRequest request = new BulkRequest();
         String _id = "7";
-        IndexRequest one = new IndexRequest(INDEX_NAME, TYPE_NAME, _id).source(XContentType.JSON, FIELD_NAME, "blaze");
+        IndexRequest one = new IndexRequest(INDEX_NAME, TYPE_NAME, _id).source(XContentType.JSON, FIELD_NAME, "살아남은 아이");
          _id = "8";
-        IndexRequest two = new IndexRequest(INDEX_NAME, TYPE_NAME, _id).source(XContentType.JSON, FIELD_NAME, "nobaksan");
+        IndexRequest two = new IndexRequest(INDEX_NAME, TYPE_NAME, _id).source(XContentType.JSON, FIELD_NAME, "프렌즈: 몬스터섬의비밀");
          _id = "9";
-        IndexRequest three = new IndexRequest(INDEX_NAME, TYPE_NAME, _id).source(XContentType.JSON, FIELD_NAME, "dokzon");
+        IndexRequest three = new IndexRequest(INDEX_NAME, TYPE_NAME, _id).source(XContentType.JSON, FIELD_NAME, "캡틴아메리카 시빌워");
 
 
         builder.build().add(one);

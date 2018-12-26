@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.admin.indices.alias.Alias;
@@ -24,7 +24,7 @@ public class Example_002 {
                 RestClient.builder(
                         new HttpHost("127.0.0.1", 9200, "http")));
 
-        String INDEX_NAME = "tweet";
+        String INDEX_NAME = "movie_auto_java";
         DeleteIndexRequest request = new DeleteIndexRequest(INDEX_NAME);
 
         DeleteIndexResponse deleteIndexResponse = client.indices().delete(request,RequestOptions.DEFAULT);

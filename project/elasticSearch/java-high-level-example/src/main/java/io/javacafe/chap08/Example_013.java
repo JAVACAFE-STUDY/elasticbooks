@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.ClearScrollRequest;
@@ -14,17 +14,19 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
 import java.io.IOException;
 
 import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
-
+/**
+ * CLEAR SCROLL API
+ * */
 public class Example_013 {
     public static void main(String[] args) throws IOException {
         RestHighLevelClient client = new RestHighLevelClient(
                 RestClient.builder(
                         new HttpHost("127.0.0.1", 9200, "http")));
 
-        String INDEX_NAME = "tweet";
-        String FIELD_NAME = "userName";
-        String QUERY_TEXT = "nobaksan";
 
+        String INDEX_NAME = "movie_auto_java";
+        String FIELD_NAME = "movieNm";
+        String QUERY_TEXT = "캡틴아메리카";
 
         SearchRequest searchRequest = new SearchRequest(INDEX_NAME);
 
@@ -34,7 +36,7 @@ public class Example_013 {
 
         searchRequest.scroll (TimeValue.timeValueMinutes (1L));
 
-        SearchResponse searchResponse = client.search(searchRequest);
+        SearchResponse searchResponse = client.search(searchRequest,RequestOptions.DEFAULT);
         String scrollId = searchResponse.getScrollId();
 
         ClearScrollRequest request = new ClearScrollRequest();

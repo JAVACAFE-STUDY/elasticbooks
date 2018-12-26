@@ -19,7 +19,7 @@ import static org.elasticsearch.index.query.QueryBuilders.geoDistanceQuery;
 import static org.elasticsearch.index.query.QueryBuilders.geoPolygonQuery;
 
 /**
- * FUNCTION SCORE QUERY API
+ * GEO QUERY API
  * */
 public class Example39 {
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {

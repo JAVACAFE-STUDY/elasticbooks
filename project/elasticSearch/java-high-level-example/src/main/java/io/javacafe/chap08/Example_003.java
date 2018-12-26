@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.admin.indices.close.CloseIndexRequest;
@@ -22,7 +22,7 @@ public class Example_003 {
                 RestClient.builder(
                         new HttpHost("127.0.0.1", 9200, "http")));
 
-        String INDEX_NAME = "tweet";
+        String INDEX_NAME = "movie_auto";
         OpenIndexRequest request = new OpenIndexRequest(INDEX_NAME);
 
         OpenIndexResponse openIndexResponse = client.indices().open(request, RequestOptions.DEFAULT);

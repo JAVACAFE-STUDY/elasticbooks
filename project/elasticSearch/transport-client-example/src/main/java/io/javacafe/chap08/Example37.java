@@ -19,7 +19,7 @@ import static org.elasticsearch.index.query.QueryBuilders.geoBoundingBoxQuery;
 import static org.elasticsearch.index.query.QueryBuilders.geoShapeQuery;
 
 /**
- * FUNCTION SCORE QUERY API
+ * GEO QUERY API
  * */
 public class Example37 {
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {

@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.ClearScrollRequest;
@@ -21,15 +21,19 @@ import java.util.Map;
 
 import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
 
+
+/**
+ * Search Template API
+ * */
 public class Example_014 {
     public static void main(String[] args) throws IOException {
         RestHighLevelClient client = new RestHighLevelClient(
                 RestClient.builder(
                         new HttpHost("127.0.0.1", 9200, "http")));
 
-        String INDEX_NAME = "tweet";
-        String FIELD_NAME = "userName";
-        String QUERY_TEXT = "nobaksan";
+        String INDEX_NAME = "movie_auto_java";
+        String FIELD_NAME = "movieNm";
+        String QUERY_TEXT = "캡틴아메리카";
 
         SearchTemplateRequest searchRequest = new SearchTemplateRequest();
         searchRequest.setRequest(new SearchRequest(INDEX_NAME));

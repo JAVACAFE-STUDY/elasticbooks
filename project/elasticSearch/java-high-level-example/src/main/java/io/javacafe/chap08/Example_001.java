@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.admin.indices.alias.Alias;
@@ -29,23 +29,22 @@ public class Example_001 {
                 RestClient.builder(
                         new HttpHost("127.0.0.1", 9200, "http")));
 
-        String INDEX_NAME = "tweet";
+        String INDEX_NAME = "movie_auto_java";
         String TYPE_NAME = "_doc";
 
         CreateIndexRequest request = new CreateIndexRequest(INDEX_NAME);
 
         //매핑생성
         XContentBuilder indexBuilder = jsonBuilder().startObject().startObject(TYPE_NAME)
-                .startObject("properties").startObject("tweetId").field("type","long").field("store","true").field("index_options","docs").endObject()
-                .startObject("createdAt").field("type","date").field("store","true").field("index_options","docs").endObject()
-                .startObject("tweetLang").field("type","keyword").field("store","true").field("index_options","docs").endObject()
-                .startObject("text").field("type","text").field("store","true").field("index_options","docs").endObject()
-                .startObject("userFollowersCount").field("type","integer").field("store","true").field("index_options","docs").endObject()
+                .startObject("properties")
+                .startObject("movieCd").field("type","keyword").field("store","true").field("index_options","docs").endObject()
+                .startObject("movieNm").field("type","text").field("store","true").field("index_options","docs").endObject()
+                .startObject("movieNmEn").field("type","text").field("store","true").field("index_options","docs").endObject()
                 .endObject().endObject().endObject();
 
         request.mapping(TYPE_NAME,indexBuilder);
 
-        String ALIAS_NAME = "twitter_index";
+        String ALIAS_NAME = "moive_auto_alias";
         request.alias(new Alias(ALIAS_NAME));
 
 

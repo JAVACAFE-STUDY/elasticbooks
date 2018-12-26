@@ -35,7 +35,7 @@ public class Example26 {
         String FIELD_NAME = "repNationNm";
         String QUERY = "한국";
 
-        String AGGREGATION_NAME="siginificant_aggregation";
+        String AGGREGATION_NAME="significant_aggregation";
         String AGGREGATION_FIELD = "typeNm";
 
 

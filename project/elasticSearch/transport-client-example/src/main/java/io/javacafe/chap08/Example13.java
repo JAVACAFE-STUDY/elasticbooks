@@ -37,7 +37,7 @@ public class Example13 {
         String TYPE_NAME = "_doc";
         String FIELD_NAME = "repNationNm";
         String QUERY = "한국";
-        String AGGREGATION_NAME = "countNatiaonNm";
+        String AGGREGATION_NAME = "countNationNm";
         String AGGREGATION_FIELD = "typeNm";
 
         AggregationBuilder aggs = AggregationBuilders.terms(AGGREGATION_NAME)

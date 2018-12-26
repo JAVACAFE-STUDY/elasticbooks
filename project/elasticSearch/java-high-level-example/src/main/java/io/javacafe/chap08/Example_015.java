@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.search.MultiSearchRequest;
@@ -26,11 +26,11 @@ public class Example_015 {
                 RestClient.builder(
                         new HttpHost("127.0.0.1", 9200, "http")));
 
-        String INDEX_NAME = "tweet";
+        String INDEX_NAME = "movie_search";
         String TYPE_NAME = "_doc";
-        String FIELD_NAME = "userName";
-        String QUERY_TEXT = "nobaksan";
-        String QUERY_TEXT2 = "dokzon";
+        String FIELD_NAME = "movieNm";
+        String QUERY_TEXT = "아내들";
+        String QUERY_TEXT2 = "아이";
 
         MultiSearchRequest request = new MultiSearchRequest();
 

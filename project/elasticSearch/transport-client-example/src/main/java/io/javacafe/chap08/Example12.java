@@ -32,7 +32,6 @@ public class Example12 {
                         .addTransportAddress(new TransportAddress(
                                 InetAddress.getByName("127.0.0.1"), 9300));
         String INDEX_NAME = "movie_search";
-        String TYPE_NAME = "_doc";
         String FIELD_NAME = "movieNm";
         String QUERY = "아내들";
 
@@ -51,9 +50,8 @@ public class Example12 {
             //데이터 출력
             for (SearchHit hit : scrollResp.getHits().getHits()) {
 
-                String tweetId= hit.getSourceAsMap().get("tweetId").toString();
-                String tweetLang = hit.getSourceAsMap().get("tweetLang").toString();
-                String text = hit.getSourceAsMap().get("text").toString();
+                String movieNm= hit.getSourceAsMap().get("movieNm").toString();
+
             }
 
             scrollResp = client.prepareSearchScroll(scrollResp.getScrollId())

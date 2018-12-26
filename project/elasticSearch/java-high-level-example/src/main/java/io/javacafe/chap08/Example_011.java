@@ -1,4 +1,4 @@
-package io.javacafe.chap11;
+package io.javacafe.chap08;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.DocWriteRequest;
@@ -35,7 +35,7 @@ import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
 
 public class Example_011 {
     /**
-     * 인덱스 오픈 및 종료
+     * Match ALL API
      * */
     public static void main(String[] args) throws IOException {
         RestHighLevelClient client = new RestHighLevelClient(
@@ -43,11 +43,11 @@ public class Example_011 {
                         new HttpHost("127.0.0.1", 9200, "http")));
 
         //인덱스 명
-        String INDEX_NAME = "tweet";
+        String INDEX_NAME = "movie_auto_java";
         //타입 명
         String TYPE_NAME="_doc";
 
-        String FIELD_NAME = "tweetId";
+        String FIELD_NAME = "movieNm";
 
         SearchRequest searchRequest = new SearchRequest(INDEX_NAME);
         searchRequest.types(TYPE_NAME);
@@ -61,7 +61,7 @@ public class Example_011 {
 
         searchRequest.source(searchSourceBuilder);
 
-        SearchResponse searchResponse = client.search(searchRequest);
+        SearchResponse searchResponse = client.search(searchRequest,RequestOptions.DEFAULT);
         SearchHits searchHits = searchResponse.getHits();
         for (SearchHit hit : searchHits) {
             Map<String, Object> sourceAsMap = hit.getSourceAsMap();
