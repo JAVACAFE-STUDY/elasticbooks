@@ -14,4 +14,3 @@ else
 fi
 
 echo "$!" > $ELASTICSTACK_HOME/$DIR_NAME/$1/$1.pid
-$ELASTICSTACK_HOME/tail.sh $1
